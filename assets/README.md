@@ -1,0 +1,1 @@
+Images, PDFs etc.
