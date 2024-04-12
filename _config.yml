@@ -1,6 +1,6 @@
 # Configurations
-title:            main
-longtitle:        main file
+title:            Chirantandip
+longtitle:        Chirantandip main file
 author:           Chirantandip Mahanta
 email:            chirantandipmahanta@gmail.com
 description: >
@@ -15,7 +15,9 @@ rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
 #remote_theme: sighingnow/jekyll-gitbook
-theme: jekyll-theme-basically-basic
+#theme: jekyll-theme-basically-basic
+#theme: jekyll-theme-minimal 
+theme: documentation-theme-jekyll
 
 # markdown render engine.
 markdown:  pandoc
