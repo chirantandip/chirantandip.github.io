@@ -1,6 +1,6 @@
 # Configurations
-title:            Chirantandip title
-longtitle:        Chirantandip long title
+title:            main
+longtitle:        main file
 author:           Chirantandip Mahanta
 email:            chirantandipmahanta@gmail.com
 description: >
@@ -41,7 +41,7 @@ syntax_highlighter_style: colorful
 markdown_ext:             markdown,mkdown,mkdn,mkd,md
 
 # Permalinks
-permalink:                /:categories/:year-:month-:day-:title:output_ext
+permalink:                /:categories/:title:output_ext
 
 exclude:
   - _drafts
@@ -54,7 +54,7 @@ collections:
 page_width: 800px
 
 destination:      ./_site
-incremental:      false
+incremental:      true
 regenerate:       true
 
 plugins:
