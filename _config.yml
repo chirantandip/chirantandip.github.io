@@ -7,9 +7,9 @@ description: Your GitHub Page Description
 
 # Custom Fonts
 fonts:
-  - name: "Open Sans"
+  - name: "Computer Modern Sans Serif"
     css:
-      - "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      - "https://fonts.googleapis.com/css2?family=Computer+Modern+Sans+Serif&display=swap"
 
 # Plugins
 plugins:
