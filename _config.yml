@@ -20,12 +20,7 @@ rss:              RSS
 theme: jekyll-theme-minimal
 
 # markdown render engine.
-markdown:  pandoc
-pandoc:
-  extensions:
-    - filter: mermaid-filter
-    - filter: mathjax-pandoc-filter
-    - '-Mmathjax.centerDisplayMath' # center display math
+markdown: kramdown
 
 syntax_highlighter_style: colorful
 
