@@ -8,5 +8,3 @@ gem 'jekyll-feed'
 gem 'jekyll-readme-index'
 gem 'jemoji'
 gem 'webrick'
-gem "jekyll-pandoc"
-gem "jekyll-theme-basically-basic"
