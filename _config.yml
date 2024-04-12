@@ -17,7 +17,7 @@ rss:              RSS
 #remote_theme: sighingnow/jekyll-gitbook
 #theme: jekyll-theme-basically-basic
 #theme: jekyll-theme-minimal 
-theme: documentation-theme-jekyll
+theme: jekyll-theme-minimal
 
 # markdown render engine.
 markdown:  pandoc
