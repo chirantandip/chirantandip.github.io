@@ -1,4 +1,4 @@
-theme: jekyll-theme-gitbook
+remote_theme: chirantandip/jekyll-gitbook
 
 # Site settings
 title: Your GitHub Page Title
@@ -10,7 +10,3 @@ fonts:
   - name: "Computer Modern Sans Serif"
     css:
       - "https://fonts.googleapis.com/css2?family=Computer+Modern+Sans+Serif&display=swap"
-
-# Plugins
-plugins:
-  - jekyll-seo-tag
