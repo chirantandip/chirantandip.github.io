@@ -2,7 +2,7 @@
 title: CV
 author: Chirantandip
 layout: post
-permalink: /cv2/
+permalink: /cv/
 ---
 
 ### hehehehe
