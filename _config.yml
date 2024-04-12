@@ -1,3 +1,16 @@
-theme: jekyll-theme-minimal
-title: Chirantandip's homepage
-description: Bookmark this to keep an eye on my project updates!
+theme: jekyll-theme-cayman
+
+# Site settings
+title: Your GitHub Page Title
+description: Your GitHub Page Description
+
+
+# Custom Fonts
+fonts:
+  - name: "Open Sans"
+    css:
+      - "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
