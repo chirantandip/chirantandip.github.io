@@ -22,6 +22,3 @@ markdown_ext:  mkdn,mkd,md
 
 # Permalinks
 permalink:  /:title
-
-
-theme: minima
