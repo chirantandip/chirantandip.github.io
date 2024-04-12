@@ -20,6 +20,7 @@
 .c-1 {
     width: 20%;
     margin: 20px;
+    word-wrap: break-word;
 }
 .c-2 {
     background-color: rgb(247, 235, 219);
