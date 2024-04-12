@@ -25,7 +25,7 @@ exclude:
 collections:
   pages:
     output: true
-    permalink: /:path/
+    permalink: /:title/
 
 destination:      ./_site
 incremental:      true
