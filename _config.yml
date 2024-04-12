@@ -18,3 +18,20 @@ remote_theme: sighingnow/jekyll-gitbook
 
 # Permalinks
 permalink:                /:categories/:title:output_ext
+
+exclude:
+  - _drafts
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+destination:      ./_site
+incremental:      true
+regenerate:       true
+
+plugins:
+  - jekyll-feed
+  - jekyll-readme-index
+  - jemoji
