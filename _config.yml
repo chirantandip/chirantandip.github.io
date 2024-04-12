@@ -20,7 +20,16 @@ rss:              RSS
 theme: jekyll-theme-minimal
 
 # markdown render engine.
-markdown: kramdown
+markdown:         kramdown
+kramdown:
+  auto_ids:               true
+  input:                  GFM
+  math_engine:            mathjax
+  smart_quotes:           lsquo,rsquo,ldquo,rdquo
+  toc_levels:             1..6
+  syntax_highlighter:     rouge
+  syntax_highlighter_opts:
+    guess_lang:           true
 
 syntax_highlighter_style: colorful
 
