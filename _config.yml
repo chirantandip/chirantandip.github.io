@@ -16,8 +16,8 @@ rss:              RSS
 # bootstrap: use the remote theme for the site itself
 #remote_theme: sighingnow/jekyll-gitbook
 #theme: jekyll-theme-basically-basic
-#theme: jekyll-theme-minimal 
-remote_theme: chirantandip/my-minimal-jekyll-theme
+theme: jekyll-theme-minimal 
+#remote_theme: chirantandip/my-minimal-jekyll-theme
 
 # markdown render engine.
 markdown:         kramdown
