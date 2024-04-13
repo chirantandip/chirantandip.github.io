@@ -1,272 +1,553 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    
-    <title>Chirantandip</title>
-  
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css"
-    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chirantandip Mahanta | CV</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <style>
 
+  @font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+  }
+  @font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+  font-weight: bold;
+  }
+  @font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+  font-style: italic, oblique;
+  }
+  @font-face {
+  font-family: "Computer Modern";
+  src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+  font-weight: bold;
+  font-style: italic, oblique;
+  }
+
+  html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  }
+
+  body {
+  color: #2c2b2b;
+  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 1em;
+  padding: 1em;
+  margin: auto;
+  max-width: 55em;
+  background: #fefefe;
+  text-align: justify;
+  }
+
+  #title-block-header {
+  position: fixed;
+  top: 0;
+  width: 55em;
+  background-color: #fff; /* Change this to your desired background color */
+  z-index: 1000; /* Adjust the z-index as needed to ensure the header appears above other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow for a subtle effect */
+  }
+
+  .title {
+  margin: 0;
+  padding: 10px 0; /* Adjust padding as needed */
+  text-align: center; /* Center the title horizontally */
+  font-size: 24px; /* Adjust font size as needed */
+  }
+
+  .contacts {
+    margin-top: 50px; /* Adjust this value to leave enough space below the fixed header */
+  }
+
+  a {
+  color: #0645ad;
+  text-decoration: none;
+  }
+
+  a:visited {
+  color: #0b0080;
+  }
+
+  a:hover {
+  color: #06e;
+  }
+
+  a:active {
+  color: #faa700;
+  }
+
+  a:focus {
+  outline: thin dotted;
+  }
+
+  *::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+  }
+
+  *::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #000;
+  }
+
+  a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+  }
+
+  a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad;
+  }
+
+  p {
+  margin: 1em 0;
+  }
+
+  img {
+  max-width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+  color: #002147;
+  line-height: 125%;
+  margin-top: 2em;
+  font-weight: normal;
+  }
+
+  h4, h5, h6 {
+  font-weight: bold;
+  }
+
+  h1 {
+  font-size: 1.5em;
+  }
+
+  h2 {
+  font-size: 1.4em;
+  }
+
+  h3 {
+  font-size: 1.2em;
+  }
+
+  h4 {
+  font-size: 1.2em;
+  }
+
+  h5 {
+  font-size: 1em;
+  }
+
+  h6 {
+  font-size: 0.9em;
+  }
+
+  blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+  }
+
+  hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+  }
+
+  pre, code, kbd, samp {
+  color: #000;
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 0.98em;
+  }
+
+  pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  }
+
+  b, strong {
+  font-weight: bold;
+  }
+
+  dfn {
+  font-style: italic;
+  }
+
+  ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+  }
+
+  mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+  }
+
+  sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  }
+
+  sup {
+  top: -0.5em;
+  }
+
+  sub {
+  bottom: -0.25em;
+  }
+
+  ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+  }
+
+  li p:last-child {
+  margin-bottom: 0;
+  }
+
+  ul ul, ol ol {
+  margin: .3em 0;
+  }
+
+  dl {
+  margin-bottom: 1em;
+  }
+
+  dt {
+  font-weight: bold;
+  margin-bottom: .8em;
+  }
+
+  dd {
+  margin: 0 0 .8em 2em;
+  }
+
+  dd:last-child {
+  margin-bottom: 0;
+  }
+
+  img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  }
+
+  figure {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+  }
+
+  figure img {
+  border: none;
+  margin: 0 auto;
+  }
+
+  figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 .8em;
+  }
+
+  table {
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-spacing: 0;
+  border-collapse: collapse;
+  }
+
+  table th {
+  padding: .2em 1em;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  }
+
+  table td {
+  padding: .2em 1em;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  vertical-align: top;
+  }
+
+  .author {
+  font-size: 1.2em;
+  text-align: center;
+  }
+
+  @media only screen and (min-width: 480px) {
+  body {
+  font-size: 14px;
+  }
+  }
+  @media only screen and (min-width: 768px) {
+  body {
+  font-size: 16px;
+  }
+  }
+  @media print {
+  * {
+  background: transparent !important;
+  color: black !important;
+  filter: none !important;
+  -ms-filter: none !important;
+  }
+
+  body {
+  font-size: 12pt;
+  max-width: 100%;
+  }
+
+  a, a:visited {
+  text-decoration: underline;
+  }
+
+  hr {
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid black;
+  }
+
+  a[href]:after {
+  content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+  content: " (" attr(title) ")";
+  }
+
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+  content: "";
+  }
+
+  pre, blockquote {
+  border: 1px solid #999;
+  padding-right: 1em;
+  page-break-inside: avoid;
+  }
+
+  tr, img {
+  page-break-inside: avoid;
+  }
+
+  img {
+  max-width: 100% !important;
+  }
+
+  @page :left {
+  margin: 15mm 20mm 15mm 10mm;
+  }
+
+  @page :right {
+  margin: 15mm 10mm 15mm 20mm;
+  }
+
+  p, h2, h3 {
+  orphans: 3;
+  widows: 3;
+  }
+
+  h2, h3 {
+  page-break-after: avoid;
+  }
+  }
+
+  </style>
 </head>
-
-
 <body>
-
-    <div class="container">
-        <div class="row">
-            <div class="column c-1">     
-                
-                <div class="circular-frame">
-                    <img src="assets/images/me.jpg" alt="My Profile Picture">
-                </div>
-                <h2><br>Chirantandip Mahanta</h2>
-                <code>
-                    chirantandipmahanta@gmail.com
-                    mm19b029@smail.iitm.ac.in
-                </code>
-                
-
-
-            
-                
-
-            </div>
-            <div class="column c-2">         
-                <h2 id="education">EDUCATION</h2>
-                <table>
-                    <colgroup>
-                        <col style="width: 40%" />
-                        <col style="width: 30%" />
-                        <col style="width: 30%" />
-                    </colgroup>
-                <tbody>
-                <tr class="odd">
-                <td>Inter-Disciplinary Dual Degree (IDDD)</td>
-                <td>Computational Engineering</td>
-                <td>Indian Institute of Technology, Madras.</td>
-                </tr>
-                <tr class="even">
-                <td>Bachelor of Technology (B.Tech)</td>
-                <td>Metallurgical and Materials Engineering</td>
-                <td>Indian Institute of Technology, Madras</td>
-                </tr>
-                <tr class="odd">
-                <td>Minor</td>
-                <td>Physics</td>
-                <td>Indian Institute of Technology, Madras</td>
-                </tr>
-                </tbody>
-                </table>
-
-
-                    <h2>CORE COMPETENCIES</h2>
-                    <table>
-                    <colgroup>
-                    <col style="width: 10%" />
-                    <col style="width: 50%" />
-                    </colgroup>
-                    <tbody>
-                    <tr class="odd">
-                    <td>Theory</td>
-                    <td>Phase-Field Theory, Phase Transformations in Metals &amp; Alloys, Thermodynamics &amp; Statistical Physics, Physical Metallurgy, Mechanical Behavior</td>
-                    </tr>
-                    <tr class="even">
-                    <td>Simulation</td>
-                    <td>Numerical Methods for PDEs, Finite Element Analysis, Approximation Methods, Numerical Linear Algebra.</td>
-                    </tr>
-                    <tr class="odd">
-                    <td>Microscopy</td>
-                    <td>X-Ray Diffraction, Scanning Electron Microscopy, Transmission Electron Microscopy (Theory), Atom Probe Tomography (Theory, Post Processing)</td>
-                    </tr>
-                    <tr class="even">
-                    <td>Computing</td>
-                    <td>High Performance Computing (C/C++ - <a href="https://www.khronos.org/sycl/">SYCL</a>, <a href="https://www.khronos.org/opencl/">OpenCL</a>, <a href="https://www.open-mpi.org/">MPI</a>, <a href="https://www.openmp.org/">OpenMP</a>, <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a>, <a href="https://www.oneapi.io/">Intel-OneAPI</a>), <a href="https://thermocalc.com/">Thermo-Calc</a>, <a href="https://pycalphad.org/docs/latest/">pyCalphad</a>, <a href="https://www.dealii.org/">deal.ii</a>, Data Analysis &amp; Visualisation (python - <a href="https://scipy.org/">SciPy</a>, <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://numpy.org/">NumPy</a> etc.)</td>
-                    </tr>
-                    </tbody>
-                    </table>
-
-
-                    <h2>RESEARCH EXPERIENCE</h2>
-
-                    <h3>
-                        <div class="onefiller">
-                            <div>Integrated Computational Materials Engineering Lab</div>
-                            <div class="fill"></div>
-                            <div>Guide: <a href="https://iitm.irins.org/profile/50867"> G. Phanikumar</a></div>
-                        </div>
-                    </h3>
-                      <h4 id="pname">A Multi-Phase-Field software development for large scale simulations coupled with thermodynamic database.</h4>
-                      <p>
-                        <p><div class="onefiller">
-                            <div>IDDD Project</div>
-                            <div class="fill"></div>
-                            <div>Aug 2023-Ongoing</div>
-                        </div></p>
-                    
-                        <ul>
-                            <li>Numerically solved a multi-phase-field version of the Kim-Kim-Suzuki model with thermodynamic database coupling.</li>
-                            <li>Studied the solidification of AlZn, NiAl, NiNb and NiAlMo systems; eutectic of Al-Zn and the L12 precipitate of NiAlMo.</li>
-                            <li>Code developed in C++ using <a href="https://www.khronos.org/sycl/">SYCL</a>, MPI and <a href="https://www.oneapi.io/">OneAPI</a>. Simulations were benchmarked against existing <a href="https://microsim.co.in/">MicroSim</a> solvers.</li>
-                            <li>Learned: Intermediate Phase-Field (WB, KKS models etc.), Computational Thermodynamics.</li>
-                        </ul>
-                    
-                    </p>
-                      
-                      <h4 id="pname">Phase-Field modelling of basic microstructure evolution phenomenon.</h4>
-                        <p><div class="onefiller">
-                        <div>UG Research Course I &amp; II (15 credits)</div>
-                        <div class="fill"></div>
-                        <div>July 2021 - May 2022</div>
-                        </div></p>
-
-                        <ul>
-                            <li>Simulated Diffusion, Spinodal Decomposition and Dendritic Solidification numerically with the Finite Difference method.</li>
-                            <li>Investigated the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.</li>
-                            <li>Developed three parallel programs in C/C++ with each of OpenCL, MPI and SYCL frameworks in their respective style.</li>
-                            <li>Tested the programs across devices (CPUs, GPUs) and platforms (Intel, Nvidia) for efficiency, scaling, memory usage etc.</li>
-                            <li>Learned: Basic Phase-Field, Solidification, OpenCL, SYCL, MPI.</li>
-                        </ul>
-                        
-                    
-                    <h3>
-                        <div class="onefiller">
-                            <div>Combinatiorial Alloy Design &amp; Correlative Microscopy Group</div>
-                            <div class="fill"></div>
-                            <div>Guide: <a href="https://iitm.irins.org/profile/69235">Prof. K. G. Pradeep</a></div>
-                        </div>
-                    </h3>
-                    
-                    <h4 id="pname">Synthesis and characterization of the FeMnCoCrCu High Entropy Alloy.</h4>
-                    <p><div class="onefiller">
-                        <div>B. Tech Project (9 credits)</div>
-                        <div class="fill"></div>
-                        <div>July 2022 - Nov 2022.</div>
-                    </div></p>
-                       
-                        <ul>
-                            <li>Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace & performed solutionizing treatments.</li>
-                            <li>Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed.</li>
-                            <li>Learned: XRD calculations, Optical Microscopy, Sample Polishing.</li>
-                        </ul>
-                        
-                      
-                      <h4 id="pname">Atom Probe Tomography (APT) Data Analysis for feature detection in a MAX Phase</h4>
-                      
-                    <p><div class="onefiller">
-                            <div>Young Research Fellowship Project</div>
-                            <div class="fill"></div>
-                            <div>Oct 2021 - June 2022</div>
-                    </div></p>
-                    <ul>
-                        <li>Identified the elements and their distribution from the mass spectrum and raw APT data of a <span class="math inline"><em>C</em><em>r</em><sub>2</sub><em>A</em><em>l</em>(<em>S</em><em>i</em>)<em>C</em></span> MAX Phase.</li>
-                        <li>Learned and implemented Cluster Analysis, Proximity histograms and Distribution Maps to extract interfaces and clusters.</li>
-                        <li>Learned: Mass-Spectrum Analysis, MAX-Phases, APT Theory & Data Post Processing.</li>
-                    </ul>
-                    
-                      
-                    <h3>
-                        <div class="onefiller">
-                            <div> Minor Projects &amp; Term Papers</div>
-                            <div class="fill"></div>
-                            <div> </div>
-                        </div>
-                    </h3>  
-
-                      <h4 id="pname">Paper Review Presentation | Advanced TEM Course.</h4>
-                      <p> Reviewed the method for the determination of the wave aberration function for HRTEM proposed by [<a href="https://doi.org/10.1016/S1359-6454(96)00225-X">Meyer et al</a>].</p>
-                      
-                      <h4 id="pname">A critical review of the steady state creep behavior of an alloy.</h4>
-                      <p> Calculated creep activation energy and stress exponent by fitting the creep equation to the creep curve [<a href="https://doi.org/10.1016/S1359-6454(96)00225-X">Pandey et al</a>].<br />
-                       Identified the LSR mechanism to be gb diffusion controlled gb sliding and the HSR mechanism to be dislocation creep.</p>
-                      
-                      <h4 id="pname">Calculation of phase diagrams within the regular solution model.</h4>
-                      <p> Calculated eutectic and peritectic phase diagrams of binary solid-solutions by the common-tangent construction method.</p>
-                    
-                    <h2 id="workshops"> WORKSHOPS</h2>
-                    
-                    <h4 id="pname">
-                        <div class="onefiller">
-                        <div> <a href="https://microsim.co.in/">MicroSim</a> Workshops 4.0 &amp; 3.0</div>
-                        <div class="fill"></div>
-                        <div>IIT Madras, Jan 2024 ; IISC Bangalore July 2023 </div>
-                        </div>
-                    </h4>
-                      <p> Assisted in training attendees in the OpenCL based MicroSim Solver.<br />
-                       Trained on using the CUDA, AMReX, MPI and OpenFOAM based MicroSim solvers for microstructure simulations.</p>
-                    
-                    
-                    <h4 id="pname">
-                        <div class="onefiller">
-                        <div> <a href="https://nfapt.iitm.ac.in/">NFAPT</a> Summer School On Materials Characterization</div>
-                        <div class="fill"></div>
-                        <div>IIT Madras, July 2023</div>
-                        </div>
-                    </h4>
-                      <p> Trained on Thermo Fischer’s Axia ChemiSEM instrument and imaged (SEM &amp; EDS) a few standard samples.<br />
-                       Attended live demonstrations of APT operation and Data Analysis (IVAS) by CAMECA professionals at NFAPT, IITM.<br />
-                       Learned about the instruments, applied theory and practical challenges of SEM, EDS, EBSD, TEM, FIB and APT.</p>
-                    
-                    
-                    
-                    <h2 id="extra-curricular-activities"> EXTRA-CURRICULAR ACTIVITIES</h2>
-                      <h4 id="pname">Organizer @ NFAPT (National Facility of Atom Probe Tomography) Anniversary 2022 @ IITM</h4>
-                      <p> Helped organise NFAPT Annual Lecture Series 2022 and also designed the 4th NFAPT Newsletter.</p>
-                      <h4 id="industry-cohort-member-grain-iitm">Industry Cohort Member @ GRAIN IITM</h4>
-                      <p> Identified challenges in the GTRE Kaveri program via collaborative efforts with professors and industry experts.<br />
-                       Proposed an Integrated-Computational framework to accelerate design, simulations and experimental validation.<br />
-                       Advocated for a National Materials Database; developed methods for data collection, pre-processing and analysis.</p>
-                      <h4 id="mentor-avanti-fellows-iitm">Mentor Avanti Fellows IITM</h4>
-                      <p> Mentored 2 students throughout their college preparation; Tutored them academically; Both got into IIT Madras.</p>
-                    
-                    <h2 id="relevant-coursework"> RELEVANT COURSEWORK</h2>
-                      <table>
-                      <thead>
-                      <tr class="header">
-                      <tbody>
-                      <tr class="odd">
-                      <td>Computational Engineering <strong>:</strong></td>
-                      <td>Finite Element Analysis, Applications of Molecular Dynamics, Atomistic Modelling of Materials, Computational Materials Thermodynamics, High Performance Computing</td>
-                      </tr>
-                      <tr class="even">
-                      <td>Microscopy <strong>:</strong></td>
-                      <td>The Field Emission Sciences and Atom Probe Tomography, Materials Characterisation, Advanced Transmission Electron Microscopy.</td>
-                      </tr>
-                      <tr class="odd">
-                      <td>Metallurgy <strong>:</strong></td>
-                      <td>Physical Metallurgy, Thermodynamics of Materials, Phase Transformations, Deformation &amp; Failure of Materials, Transport Phenomenon</td>
-                      </tr>
-                      <tr class="even">
-                      <td>Physics <strong>:</strong></td>
-                      <td>Quantum Mechanics I &amp; II, Statistical Physics, Classical Mechanics, Superconductivity, Physics of Materials, Physics &amp; Tech of Thin Films.</td>
-                      </tr>
-                      </tbody>
-                      </table>
-                      <h2 id="scholastic-achievements"> SCHOLASTIC ACHIEVEMENTS</h2>
-                      <ul>
-                      <li>Young Research Fellowship (YRF) <a href="https://yrf.iitm.ac.in/2020fellows.html">(link)</a><br />
-                      Among the top 30 to receive the prestigious Young Research Fellowship (with 200+ applicants) at IIT Madras.</li>
-                      <li>Samsung Star Scholarship by Samsung India</li>
-                      <li>Kishore Vaigyanik Protsahan Yojana (<a href="http://www.kvpy.iisc.ernet.in/main/index.htm">KVPY</a>) Scholarship <a href="http://kvpy.iisc.ac.in/main/resources/2018-fellowships/2018-SX-GEN.pdf">(link)</a><br />
-                      Attained All India Rank 671 in the KVPY Aptitude test and got selected for the scholarship.</li>
-                      <li>Recieved the Dakshana Scholarship for All India Jawahar Navodaya Vidyalaya students</li>
-                      </ul>
-
-            
-            
-            </div>
-            <div class="column c-3">
-                
-                <p> </p>
-            </div>
-        </div>
-    </div>
-
-
+<header id="title-block-header">
+<h1 class="title">Chirantandip Mahanta | CV</h1>
+</header>
+<pre class="contacts"><code>emails: chirantandipmahanta@gmail.com | mm19b029@smail.iitm.ac.in</code></pre>
+<h1 id="education">EDUCATION</h1>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 35%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Inter-Disciplinary Dual Degree (IDDD)</td>
+<td>Computational Engineering</td>
+<td>Indian Institute of Technology, Madras.</td>
+</tr>
+<tr class="even">
+<td>Bachelor of Technology (B.Tech)</td>
+<td>Metallurgical and Materials Engineering</td>
+<td>Indian Institute of Technology, Madras</td>
+</tr>
+<tr class="odd">
+<td>Minor</td>
+<td>Physics</td>
+<td>Indian Institute of Technology, Madras</td>
+</tr>
+</tbody>
+</table>
+<h1 id="core-competencies">CORE COMPETENCIES</h1>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Theory</td>
+<td>Phase-Field Theory, Phase Transformations in Metals &amp; Alloys, Thermodynamics &amp; Statistical Physics, Physical Metallurgy, Mechanical Behavior</td>
+</tr>
+<tr class="even">
+<td>Simulation</td>
+<td>Numerical Methods for PDEs, Finite Element Analysis, Approximation Methods, Numerical Linear Algebra.</td>
+</tr>
+<tr class="odd">
+<td>Microscopy</td>
+<td>X-Ray Diffraction, Scanning Electron Microscopy, Transmission Electron Microscopy (Theory), Atom Probe Tomography (Theory, Post Processing)</td>
+</tr>
+<tr class="even">
+<td>Computing</td>
+<td>High Performance Computing (C/C++ - <a href="https://www.khronos.org/sycl/">SYCL</a>, <a href="https://www.khronos.org/opencl/">OpenCL</a>, <a href="https://www.open-mpi.org/">MPI</a>, <a href="https://www.openmp.org/">OpenMP</a>, <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a>, <a href="https://www.oneapi.io/">Intel-OneAPI</a>), <a href="https://thermocalc.com/">Thermo-Calc</a>, <a href="https://pycalphad.org/docs/latest/">pyCalphad</a>, <a href="https://www.dealii.org/">deal.ii</a>, Data Analysis &amp; Visualisation (python - <a href="https://scipy.org/">SciPy</a>, <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://numpy.org/">NumPy</a> etc.)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="research-experience">RESEARCH EXPERIENCE</h1>
+<h2 id="integraterd-computational-materials-engineering-lab-guide-prof.-g.-phanikumar">Integraterd Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar</h2>
+<h3 id="a-multi-phase-field-software-development-for-large-scale-simulations-coupled-with-thermodynamic-database.">A Multi-Phase-Field software development for large scale simulations coupled with thermodynamic database.</h3>
+<p><em>IDDD Project Aug 2023</em> | Ongoing</p>
+<ul>
+<li>Numerically solved a multi-phase-field version of the Kim-Kim-Suzuki model with thermodynamic database coupling.</li>
+<li>Studied the solidification of AlZn, NiAl, NiNb and NiAlMo systems; eutectic of Al-Zn and the L12 precipitate of NiAlMo.</li>
+<li>Code developed in C++ using <a href="https://www.khronos.org/sycl/">SYCL</a>, MPI and <a href="https://www.oneapi.io/">OneAPI</a>. Simulations were bookmarked against existing <a href="https://microsim.co.in/">MicroSim</a> solvers.</li>
+<li>Learned : Intermediate Phase-Field (WB, KKS models etc.), Computational Thermodynamics.</li>
+</ul>
+<h3 id="phase-field-modelling-of-basic-microstructure-evolution-phenomenon.">Phase-Field modelling of basic microstructure evolution phenomenon.</h3>
+<p><em>UG Research Course I &amp; II (15 credits)</em> | July 2021 - May 2022</p>
+<ul>
+<li>Simulated Diffusion, Spinodal Decomposition and Dendritic Solidification numerically with the Finite Difference method.</li>
+<li>Investigated the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.</li>
+<li>Developed three parallel programs in C/C++ with each of OpenCL, MPI and SYCL frameworks in their respective style.</li>
+<li>Tested the programs across devices (CPUs, GPUs) and platforms (Intel, Nvidia) for efficiency, scaling, memory usage etc.</li>
+<li>Learned : Basic Phase-Field, Solidification, OpenCL, SYCL, MPI.</li>
+</ul>
+<h2 id="combinatiorial-alloy-design-correlative-microscopy-group-guide-prof.-k.-g.-pradeep">Combinatiorial Alloy Design &amp; Correlative Microscopy Group | Guide: Prof. K. G. Pradeep</h2>
+<h3 id="synthesis-and-characterization-of-the-femncocrcu-high-entropy-alloy.">Synthesis and characterization of the FeMnCoCrCu High Entropy Alloy.</h3>
+<p><em>B. Tech Project (9 credits)</em> | July 2022 - Nov 2022.</p>
+<ul>
+<li>Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace &amp; performed solutionizing treatments.</li>
+<li>Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed.</li>
+<li>Learned : XRD calculations, Optical Microscopy, Sample Polishing.</li>
+</ul>
+<h3 id="atom-probe-tomography-apt-data-analysis-for-feature-detection-in-a-max-phase">Atom Probe Tomography (APT) Data Analysis for feature detection in a MAX Phase</h3>
+<p><em>Young Research Fellowship Project</em> | Oct 2021 - June 2022.</p>
+<ul>
+<li>Identified the elements and their distribution from the mass spectrum and raw APT data of a <span class="math inline"><em>C</em><em>r</em><sub>2</sub><em>A</em><em>l</em>(<em>S</em><em>i</em>)<em>C</em></span> MAX Phase.</li>
+<li>Learned and implemented Cluster Analysis, Proximity histograms and Distribution Maps to extract interfaces and clusters.</li>
+<li>Learned : Mass-Spectrum Analysis, MAX-Phases, APT Theory &amp; Data Post Processing.</li>
+</ul>
+<h2 id="minor-projects-term-papers">Minor Projects &amp; Term Papers</h2>
+<p>Paper Review Presentation | Advanced TEM Course.</p>
+<ul>
+<li>Reviewed the method for the determination of the wave aberration function for HRTEM proposed by [<a href="https://doi.org/10.1016/S1359-6454(96)00225-X">Meyer et al</a>].</li>
+</ul>
+<p>A critical review of the steady state creep behavior of an alloy.</p>
+<ul>
+<li>Calculated creep activation energy and stress exponent by fitting the creep equation to the creep curve [<a href="https://doi.org/10.1016/S1359-6454(96)00225-X">Pandey et al</a>].</li>
+<li>Identified the LSR mechanism to be gb diffusion controlled gb sliding and the HSR mechanism to be dislocation creep.</li>
+</ul>
+<p>Calculation of phase diagrams within the regular solution model.</p>
+<ul>
+<li>Calculated eutectic and peritectic phase diagrams of binary solid-solutions by the common-tangent construction method.</li>
+</ul>
+<h2 id="workshops">WORKSHOPS</h2>
+<p><a href="https://microsim.co.in/">MicroSim</a> Workshops 4.0 &amp; 3.0 IIT Madras, Jan 2024 ; IISC Bangalore July 2023</p>
+<ul>
+<li>Assisted in training attendees in the OpenCL based MicroSim Solver.</li>
+<li>Trained on using the CUDA, AMReX, MPI and OpenFOAM based MicroSim solvers for microstructure simulations.</li>
+</ul>
+<p><a href="https://nfapt.iitm.ac.in/">NFAPT</a> Summer School On Materials Characterization IIT Madras, July 2023</p>
+<ul>
+<li>Trained on Thermo Fischer’s Axia ChemiSEM instrument and imaged (SEM &amp; EDS) a few standard samples.</li>
+<li>Attended live demonstrations of APT operation and Data Analysis (IVAS) by CAMECA professionals at NFAPT, IITM.</li>
+<li>Learned about the instruments, applied theory and practical challenges of SEM, EDS, EBSD, TEM, FIB and APT.</li>
+</ul>
+<h2 id="extra-curricular-activities">EXTRA-CURRICULAR ACTIVITIES</h2>
+<p>Organizer @ NFAPT (National Facility of Atom Probe Tomography) Anniversary 2022 @ IITM</p>
+<ul>
+<li>Helped organise NFAPT Annual Lecture Series 2022 and also designed the 4th NFAPT Newsletter.</li>
+</ul>
+<p>Industry Cohort Member @ GRAIN IITM</p>
+<ul>
+<li>Identified challenges in the GTRE Kaveri program via collaborative efforts with professors and industry experts.</li>
+<li>Proposed an Integrated-Computational framework to accelerate design, simulations and experimental validation.</li>
+<li>Advocated for a National Materials Database; developed methods for data collection, pre-processing and analysis.</li>
+</ul>
+<p>Mentor Avanti Fellows IITM</p>
+<ul>
+<li>Mentored 2 students throughout their college preparation; Tutored them academically; Both got into IIT Madras.</li>
+</ul>
+<h2 id="relevant-coursework">RELEVANT COURSEWORK</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Computational Engineering <strong>:</strong></td>
+<td>Finite Element Analysis, Applications of Molecular Dynamics, Atomistic Modelling of Materials, Computational Materials Thermodynamics, High Performance Computing</td>
+</tr>
+<tr class="even">
+<td>Microscopy <strong>:</strong></td>
+<td>The Field Emission Sciences and Atom Probe Tomography, Materials Characterisation, Advanced Transmission Electron Microscopy.</td>
+</tr>
+<tr class="odd">
+<td>Metallurgy <strong>:</strong></td>
+<td>Physical Metallurgy, Thermodynamics of Materials, Phase Transformations, Deformation &amp; Failure of Materials, Transport Phenomenon</td>
+</tr>
+<tr class="even">
+<td>Physics <strong>:</strong></td>
+<td>Quantum Mechanics I &amp; II, Statistical Physics, Classical Mechanics, Superconductivity, Physics of Materials, Physics &amp; Tech of Thin Films.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scholastic-achievements">SCHOLASTIC ACHIEVEMENTS</h2>
+<ul>
+<li>Young Research Fellowship (YRF) <a href="https://yrf.iitm.ac.in/2020fellows.html">(link)</a><br />
+Among the top 30 to receive the prestigious Young Research Fellowship (with 200+ applicants) at IIT Madras.</li>
+<li>Samsung Star Scholarship by Samsung India</li>
+<li>Kishore Vaigyanik Protsahan Yojana (<a href="http://www.kvpy.iisc.ernet.in/main/index.htm">KVPY</a>) Scholarship <a href="http://kvpy.iisc.ac.in/main/resources/2018-fellowships/2018-SX-GEN.pdf">(link)</a><br />
+Attained All India Rank 671 in the KVPY Aptitude test and got selected for the scholarship.</li>
+<li>Recieved the Dakshana Scholarship for All India Jawahar Navodaya Vidyalaya students</li>
+</ul>
 </body>
-
-
 </html>
