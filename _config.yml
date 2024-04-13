@@ -1,6 +1,0 @@
-defaults:
-  -
-    scope:
-      path: "" # This means all files in the root directory
-    values:
-      permalink: /:basename
