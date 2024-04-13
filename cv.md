@@ -171,4 +171,7 @@ Scholarship
 Attained All India Rank 671 in the KVPY Aptitude test and got selected
 for the scholarship.
 - Recieved the Dakshana Scholarship for All India Jawahar Navodaya
-Vidyalaya students
+Vidyalaya students.
+
+---
+`Generated with pandoc from cv.md`
