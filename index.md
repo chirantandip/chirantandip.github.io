@@ -2,7 +2,7 @@
 title: Chirantandip Homepage
 ---
 
-```contact
+```contacts
 This page is currently in the making.
 ```
 
