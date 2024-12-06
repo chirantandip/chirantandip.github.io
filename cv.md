@@ -19,6 +19,15 @@ Education
 | B.Tech| Metallurgical and Materials Engineering| Indian Institute of Technology, Madras|
 |Minor|Physics|Indian Institute of Technology, Madras|
 
+PhD Work
+===
+
+## Materials Modelling Group | Guide: Prof. Abhik Choudhary
+
+### A Lattice-Boltzmann flow solver coupled with Phase-Field to study flow effects on solidification.  
+
+[to be edited]
+
 
 Undergrad Projects @ IIT Madras
 ===
