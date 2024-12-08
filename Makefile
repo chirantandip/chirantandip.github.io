@@ -1,19 +1,11 @@
 
-name=cv
+MD_FILES:=$(shell find . -type f -name "*.md")
+HTML_FILES := $(MD_FILES:%.md=%.html)
 
-mdfile=./${name}.md
-pdffile=./${name}.pdf
-htmlfile=./${name}.html
+all: clean $(HTML_FILES)
 
-pandoc=/usr/bin/pandoc
-
-all: md2html
-
-md2pdf:
-	 ${pandoc} -H ./assets/style.sty -s ${mdfile} -o ${pdffile}
-
-md2html:
-	${pandoc} -f markdown-auto_identifiers --css ./assets/style.css -s ${mdfile} -o ${htmlfile}
+%.html: %.md
+	/usr/bin/pandoc -s $< -o $@ --template=assets/template.html --css=assets/style.css
 
 clean:
-	rm *.pdf *.html
+	rm -f $(HTML_FILES)

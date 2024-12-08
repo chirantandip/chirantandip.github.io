@@ -1,13 +1,6 @@
 ---
-title: Chirantandip Mahanta | Curriculum Vitae
-font-family: sans
+title: "Chirantandip Mahanta | Curriculum Vitae"
 ---
-
-```contacts
-emails: chirantandi5@iisc.ac.in | chirantandip@gmail.com
-```
-
-
 
 Education 
 ===

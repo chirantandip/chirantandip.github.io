@@ -1,47 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-font-size: 100%;
-overflow-y: scroll;
--webkit-text-size-adjust: 100%;
--ms-text-size-adjust: 100%;
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
-color: #2b3938;
-font-family: "Computer Modern Sans", sans-serif;
-font-size: 14px;
-line-height: 1.5;
-margin-top: 1em;
-padding: 1em;
-margin: auto;
-max-width: 55em;
-background: #fefefe;
-text-align: justify;
+  color: #2b3938;
+  font-family: "Computer Modern Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 5em;
+  padding: 1em;
+
+  margin: auto;
+  max-width: 80%;
+
+  background: #fefefe;
+  text-align: justify;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-#title-block-header {
-position: fixed;
-top: 0;
-width: 55em;
-background-color: #fff; /* Change this to your desired background color */
-z-index: 1000; /* Adjust the z-index as needed to ensure the header appears above other content */
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow for a subtle effect */
+header{
+  position: fixed;
+  width: 80% ;
+  z-index: 1000;
+
+  background-color: white ;
+
+  text-align: center;
+  font-size: 24px;
+  font-weight: bolder;
+  font-family: "Open-Sans";
+  color: black;
 }
 
-.title {
-margin: 0;
-padding: 10px 0; /* Adjust padding as needed */
-text-align: center; /* Center the title horizontally */
-font-size: 24px; /* Adjust font size as needed */
-background-color: white;
-letter-spacing: normal;
-font-weight: normal;
-font-family: serif;
-color: black;
-border: none;
+footer {
+  background-color: #eee;
+  color: #555;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
 }
 
-.contacts {
-  margin-top: 50px; /* Adjust this value to leave enough space below the fixed header */
+
+.navbar {
+  width: 10%;
+  min-width: 10em;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  font-size: 20px;
+}
+
+.navbar h2 {
+  font-size: 20px;
+  margin-bottom: 20pt;
+
+  border-bottom: #000;
+  border-bottom-style: solid;
+  border-bottom-width: 1pt;
+}
+
+.navbar a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+.main-content {
+  margin-left: 10%;
+  min-width: 55em;
+  padding: 40px;
+
 }
 
 a {
@@ -105,7 +156,7 @@ font-weight: bold;
 }
 
 h1 {
-font-size: 1.5em;
+font-size: 1.25em;
 color: darkslateblue;
 font-weight: bold;
 letter-spacing: 1pt;
@@ -116,7 +167,7 @@ border-bottom-width: 1pt;
 }
 
 h2 {
-font-size: 1.4em;
+font-size: 1.2em;
 }
 
 h3 {
@@ -255,8 +306,10 @@ margin: 0 0 .8em;
 }
 
 table {
+width: 100%;
+margin-top: 2em;
 margin-bottom: 2em;
-border-spacing: 0;
+border-spacing: 1pt;
 border-collapse: collapse;
 }
 
@@ -350,3 +403,4 @@ h2, h3 {
 page-break-after: avoid;
 }
 }
+
