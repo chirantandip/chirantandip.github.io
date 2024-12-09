@@ -19,7 +19,10 @@ body {
 
   background: #fefefe;
   text-align: justify;
-
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 }
 
@@ -57,43 +60,27 @@ footer {
 
 .navbar {
   z-index: 10;
-  min-width: 20em;
+  min-width: 60%;
+
+  height: 40pt;
 
   background-color: white;
-  border-right: 1px solid lightgray;
-  
-  margin-left: 2em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 10pt;
   
   position: fixed;
-  top: 40px;
-  left: 0;
-  bottom: 0;
-
-
-/*   margin-top: 40px;
-  float :left;  */
+  top: 20px;
   
   overflow-y: auto;
   font-size: 14px;
 }
 
-.inner-body{
-  display: flex;
-  flex-direction: row; 
-  align-items: center;
-  justify-content: center;
-  margin-left: 15%;
-}
-
 .main-content {
-
-  margin-top: 50px;
+  margin-top: 90px;
   margin-bottom: 50px;
+  min-height: 100vh;
 
   width: 60%;
-  min-width: 55em;
-
-  min-height: 100vh;
 }
 
 
@@ -106,12 +93,11 @@ footer {
 }
 
 .navbar a {
-  display: block;
+  
   color: black;
   text-decoration: none;
   font-size: 16px;
   padding-left: 10px;
-  padding-top: 2px;
 
 }
 
