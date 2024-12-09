@@ -57,24 +57,20 @@ footer {
 
 .navbar {
   z-index: 10;
-  min-width: 14%;
+  min-width: 20em;
+  width: 20%;
 
   background-color: white;
   border-right: 1px solid lightgray;
   
   margin-left: 2em;
-  
-  /* position: fixed;
-  top: 40px;
-  left: 0;
-  bottom: 0; */
 
   margin-top: 40px;
 
   float :left; 
   
   overflow-y: auto;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .inner-body{
