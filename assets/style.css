@@ -14,85 +14,110 @@ html {
 body {
   color: #2b3938;
   font-family: "Computer Modern Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
-  margin-top: 5em;
-  padding: 1em;
-
-  margin: auto;
-  max-width: 80%;
 
   background: #fefefe;
   text-align: justify;
-  
-  display: flex;
-  flex-direction: column;
+
   min-height: 100vh;
 }
 
 header{
   position: fixed;
-  width: 80% ;
+  top: 0;
+
   z-index: 1000;
 
-  background-color: white ;
+  width: 100%;
+  padding: 10px;
+
+  background-color: white;
 
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bolder;
   font-family: "Open-Sans";
   color: black;
+
+  border-bottom-style: solid;
+  border-bottom-color: lightgrey;
+  border-bottom-width: 1px;
 }
 
 footer {
-  background-color: #eee;
-  color: #555;
+  color: #726767;
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-top: auto;
+  margin-left: 15%;
 }
 
 
 .navbar {
-  width: 10%;
-  min-width: 10em;
-  background-color: #fff;
-  border-right: 1px solid #ddd;
-  padding: 20px;
-  position: fixed;
-  top: 80px;
+  z-index: 10;
+  min-width: 14%;
+
+  background-color: white;
+  border-right: 1px solid lightgray;
+  
+  margin-left: 2em;
+  
+  /* position: fixed;
+  top: 40px;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
+
+  margin-top: 40px;
+
+  float :left; 
+  
   overflow-y: auto;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-.navbar h2 {
-  font-size: 20px;
-  margin-bottom: 20pt;
+.inner-body{
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+}
 
-  border-bottom: #000;
-  border-bottom-style: solid;
-  border-bottom-width: 1pt;
+.main-content {
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  width: 60%;
+  min-width: 55em;
+
+  min-height: 100vh;
+}
+
+
+.navbar h2 {
+  font-size: 16px;
+  font-weight: bolder;
+  padding-top: 5pt;
+  padding-bottom: 5pt;
+  padding-left: 10px;
 }
 
 .navbar a {
   display: block;
-  color: #333;
+  color: black;
   text-decoration: none;
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 2px;
+
 }
 
 .navbar a:hover {
-  color: #007bff;
-}
-
-.main-content {
-  margin-left: 10%;
-  min-width: 55em;
-  padding: 40px;
-
+  color: darkblue;
+  background-color: lightcyan;
 }
 
 a {
@@ -149,6 +174,7 @@ color: #002147;
 line-height: 125%;
 margin-top: 2em;
 font-weight: normal;
+font-size: 18px;
 }
 
 h4, h5, h6 {
@@ -156,7 +182,7 @@ font-weight: bold;
 }
 
 h1 {
-font-size: 1.25em;
+font-size: 20px;
 color: darkslateblue;
 font-weight: bold;
 letter-spacing: 1pt;
@@ -167,23 +193,7 @@ border-bottom-width: 1pt;
 }
 
 h2 {
-font-size: 1.2em;
-}
-
-h3 {
-font-size: 1.2em;
-}
-
-h4 {
-font-size: 1.2em;
-}
-
-h5 {
-font-size: 1em;
-}
-
-h6 {
-font-size: 0.9em;
+font-size: 20px;
 }
 
 blockquote {
@@ -207,7 +217,7 @@ pre, code, kbd, samp {
 color: #000;
 font-family: monospace, monospace;
 _font-family: 'courier new', monospace;
-font-size: 0.98em;
+font-size: 16px;
 }
 
 pre {
@@ -343,11 +353,6 @@ background: transparent !important;
 color: black !important;
 filter: none !important;
 -ms-filter: none !important;
-}
-
-body {
-font-size: 12pt;
-max-width: 100%;
 }
 
 a, a:visited {
