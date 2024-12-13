@@ -1,113 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="assets/style.css">
-    </head>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="assets/css/theme-style.css">
+    <link rel="stylesheet" href="assets/css/cv-style.css">
+    <base href="/home/chiru/Code/notes_pandoc/home/">
+</head>
+<body>
 
-    <body>
+<div class="navbar">
+    <table class = "navtable">
+        <colgroup>
+            <col style="width:  7.5%" />
+            <col style="width:  7.5%" />
+            <col style="width: 20.0%" />
+            <col style="width: 15.0%" />
+            <col style="width: 15.0%" />
+            <col style="width:  7.5%" />
+            <col style="width:  7.5%" />
+        </colgroup>
+        <tbody> <tr>
+            <td onclick="location.href='index.html'">Home</td>
+            <td onclick="location.href='cv.html'">CV</td>
 
-        <!-- <header>Chirantandip Mahanta | Curriculum Vitae</header> -->
 
-        <div class="navbar">
-
-            <a href="index.html">Home</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
+            <td class="dropdown">Research
+                <div class="dropdown-content">
+                    <a href="phd_flow_vs_ds.html"> Flow v/s Solidification </a>
+                    <a href="phd_lbm.html"> Lattice-Boltzmann Flow </a>
+                    
+                </div>
+            </td>
             
+            <td class="dropdown">Notes
+                <div class="dropdown-content">
+                    <a href="notes/notes_lbm.html">On Lattice-Boltzmann</a>
+                    <a href="notes/pfm_gp.html">On Grand-Potential</a>
+                    <a href="notes/pfm_kks.html">On Kim-Kim-Suzuki</a>
+                    <a href="notes/pfm_intro.html">On Fundamentals of Phase-Field</a>
+                </div>
+            </td>
 
-            <a href="phd_ds.html">Directional Solidification</a>
-        <!-- 
-            <h2>UG Projects</h2>
+            <td class="dropdown">Code
+                <!-- <div class="dropdown-content">
+                    <a href="notes_sycl.html">KKS-SYCL</a>
+                    <a href="notes_opencl.html">OpenCL</a>
+                    <a href="notes_mpi.html">MPI</a>
+                </div> -->
+            </td>
 
-            <a href="UG_IDDD.html">Phase-Field with SYCL</a>
-            <a href="UG_UGRC.html">OpenCL Programming</a>
-            <a href="UG_OTHERS.html">Miscellaneous</a>
+            <td onclick="location.href='https://github.com/chirantandip'">GitHub</td>
+            <td onclick="location.href='contact.html'">Contact</td>
 
+        </tr></tbody>
+    </table>
+</div>
 
+<div class="container">
+    <header>Chirantandip Mahanta | Curriculum Vitae</header>
+    <br>
+    <code>chirantandi5@iisc.ac.in | chirantandip@gmail.com </code>
 
-            <a href="notes_pfm.html">On Phase-Field</a>
-            <a href="notes_lbm.html">On Lattice-Boltzmann</a>
-            <a href="notes_fdm.html">On Finite-Difference</a>
-            <a href="notes_frm.html">On Finite-Elements</a> -->
+    <h1 id="education">Education</h1>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 45%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>PhD</td>
+<td>Materials Engineering</td>
+<td>Indian Institute of Science, Bangalore.</td>
+</tr>
+<tr class="even">
+<td>M.Tech</td>
+<td>Computational Engineering</td>
+<td>Indian Institute of Technology, Madras.</td>
+</tr>
+<tr class="odd">
+<td>B.Tech</td>
+<td>Metallurgical and Materials Engineering</td>
+<td>Indian Institute of Technology, Madras</td>
+</tr>
+<tr class="even">
+<td>Minor</td>
+<td>Physics</td>
+<td>Indian Institute of Technology, Madras</td>
+</tr>
+</tbody>
+</table>
+<h1 id="phd-projects-iisc">PhD Projects @ IISc</h1>
+<h2 id="materials-modelling-group-guide-prof.-abhik-choudhary">Materials Modelling Group | Guide: Prof. Abhik Choudhary</h2>
+<h3 id="a-lattice-boltzmann-flow-solver-coupled-with-phase-field-to-study-flow-effects-on-solidification.">A Lattice-Boltzmann flow solver coupled with Phase-Field to study flow effects on solidification.</h3>
+<p>[to be edited]</p>
+<h1 id="undergrad-projects-iit-madras">Undergrad Projects @ IIT Madras</h1>
+<h2 id="integrated-computational-materials-engineering-lab-guide-prof.-g.-phanikumar">Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar</h2>
+<h3 id="a-sycl-based-multi-phase-field-solver-for-large-scale-microstructure-simulations.">A SYCL based Multi-Phase-Field solver for large scale microstructure simulations.</h3>
+<p>We developed a finite-difference solver of the Kim-Kim-Suzuki model in C++ and integrated it with <a href="https://www.khronos.org/sycl/">SYCL</a>, MPI and <a href="https://www.oneapi.io/">OneAPI</a> libraries. A parabolic approximation of free energy function allows the solver to be coupled with an open-source or encrypted database like ThermoCalc or Pandat.</p>
+<h3 id="an-opencl-based-phase-field-solver-of-basic-microstructure-evolution-phenomenon.">An OpenCL based Phase-Field solver of basic microstructure evolution phenomenon.</h3>
+<p>We Developed OpenCL based codes for finite-difference simulations of Spinodal Decomposition and Dendritic Solidification and did parametric studies on the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.</p>
+<h2 id="combinatorial-alloy-design-correlative-microscopy-group-guide-prof.-k.-g.-pradeep">Combinatorial Alloy Design &amp; Correlative Microscopy Group | Guide: Prof. K. G. Pradeep</h2>
+<h3 id="synthesis-and-characterization-of-the-femncocrcu-high-entropy-alloy.">Synthesis and characterization of the FeMnCoCrCu High Entropy Alloy.</h3>
+<p>Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace &amp; performed solutionizing treatments. Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed. Further attempted to precipitate Cu clusters via heat treatments for improving its strength.</p>
+<h3 id="atom-probe-tomography-apt-data-analysis-for-feature-detection-in-a-max-phase">Atom Probe Tomography (APT) Data Analysis for feature detection in a MAX Phase</h3>
+<p><em>Young Research Fellowship (<a href="https://yrf.iitm.ac.in/2020fellows.html">YRF</a>) 2020 Project</em></p>
+<p>Identified solute segregation by reconstructing the mass spectrum and raw APT data of a <span class="math inline"><em>C</em><em>r</em><sub>2</sub><em>A</em><em>l</em>(<em>S</em><em>i</em>)<em>C</em></span> MAX Phase. Investigated methods of feature detection for efficient identification of interfaces and clusters in APT data.</p>
+<h1 id="affiliations">Affiliations</h1>
+<h3 id="microsim-india."><a href="https://microsim.co.in/">MicroSim</a> India.</h3>
+<ul>
+<li>A part of MicroSim’s code development team.</li>
+<li>Organizing member of MicroSim workshops 2023-onwards.</li>
+</ul>
+<h3 id="national-facility-of-atom-probe-tomography-iit-madras."><a href="https://nfapt.iitm.ac.in/">National Facility of Atom Probe Tomography</a>, IIT Madras.</h3>
+<ul>
+<li>Participated in the Summer School for Materials Characterization, 2023.</li>
+<li>Organizing member for the Annual Lecture Series 2022 and also designed the 4th NFAPT Newsletter.</li>
+</ul>
+<h3 id="avanti-fellows.">Avanti Fellows.</h3>
+<p>I was a student at Avanti Learning center in Pondicherry during 2017-2019, preparing for the JEE examination. After I got into IIT Madras, I joined the Avanti mentor team and mentored students throughout their JEE Preparation.</p>
+<h1 id="scholastic-achievements">Scholastic Achievements</h1>
+<ul>
+<li>Young Research Fellowship (YRF) <a href="https://yrf.iitm.ac.in/2020fellows.html">(link)</a> at IIT Madras.</li>
+<li>Samsung Star Scholarship by Samsung India.</li>
+<li>Kishore Vaigyanik Protsahan Yojana (<a href="http://www.kvpy.iisc.ernet.in/main/index.htm">KVPY</a>) Scholarship <a href="http://kvpy.iisc.ac.in/main/resources/2018-fellowships/2018-SX-GEN.pdf">(link)</a> (All India Rank 671 ).</li>
+<li>Dakshana Scholarship for All India Jawahar Navodaya Vidyalaya students.</li>
+</ul>
+<hr /> 
+</div>
 
-        </div>
+<footer> 
+    Chirantandip Mahanta | PhD IISc | chirantandi5@iisc.ac.in
+</footer>
 
-
-        <div class="main-content">
-            <h1 id="education">Education</h1>
-            <table>
-            <colgroup>
-            <col style="width: 18%" />
-            <col style="width: 45%" />
-            <col style="width: 36%" />
-            </colgroup>
-            <tbody>
-            <tr class="odd">
-            <td>PhD</td>
-            <td>Materials Engineering</td>
-            <td>Indian Institute of Science, Bangalore.</td>
-            </tr>
-            <tr class="even">
-            <td>M.Tech</td>
-            <td>Computational Engineering</td>
-            <td>Indian Institute of Technology, Madras.</td>
-            </tr>
-            <tr class="odd">
-            <td>B.Tech</td>
-            <td>Metallurgical and Materials Engineering</td>
-            <td>Indian Institute of Technology, Madras</td>
-            </tr>
-            <tr class="even">
-            <td>Minor</td>
-            <td>Physics</td>
-            <td>Indian Institute of Technology, Madras</td>
-            </tr>
-            </tbody>
-            </table>
-            <h1 id="phd-work">PhD Work</h1>
-            <h2 id="materials-modelling-group-guide-prof.-abhik-choudhary">Materials Modelling Group | Guide: Prof. Abhik Choudhary</h2>
-            <h3 id="a-lattice-boltzmann-flow-solver-coupled-with-phase-field-to-study-flow-effects-on-solidification.">A Lattice-Boltzmann flow solver coupled with Phase-Field to study flow effects on solidification.</h3>
-            <p>[to be edited]</p>
-            <h1 id="undergrad-projects-iit-madras">Undergrad Projects @ IIT Madras</h1>
-            <h2 id="integrated-computational-materials-engineering-lab-guide-prof.-g.-phanikumar">Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar</h2>
-            <h3 id="a-sycl-based-multi-phase-field-solver-for-large-scale-microstructure-simulations.">A SYCL based Multi-Phase-Field solver for large scale microstructure simulations.</h3>
-            <p>We developed a finite-difference solver of the Kim-Kim-Suzuki model in C++ and integrated it with <a href="https://www.khronos.org/sycl/">SYCL</a>, MPI and <a href="https://www.oneapi.io/">OneAPI</a> libraries. A parabolic approximation of free energy function allows the solver to be coupled with an open-source or encrypted database like ThermoCalc or Pandat.</p>
-            <h3 id="an-opencl-based-phase-field-solver-of-basic-microstructure-evolution-phenomenon.">An OpenCL based Phase-Field solver of basic microstructure evolution phenomenon.</h3>
-            <p>We Developed OpenCL based codes for finite-difference simulations of Spinodal Decomposition and Dendritic Solidification and did parametric studies on the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.</p>
-            <h2 id="combinatorial-alloy-design-correlative-microscopy-group-guide-prof.-k.-g.-pradeep">Combinatorial Alloy Design &amp; Correlative Microscopy Group | Guide: Prof. K. G. Pradeep</h2>
-            <h3 id="synthesis-and-characterization-of-the-femncocrcu-high-entropy-alloy.">Synthesis and characterization of the FeMnCoCrCu High Entropy Alloy.</h3>
-            <p>Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace &amp; performed solutionizing treatments. Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed. Further attempted to precipitate Cu clusters via heat treatments for improving its strength.</p>
-            <h3 id="atom-probe-tomography-apt-data-analysis-for-feature-detection-in-a-max-phase">Atom Probe Tomography (APT) Data Analysis for feature detection in a MAX Phase</h3>
-            <p><em>Young Research Fellowship (<a href="https://yrf.iitm.ac.in/2020fellows.html">YRF</a>) 2020 Project</em></p>
-            <p>Identified solute segregation by reconstructing the mass spectrum and raw APT data of a <span class="math inline"><em>C</em><em>r</em><sub>2</sub><em>A</em><em>l</em>(<em>S</em><em>i</em>)<em>C</em></span> MAX Phase. Investigated methods of feature detection for efficient identification of interfaces and clusters in APT data.</p>
-            <h1 id="affiliations">Affiliations</h1>
-            <h3 id="microsim-india."><a href="https://microsim.co.in/">MicroSim</a> India.</h3>
-            <ul>
-            <li>A part of MicroSim’s code development team.</li>
-            <li>Organizing member of MicroSim workshops 2023-onwards.</li>
-            </ul>
-            <h3 id="national-facility-of-atom-probe-tomography-iit-madras."><a href="https://nfapt.iitm.ac.in/">National Facility of Atom Probe Tomography</a>, IIT Madras.</h3>
-            <ul>
-            <li>Participated in the Summer School for Materials Characterization, 2023.</li>
-            <li>Organizing member for the Annual Lecture Series 2022 and also designed the 4th NFAPT Newsletter.</li>
-            </ul>
-            <h3 id="avanti-fellows.">Avanti Fellows.</h3>
-            <p>I was a student at Avanti Learning center in Pondicherry during 2017-2019, preparing for the JEE examination. After I got into IIT Madras, I joined the Avanti mentor team and mentored students throughout their JEE Preparation.</p>
-            <h1 id="scholastic-achievements">Scholastic Achievements</h1>
-            <ul>
-            <li>Young Research Fellowship (YRF) <a href="https://yrf.iitm.ac.in/2020fellows.html">(link)</a> at IIT Madras.</li>
-            <li>Samsung Star Scholarship by Samsung India.</li>
-            <li>Kishore Vaigyanik Protsahan Yojana (<a href="http://www.kvpy.iisc.ernet.in/main/index.htm">KVPY</a>) Scholarship <a href="http://kvpy.iisc.ac.in/main/resources/2018-fellowships/2018-SX-GEN.pdf">(link)</a> (All India Rank 671 ).</li>
-            <li>Dakshana Scholarship for All India Jawahar Navodaya Vidyalaya students.</li>
-            </ul>
-            <hr />
-        </div>
-
-
-        <footer>
-            Chirantandip Mahanta | Phd IISc | chirantandi5@iisc.ac.in
-        </footer>
-
-    </body>
+</body>
 </html>

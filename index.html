@@ -1,49 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="assets/style.css">
-    </head>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="assets/css/theme-style.css">
+    
+    <!-- <base href="https://chirantandip.github.io/"> -->
+    <base href="/home/chiru/Code/notes_pandoc/home/">
+</head>
 
-    <body>
+<body>
 
-        <!-- <header>What am I up to?</header> -->
+<div class="navbar">
+    <table class = "navtable">
+        <colgroup>
+            <col style="width:  7.5%" />
+            <col style="width:  7.5%" />
+            <col style="width: 20.0%" />
+            <col style="width: 15.0%" />
+            <col style="width: 15.0%" />
+            <col style="width:  7.5%" />
+            <col style="width:  7.5%" />
+        </colgroup>
+        <tbody> <tr>
+            <td onclick="location.href='index.html'">Home</td>
+            <td onclick="location.href='cv.html'">CV</td>
 
-        <div class="navbar">
 
-            <a href="index.html">Home</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
+            <td class="dropdown">Research
+                <div class="dropdown-content">
+                    <a href="phd_flow_vs_ds.html"> Flow v/s Solidification </a>
+                    <a href="phd_lbm.html"> Lattice-Boltzmann Flow </a>
+                    
+                </div>
+            </td>
             
+            <td class="dropdown">Notes
+                <div class="dropdown-content">
+                    <a href="notes/notes_lbm.html">On Lattice-Boltzmann</a>
+                    <a href="notes/pfm_gp.html">On Grand-Potential</a>
+                    <a href="notes/pfm_kks.html">On Kim-Kim-Suzuki</a>
+                    <a href="notes/pfm_intro.html">On Fundamentals of Phase-Field</a>
+                </div>
+            </td>
 
-            <a href="phd_ds.html">Directional Solidification</a>
-        <!-- 
-            <h2>UG Projects</h2>
+            <td class="dropdown">Code
+                <!-- <div class="dropdown-content">
+                    <a href="notes_sycl.html">KKS-SYCL</a>
+                    <a href="notes_opencl.html">OpenCL</a>
+                    <a href="notes_mpi.html">MPI</a>
+                </div> -->
+            </td>
 
-            <a href="UG_IDDD.html">Phase-Field with SYCL</a>
-            <a href="UG_UGRC.html">OpenCL Programming</a>
-            <a href="UG_OTHERS.html">Miscellaneous</a>
+            <td onclick="location.href='https://github.com/chirantandip'">GitHub</td>
+            <td onclick="location.href='contact.html'">Contact</td>
 
+        </tr></tbody>
+    </table>
+</div>
+    
+<div class="main-content"> <p>I am a PhD Student and my research is centered around solidification of metals and alloys. I write large C++ programs that approximately solves the partial-differential-equations that govern solidification and other relevant phenomenon like fluid flow, heat transfer etc.</p>
+<p>As of yet, I have majorly worked on the Phase-Field simulations <a href="notes/pfm_intro.html">(What is Phase-Field?)</a>. More specifically, I have developed a GPU solver for the Kim-Kim-Suzuki equations, as my M.tech thesis, which you can find <a href="projects/ug_kks_sycl.html">here</a>.</p>
+<p>My major interests are Complex-Systems and Multi-Physics simulations.</p> </div>
 
+<footer> 
+    Chirantandip Mahanta | PhD IISc | chirantandi5@iisc.ac.in
+</footer>
 
-            <a href="notes_pfm.html">On Phase-Field</a>
-            <a href="notes_lbm.html">On Lattice-Boltzmann</a>
-            <a href="notes_fdm.html">On Finite-Difference</a>
-            <a href="notes_frm.html">On Finite-Elements</a> -->
-
-        </div>
-
-
-        <div class="main-content">
-            <p>I am a PhD Student and my research is centered around solidification of metals and alloys. I write large C++ programs that approximately solves the partial-differential-equations that govern solidification and other relevant phenomenon like fluid flow, heat transfer etc.</p>
-            <p>As of yet, I have majorly worked on the Phase-Field simulations (<a href="notes_pfm.html">what id phase field?</a>). More specifically, I have developed a GPU solver for the Kim-Kim-Suzuki equations, as my M.tech thesis, which you can find <a href="UG_KKS.html">here</a>.</p>
-            <p>My major interests are Complex-Systems and Multi-Physics simulations.</p>
-        </div>
-
-
-        <footer>
-            Chirantandip Mahanta | Phd IISc | chirantandi5@iisc.ac.in
-        </footer>
-
-    </body>
+</body>
 </html>

@@ -1,0 +1,56 @@
+\usepackage[utf8]{inputenc}
+\usepackage[vmargin=2cm,hmargin=2cm]{geometry}
+
+\usepackage{setspace}
+\SetSinglespace{0.8}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{xcolor}
+\definecolor{oxfordblue}{HTML}{002147}
+
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\bfseries\centering\Large\color{oxfordblue}}
+  {\MakeUppercase{\chaptertitlename} \thechapter}
+  {1ex}
+  {\MakeUppercase}
+
+\titleformat{\section}
+  {\bfseries\Large\color{oxfordblue}}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\bfseries\large\color{oxfordblue}}
+  {\thesubsection}
+  {1em}
+  {}
+
+\usepackage[export]{adjustbox}
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\oldincludegraphics[#1,max width=0.7\linewidth]{#2}}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linktoc=all,
+    linkcolor={oxfordblue},
+    citecolor={red},
+    urlcolor={oxfordblue}
+}
+
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=0.05cm}
+\setlist[enumerate]{itemsep=0.05cm}
+%% List item left padding
+\setlist[itemize,1]{leftmargin=\dimexpr 10pt}
+\setlist[enumerate,1]{leftmargin=\dimexpr 10pt}
