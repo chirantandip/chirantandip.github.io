@@ -3,7 +3,7 @@ MD_FILES:=$(shell find . -maxdepth 1 -type f -name "*.md")
 HTML_FILES:= $(MD_FILES:%.md=%.html)
 
 NOTES_MD = $(shell find notes -type f -name "*.md")
-NOTES_HTML =# $(NOTES_MD:%.md=%.html)
+NOTES_HTML =$(NOTES_MD:%.md=%.html)
 
 pandoc   =/usr/bin/pandoc
 mathopts =--mathjax

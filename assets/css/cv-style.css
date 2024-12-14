@@ -1,99 +1,97 @@
+.CV_BODY {
 
-.container {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   width: 60%;
-  margin: 0 auto;
-  margin-top: 80px;
-  position: relative;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  padding: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 
-  padding: 20px;
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 0.6rem;
 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: justify;
+  font-size: 1rem;
+  color: rgb(52, 52, 52);
 
   header {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: serif;
     font-weight: bold;
     text-align: center;
-    color: black;
     width: 100%;
+    margin-bottom: 0.5rem;
     letter-spacing: 1px;
   }
 
+  .mails{
+    font-family: monospace;
+    color: darkslateblue;
+    font-size: 0.8rem;
+    text-align: center;
+    a{
+      padding-left: 0.3rem;
+      text-decoration: underline;
+      text-decoration-color: slateblue;
+    }
+  }
+
   h1, h2, h3, h4 {
+    color: black;
     font-family: 'Georgia', serif;
     font-weight: normal;
   }
 
   h1 {
-    font-size: 20px;
-    color: #616161;
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    border-bottom: solid 1px lightgray;
   }
 
   h2 {
-    font-size: 20px;
-    margin-top: 1em;
-    color: #424242;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: -0.1rem;
   }
 
   h3 {
-    font-size: 18px;
-    margin-top: 0.8em;
-    margin-bottom: 0;
-    color: #0b294c;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 16px;
-    color: #353535;
-    margin: 0 auto;
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+    font-weight: bolder;
   }
 
   ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
+    list-style-type: "\2022   ";
+    list-style-position: outside;
+    padding-left: 1rem;
   }
 
-  ul li {
-    margin-bottom: 0;
-    padding-left: 1.5em;
-    position: relative;
-  }
-
-  ul li:before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #2d3e50;
-  }
 
   table {
-    min-width: 100%;
-    margin: 0 auto
-    border-collapse: collapse;
-    background-color: white;
-    color: #0b294c;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    font-family: serif;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: justify;
   }
 
-  th, td {
-    padding: 0;
-    border: none;
-    text-align: left;
-  }
+}
 
-  th {
-    background-color: #2d3e50;
-    color: white;
-    font-weight: bold;
+@media screen and (max-width: 1000px) {
+  .CV_BODY {
+      width: 80%;
   }
-
-  td {
-    background-color: white;
+}
+@media screen and (max-width: 600px) {
+  .CV_BODY {
+      width: 100%;
   }
-
 }

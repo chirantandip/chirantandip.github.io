@@ -12,7 +12,7 @@ Education
 | B.Tech| Metallurgical and Materials Engineering| Indian Institute of Technology, Madras|
 |Minor|Physics|Indian Institute of Technology, Madras|
 
-PhD Projects @ IISc
+Indian Institute of Science
 ===
 
 ## Materials Modelling Group | Guide: Prof. Abhik Choudhary
@@ -22,7 +22,7 @@ PhD Projects @ IISc
 [to be edited]
 
 
-Undergrad Projects @ IIT Madras
+Indian Institute of Technology Madras
 ===
 
 ## Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar
@@ -66,7 +66,7 @@ Affiliations
 
 ### Avanti Fellows.
 
-I was a student at Avanti Learning center in Pondicherry during 2017-2019, preparing for the JEE examination. After I got into IIT Madras, I joined the Avanti mentor team and mentored students throughout their JEE Preparation.
+- I was a student at Avanti Learning center in Pondicherry during 2017-2019, preparing for the JEE examination. After I got into IIT Madras, I joined the Avanti mentor team and mentored students throughout their JEE Preparation.
 
 Scholastic Achievements
 ===
@@ -78,4 +78,3 @@ Scholastic Achievements
 [(link)](http://kvpy.iisc.ac.in/main/resources/2018-fellowships/2018-SX-GEN.pdf) (All India Rank 671 ).
 - Dakshana Scholarship for All India Jawahar Navodaya Vidyalaya students.
 
----
