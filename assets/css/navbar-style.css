@@ -23,6 +23,11 @@
     }
 }
 
+@media print {
+    .navbar {
+        display: none;
+    }
+}
 
 table.navtable{
     width: 100%;
