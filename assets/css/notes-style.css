@@ -12,67 +12,93 @@ h3:before {
     counter-increment: h3counter;
 }
 
-.navbar {
-    position: relative;
-}
-
 .notes-content{
 
-margin: 0 auto;
-margin-top: 4em;
-
-width: 60%;
-min-height: 100vh;
-padding-left: 2em;
-padding-right: 2em;
-
-font-size: 20px;
-font-family: serif;
-line-height: normal;
-text-align: justify;
-
-color: rgb(55, 55, 55);
-
-h1{
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    text-align: center;
-    border-bottom-style: solid;
-    border-bottom-color: lightblue;
-    border-bottom-width: 1pt;
-}
-
-h2{
-    color: darkslateblue;
-    font-size: 22px;
-    text-align: left;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(235, 235, 235);
-    border-bottom-width: 1pt;
-}
-
-h3{
-    color: rgb(86, 81, 120);
-    font-size: 20px;
-    text-align: left;
-}
-
-
-.references{
+    margin: 0 auto;
     margin-top: 4em;
-    padding: 20px;
 
-    font-size: 18px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 60%;
+    min-height: 100vh;
+    padding-left: 2em;
+    padding-right: 2em;
+
+    font-size: 20px;
+    font-family: serif;
     line-height: normal;
+    text-align: justify;
 
-    background-color: aliceblue;
-    color: darkslategrey;
-}
+    color: rgb(55, 55, 55);
 
-blockquote {
-    font-size: 14px;
-    font-family: 'Courier New', Courier, monospace;
+    h1{
+        color: rgb(0, 0, 0);
+        font-size: 24px;
+        text-align: center;
+        border-bottom-style: solid;
+        border-bottom-color: lightblue;
+        border-bottom-width: 1pt;
+    }
+
+    h2{
+        color: darkslateblue;
+        font-size: 22px;
+        text-align: left;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(235, 235, 235);
+        border-bottom-width: 1pt;
+    }
+
+    h3{
+        color: rgb(86, 81, 120);
+        font-size: 20px;
+        text-align: left;
+    }
+
+
+    .references{
+        margin-top: 4em;
+        padding: 20px;
+
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        line-height: normal;
+
+        background-color: aliceblue;
+        color: darkslategrey;
+    }
+
+    blockquote {
+        font-size: 14px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 2em;
+    }
+    
+    li p:last-child {
+    margin-bottom: 0;
+    }
+    
+    ul ul, ol ol {
+    margin: .3em 0;
+    }
+    
+    dl {
+    margin-bottom: 1em;
+    }
+    
+    dt {
+    font-weight: bold;
+    margin-bottom: .8em;
+    }
+    
+    dd {
+    margin: 0 0 .8em 2em;
+    }
+    
+    dd:last-child {
+    margin-bottom: 0;
     }
 
 }

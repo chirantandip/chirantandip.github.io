@@ -93,8 +93,8 @@ equilibrium state.
 At the interfacial region the components also satisfy the equality of
 chemical potential and the solute concentration is taken to be
 
-$$c = h(\phi)c_{S} + (1-h(\phi))c_{L} \; \; \; \; \; \; f^S_{c_S}[c_S(x,t)]=f^L_{c_L}[c_L(x,t)]
-\label{eq:c-constraints}$$
+$$c = h(\phi)c_{S} + (1-h(\phi))c_{L}$$
+$$f^S_{c_S}[c_S(x,t)]=f^L_{c_L}[c_L(x,t)]$$
 
 Assuming $g(\phi)=\phi^2(1-\phi)^2$, $\phi_0=1$ (solid) at $x=-\inf$ and
 $\phi_0=0$ (liquid) at $x=+\inf$, the equilibrium profile solved for 1D
