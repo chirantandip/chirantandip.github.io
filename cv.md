@@ -1,5 +1,5 @@
 ---
-title: "Chirantandip Mahanta | Curriculum Vitae"
+title: "Chirantandip | Curriculum Vitae"
 ---
 
 Education 
