@@ -3,13 +3,16 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
     <base href="https://chirantandip.github.io/">
-    <link rel="stylesheet" href="assets/css/theme-style.css">
-    <link rel="stylesheet" href="assets/css/navbar-style.css">
-    <link rel="stylesheet" href="assets/css/notes-style.css">
+
+    <link rel="stylesheet" href="../assets/css/theme-style.css">
+    <link rel="stylesheet" href="../assets/css/navbar-style.css">
+    <link rel="stylesheet" href="../assets/css/notes-style.css">
     <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
+
     <title>The Phase-Field Method</title>
 </head>
 
@@ -84,10 +87,10 @@
 <p><span class="math display">\[\frac{\partial \phi(r,t)}{\partial t} = -L_\phi \left[ \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t) \right]\]</span></p>
 <p>here <span class="math inline">\(L_\phi\)</span> is a constant. The key assumptions for this equation to hold are:</p>
 <ul>
-<li><p>The interfaces are diffuse. <span class="math inline">\(\phi\)</span> has continuous values across them.</p></li>
-<li><p>The Higher-order terms in the taylor expansion of the free energy density <span class="math inline">\(f(\phi)\)</span> are negligible.</p></li>
-<li><p><span class="math inline">\(\phi\)</span> will change with time to decrease the total free energy of the system.</p></li>
-<li><p>Thermodynamics is the only driving force for change. No other forces like electromagnetism are at play.</p></li>
+<li>The interfaces are diffuse. <span class="math inline">\(\phi\)</span> has continuous values across them.</li>
+<li>The Higher-order terms in the taylor expansion of the free energy density <span class="math inline">\(f(\phi)\)</span> are negligible.</li>
+<li><span class="math inline">\(\phi\)</span> will change with time to decrease the total free energy of the system.</li>
+<li>Thermodynamics is the only driving force for change. No other forces like electromagnetism are at play.</li>
 </ul>
 <p>These assumptions are also a must for the evolution of conserved order parameters as well.</p>
 <h3 id="the-cahn-hilliard-equation">The Cahn-Hilliard equation</h3>

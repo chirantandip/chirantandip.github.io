@@ -80,11 +80,8 @@ here $L_\phi$ is a constant. The key assumptions for this equation to
 hold are:
 
 -   The interfaces are diffuse. $\phi$ has continuous values across them.
-
 -   The Higher-order terms in the taylor expansion of the free energy density $f(\phi)$ are negligible.
-
 -   $\phi$ will change with time to decrease the total free energy of the system.
-
 -   Thermodynamics is the only driving force for change. No other forces like electromagnetism are at play.
 
 These assumptions are also a must for the evolution of conserved order

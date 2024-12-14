@@ -22,12 +22,16 @@ html {
     -ms-text-size-adjust: 100%;
   }
 
+  footer{
+    width: 100%;
+  }
+
 }
 
 body {
   color: #2b3938;
   font-family: sans-serif;
-  font-size: 12pt;
+  font-size: 1rem;
   width: 100%;
   min-height: 100vh;
 
@@ -41,12 +45,18 @@ body {
 
 footer {
   position: relative;
+  margin: 4rem;
+  padding: 2rem;
   width: 80%;
-  color: #726767;
+  height: 200px;
+
+  background-color: rebeccapurple;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+
   text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-top: auto;
 }
 
 .main-content {
