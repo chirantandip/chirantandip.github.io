@@ -119,8 +119,17 @@ h3:before {
         padding: 1rem;
         margin: 2rem;
     }
+
     a{
         color: rebeccapurple;
         text-decoration: underline rebeccapurple 1px;
     }
+
+    ul, ol, li{
+        margin: 0;
+        padding: 0;
+        padding-left: 3rem;
+
+    }
+
 }
