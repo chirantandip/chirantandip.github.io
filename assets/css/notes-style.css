@@ -119,15 +119,6 @@ h3:before {
         padding: 1rem;
         margin: 2rem;
     }
-
-    ul {
-        list-style-position: inside;
-    }
-
-    ul.p{
-        margin: 0;
-    }
-
     a{
         color: rebeccapurple;
         text-decoration: underline rebeccapurple 1px;
