@@ -45,10 +45,9 @@ body {
 
 footer {
   position: relative;
-  margin: 4rem;
   padding: 2rem;
   width: 80%;
-  height: 200px;
+  height: 10rem;
 
   background-color: rebeccapurple;
   color: white;
