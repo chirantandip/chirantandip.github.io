@@ -1,17 +1,3 @@
-@font-face {
-  font-family: 'myfonthere';
-  font-style: normal;
-  font-weight: normal;
-  src: url('https://chirantandip.github.io/font/cmunbmr.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'myfonthere';
-  font-style:normal;
-  font-weight: bold;
-  src: url('https://chirantandip.github.io/font/cmunsx.ttf') format('truetype');
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -29,17 +15,12 @@ html {
 @media screen and (max-width: 1000px) {
 
   html {
-    font-size: 8pt;
+    font-size: 1rem;
     overflow-y: scroll;
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }
-
-  footer{
-    width: 100%;
-  }
-
 }
 
 body {

@@ -33,7 +33,7 @@
     gap: 1rem;
 }
 
-.indeximg img {
+.img-container img {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -42,7 +42,7 @@
 /* Individual image box */
 .img-container {
     flex: auto;
-    width: 100%;
+    width: 50%;
     margin: auto;
     height: auto;
     /* border: 2px solid rgba(255, 255, 255, 0.5); */
