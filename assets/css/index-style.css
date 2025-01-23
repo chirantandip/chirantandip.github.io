@@ -23,7 +23,7 @@
     padding: 1rem;
     /* border-left: 1px black solid; */
 }
-
+/* 
 .indeximg {
     width: 100%;
     display: flex;
@@ -38,21 +38,35 @@
     height: auto;
     object-fit: contain;
 }
+*/
 
 /* Individual image box */
+
+
+.indeximg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
 .img-container {
-    flex: auto;
-    width: 50%;
+    flex: 1 1 45%; /* Adjust for two-column layout */
+    max-width: 45%; /* Ensures two images per row */
     margin: auto;
     height: auto;
-    /* border: 2px solid rgba(255, 255, 255, 0.5); */
     text-align: center;
-    /* border-left: 1px black solid; */
-    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px; */
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .caption {
-    font-family: myfonthere;
+    font-family: serif;
     font-size: 0.8rem;
     text-align: justify;
     color: black;
@@ -60,3 +74,10 @@
     padding-top: 0.1rem;
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .img-container {
+        flex: 1 1 100%;
+        max-width: 100%; /* Switch to one column layout */
+    }
+}
