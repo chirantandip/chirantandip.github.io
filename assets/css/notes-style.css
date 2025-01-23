@@ -57,14 +57,14 @@ h3:before {
     }
 
     h1{
-        margin-top: 4rem;
-        font-size: 1.2rem;
+        margin-top: 2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: center;
     }
 
     h2{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: bold;
         text-align: left;
         margin-top: 4rem;
@@ -74,11 +74,12 @@ h3:before {
     }
 
     h3{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin-top: 2rem;
     }
 
     .math.display{
+        font-size: 1.2rem;
         margin: 0 ;
         color: black;
         overflow: auto;
@@ -99,7 +100,7 @@ h3:before {
     }
 
     .math.inline{
-        font-size: inherit;
+        font-size: 1rem;
     }
 
     .references{
