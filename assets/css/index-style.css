@@ -2,7 +2,7 @@
     width: 80%;
     min-height: 100vh;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 3rem;
 
     display: flex;
     flex-direction: column;
@@ -24,41 +24,3 @@
 
 }
 
-.indeximg {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.img-container {
-    flex: 1 1 45%; /* Adjust for two-column layout */
-    max-width: 45%; /* Ensures two images per row */
-    margin: auto;
-    height: auto;
-    text-align: center;
-}
-
-.img-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.caption {
-    font-family: serif;
-    font-size: 0.8rem;
-    text-align: justify;
-    color: black;
-    padding: 1rem;
-    padding-top: 0.1rem;
-}
-
-
-@media (max-width: 768px) {
-    .img-container {
-        flex: 1 1 100%;
-        max-width: 100%; /* Switch to one column layout */
-    }
-}

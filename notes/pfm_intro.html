@@ -17,44 +17,32 @@
 <body>
 
 <div class="navbar">
-    <table class = "navtable">
-        <!-- <colgroup>
-            <col style="width: 7.5%" />
-            <col style="width: 7.5%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 15%" />
-            <col style="width: 15%" />
-            <col style="width: 7.5%" />
-            <col style="width: 7.5%" />
-        </colgroup> -->
-        <tbody> <tr>
-            <td onclick="location.href='index.html'">Home</td>
-            <td onclick="location.href='cv.html'">CV</td>
+<div class="navbar-menu">
 
+    <a href="index.html">Home</a>
 
-            <td class="dropdown">Research
-                <div class="dropdown-content">
-                    <a href="phd_flow_vs_ds.html"> Flow v/s Solidification </a>
-                    <a href="phd_lbm.html"> Lattice-Boltzmann Flow </a>
-                    
-                </div>
-            </td>
-            
-            <td class="dropdown">Notes
-                <div class="dropdown-content">
-                    <a href="notes/notes_lbm.html">On Lattice-Boltzmann</a>
-                    <a href="notes/pfm_gp.html">On Grand-Potential</a>
-                    <a href="notes/pfm_kks.html">On Kim-Kim-Suzuki</a>
-                    <a href="notes/pfm_intro.html">On Fundamentals of Phase-Field</a>
-                </div>
-            </td>
-            
-            <td onclick="location.href='https://github.com/chirantandip'">GitHub</td>
-            <td onclick="location.href='contact.html'">About</td>
+    <a href="cv.html">CV</a>
 
-        </tr></tbody>
-    </table>
+    <div class="dropdown">
+        <a href="#">Research</a>
+        <div class="dropdown-content">
+            <a href="phasetrans.html">Phase-Transitions</a>
+            <a href="fluids.html">Fluids</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="#">Notes</a>
+        <div class="dropdown-content">
+            <a href="notes/pfm_kks.html">On Kim-Kim-Suzuki</a>
+            <a href="notes/pfm_intro.html">On Fundamentals of Phase-Field</a>
+        </div>
+    </div>
+
+    <a href="https://github.com/chirantandip">GitHub</a>
+
+    <a href="contact.html">About</a>
+</div>
 </div>
     
 <div class="notes-content"> <h1 id="tfpf">The Fundamentals of Phase Field</h1>

@@ -22,6 +22,15 @@ index.html: index.md assets/index_template.html
 	${pandoc} --template=assets/index_template.html -s $< -o $@
 	rm assets/index_template.html
 
+fluids.html: fluids.md assets/fluids_template.html
+	${pandoc} --template=assets/fluids_template.html -s $< -o $@
+	rm assets/fluids_template.html
+
+%.html: %.md assets/%_template.html
+	$(PANDOC) --template=assets/$*_template.html -s $< -o $@
+# rm assets/$*_template.html
+
+
 %.html: %.md assets/template.html
 	${pandoc} --template=assets/template.html -s $< -o $@
 

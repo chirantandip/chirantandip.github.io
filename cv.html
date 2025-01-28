@@ -12,44 +12,32 @@
 <body>
 
 <div class="navbar">
-    <table class = "navtable">
-        <!-- <colgroup>
-            <col style="width: 7.5%" />
-            <col style="width: 7.5%" />
-            <col style="width: 20%" />
-            <col style="width: 20%" />
-            <col style="width: 15%" />
-            <col style="width: 15%" />
-            <col style="width: 7.5%" />
-            <col style="width: 7.5%" />
-        </colgroup> -->
-        <tbody> <tr>
-            <td onclick="location.href='index.html'">Home</td>
-            <td onclick="location.href='cv.html'">CV</td>
+<div class="navbar-menu">
 
+    <a href="index.html">Home</a>
 
-            <td class="dropdown">Research
-                <div class="dropdown-content">
-                    <a href="phd_flow_vs_ds.html"> Flow v/s Solidification </a>
-                    <a href="phd_lbm.html"> Lattice-Boltzmann Flow </a>
-                    
-                </div>
-            </td>
-            
-            <td class="dropdown">Notes
-                <div class="dropdown-content">
-                    <a href="notes/notes_lbm.html">On Lattice-Boltzmann</a>
-                    <a href="notes/pfm_gp.html">On Grand-Potential</a>
-                    <a href="notes/pfm_kks.html">On Kim-Kim-Suzuki</a>
-                    <a href="notes/pfm_intro.html">On Fundamentals of Phase-Field</a>
-                </div>
-            </td>
-            
-            <td onclick="location.href='https://github.com/chirantandip'">GitHub</td>
-            <td onclick="location.href='contact.html'">About</td>
+    <a href="cv.html">CV</a>
 
-        </tr></tbody>
-    </table>
+    <div class="dropdown">
+        <a href="#">Research</a>
+        <div class="dropdown-content">
+            <a href="phasetrans.html">Phase-Transitions</a>
+            <a href="fluids.html">Fluids</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <a href="#">Notes</a>
+        <div class="dropdown-content">
+            <a href="notes/pfm_kks.html">On Kim-Kim-Suzuki</a>
+            <a href="notes/pfm_intro.html">On Fundamentals of Phase-Field</a>
+        </div>
+    </div>
+
+    <a href="https://github.com/chirantandip">GitHub</a>
+
+    <a href="contact.html">About</a>
+</div>
 </div>
 
 <div class="CV_BODY">
@@ -63,9 +51,9 @@
     <h1 id="education">Education</h1>
 <table>
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 45%" />
-<col style="width: 36%" />
+<col style="width: 11%" />
+<col style="width: 44%" />
+<col style="width: 44%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -91,21 +79,29 @@
 </tbody>
 </table>
 <h1 id="indian-institute-of-science">Indian Institute of Science</h1>
-<h2 id="materials-modelling-group-guide-prof.-abhik-choudhary">Materials Modelling Group | Guide: Prof. Abhik Choudhary</h2>
+<!-- ## Materials Modelling Group | Guide: Prof. Abhik Choudhary -->
 <h3 id="a-lattice-boltzmann-flow-solver-coupled-with-phase-field-to-study-flow-effects-on-solidification.">A Lattice-Boltzmann flow solver coupled with Phase-Field to study flow effects on solidification.</h3>
 <p>[to be edited]</p>
 <h1 id="indian-institute-of-technology-madras">Indian Institute of Technology Madras</h1>
-<h2 id="integrated-computational-materials-engineering-lab-guide-prof.-g.-phanikumar">Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar</h2>
+<!-- ## Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar -->
 <h3 id="a-sycl-based-multi-phase-field-solver-for-large-scale-microstructure-simulations.">A SYCL based Multi-Phase-Field solver for large scale microstructure simulations.</h3>
-<p>We developed a finite-difference solver of the Kim-Kim-Suzuki model in C++ and integrated it with <a href="https://www.khronos.org/sycl/">SYCL</a>, MPI and <a href="https://www.oneapi.io/">OneAPI</a> libraries. A parabolic approximation of free energy function allows the solver to be coupled with an open-source or encrypted database like ThermoCalc or Pandat.</p>
+<ul>
+<li>We developed a finite-difference solver of the Kim-Kim-Suzuki model in C++ and integrated it with <a href="https://www.khronos.org/sycl/">SYCL</a>, MPI and <a href="https://www.oneapi.io/">OneAPI</a> libraries. A parabolic approximation of free energy function allows the solver to be coupled with an open-source or encrypted database like ThermoCalc or Pandat.</li>
+</ul>
 <h3 id="an-opencl-based-phase-field-solver-of-basic-microstructure-evolution-phenomenon.">An OpenCL based Phase-Field solver of basic microstructure evolution phenomenon.</h3>
-<p>We Developed OpenCL based codes for finite-difference simulations of Spinodal Decomposition and Dendritic Solidification and did parametric studies on the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.</p>
-<h2 id="combinatorial-alloy-design-correlative-microscopy-group-guide-prof.-k.-g.-pradeep">Combinatorial Alloy Design &amp; Correlative Microscopy Group | Guide: Prof. K. G. Pradeep</h2>
+<ul>
+<li>We Developed OpenCL based codes for finite-difference simulations of Spinodal Decomposition and Dendritic Solidification and did parametric studies on the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.</li>
+</ul>
+<!-- ## Combinatorial Alloy Design & Correlative Microscopy Group | Guide: Prof. K. G. Pradeep -->
 <h3 id="synthesis-and-characterization-of-the-femncocrcu-high-entropy-alloy.">Synthesis and characterization of the FeMnCoCrCu High Entropy Alloy.</h3>
-<p>Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace &amp; performed solutionizing treatments. Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed. Further attempted to precipitate Cu clusters via heat treatments for improving its strength.</p>
+<ul>
+<li>Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace &amp; performed solutionizing treatments. Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed. Further attempted to precipitate Cu clusters via heat treatments for improving its strength.</li>
+</ul>
 <h3 id="atom-probe-tomography-apt-data-analysis-for-feature-detection-in-a-max-phase">Atom Probe Tomography (APT) Data Analysis for feature detection in a MAX Phase</h3>
 <p><em>Young Research Fellowship (<a href="https://yrf.iitm.ac.in/2020fellows.html">YRF</a>) 2020 Project</em></p>
-<p>Identified solute segregation by reconstructing the mass spectrum and raw APT data of a <span class="math inline"><em>C</em><em>r</em><sub>2</sub><em>A</em><em>l</em>(<em>S</em><em>i</em>)<em>C</em></span> MAX Phase. Investigated methods of feature detection for efficient identification of interfaces and clusters in APT data.</p>
+<ul>
+<li>Identified solute segregation by reconstructing the mass spectrum and raw APT data of a <span class="math inline"><em>C</em><em>r</em><sub>2</sub><em>A</em><em>l</em>(<em>S</em><em>i</em>)<em>C</em></span> MAX Phase. Investigated methods of feature detection for efficient identification of interfaces and clusters in APT data.</li>
+</ul>
 <h1 id="affiliations">Affiliations</h1>
 <h3 id="microsim-india."><a href="https://microsim.co.in/">MicroSim</a> India.</h3>
 <ul>

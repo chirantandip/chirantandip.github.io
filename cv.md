@@ -6,7 +6,7 @@ Education
 ===
 
 ||  | |
-|--|-----|----|
+|--|--------|--------|
 |PhD  | Materials Engineering | Indian Institute of Science, Bangalore.|
 |M.Tech | Computational Engineering| Indian Institute of Technology, Madras.|
 | B.Tech| Metallurgical and Materials Engineering| Indian Institute of Technology, Madras|
@@ -15,7 +15,7 @@ Education
 Indian Institute of Science
 ===
 
-## Materials Modelling Group | Guide: Prof. Abhik Choudhary
+<!-- ## Materials Modelling Group | Guide: Prof. Abhik Choudhary -->
 
 ### A Lattice-Boltzmann flow solver coupled with Phase-Field to study flow effects on solidification.  
 
@@ -25,29 +25,29 @@ Indian Institute of Science
 Indian Institute of Technology Madras
 ===
 
-## Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar
+<!-- ## Integrated Computational Materials Engineering Lab | Guide: Prof. G. Phanikumar -->
 
 ### A SYCL based Multi-Phase-Field solver for large scale microstructure simulations.
 
-We developed a finite-difference solver of the Kim-Kim-Suzuki model in C++ and integrated it with [SYCL](https://www.khronos.org/sycl/), MPI and [OneAPI](https://www.oneapi.io/) libraries. A parabolic approximation of free energy function allows the solver to be coupled with an open-source or encrypted database like ThermoCalc or Pandat. 
+- We developed a finite-difference solver of the Kim-Kim-Suzuki model in C++ and integrated it with [SYCL](https://www.khronos.org/sycl/), MPI and [OneAPI](https://www.oneapi.io/) libraries. A parabolic approximation of free energy function allows the solver to be coupled with an open-source or encrypted database like ThermoCalc or Pandat. 
 
 
 ### An OpenCL based Phase-Field solver of basic microstructure evolution phenomenon.
 
-We Developed OpenCL based codes for finite-difference simulations of  Spinodal Decomposition and Dendritic Solidification and did parametric studies on the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.
+- We Developed OpenCL based codes for finite-difference simulations of  Spinodal Decomposition and Dendritic Solidification and did parametric studies on the effect of undercooling, boundary conditions, anisotropy and other parameters on the microstructure.
 
 
-## Combinatorial Alloy Design & Correlative Microscopy Group | Guide: Prof. K. G. Pradeep
+<!-- ## Combinatorial Alloy Design & Correlative Microscopy Group | Guide: Prof. K. G. Pradeep -->
 
 ### Synthesis and characterization of the FeMnCoCrCu High Entropy Alloy.
 
-Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace & performed solutionizing treatments. Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed. Further attempted to precipitate Cu clusters via heat treatments for improving its strength. 
+- Casted multiple Cu varying alloy compositions in the Vacuum Induction Furnace & performed solutionizing treatments. Used X-Ray Diffraction and Optical Microscopy to calculate grain size and morphology and identify precipitates formed. Further attempted to precipitate Cu clusters via heat treatments for improving its strength. 
 
 
 ### Atom Probe Tomography (APT) Data Analysis for feature detection in a MAX Phase
 *Young Research Fellowship ([YRF](https://yrf.iitm.ac.in/2020fellows.html)) 2020 Project*
 
-Identified solute segregation by reconstructing the mass spectrum and raw APT data of a $Cr_2Al(Si)C$ MAX Phase. Investigated methods of feature detection for efficient identification of interfaces and clusters in APT data.
+- Identified solute segregation by reconstructing the mass spectrum and raw APT data of a $Cr_2Al(Si)C$ MAX Phase. Investigated methods of feature detection for efficient identification of interfaces and clusters in APT data.
 
 
 Affiliations

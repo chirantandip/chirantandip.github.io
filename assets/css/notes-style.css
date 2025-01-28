@@ -7,7 +7,7 @@ h2:before {
     counter-reset: h3counter;
     content: counter(h2counter) "\0000a0\0000a0";
 }
-
+/* 
 @font-face {
     font-family: 'myfonthere';
     font-style: normal;
@@ -20,7 +20,7 @@ h2:before {
     font-style:normal;
     font-weight: bold;
     src: url('https://chirantandip.github.io/font/cmunsx.ttf') format('truetype');
-}
+} */
 
 .notes-content{
 
