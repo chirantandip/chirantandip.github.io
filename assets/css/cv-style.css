@@ -1,5 +1,6 @@
 .CV_BODY {
   min-width:500px;
+  max-width:1000px;
   margin: 2rem auto;
   padding: 2rem 2rem;
   background-color: white;
