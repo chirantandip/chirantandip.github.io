@@ -11,6 +11,7 @@
   font-weight: bold;
   src: url('https://chirantandip.github.io/font/cmunsx.ttf') format('truetype');
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +29,7 @@ html {
 body {
   color: #002147;
   font-family: myfonthere;
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 100%;
   min-height: 100vh;
 
@@ -55,7 +56,6 @@ footer {
   margin-bottom: 5em;
   width: 80%;
 }
-
 
 .indeximg {
   width: 100%;
@@ -129,7 +129,6 @@ h4, h5, h6 {
 
 h1 {
   font-size: 2em;
-
 }
 
 h2 {
@@ -142,7 +141,6 @@ blockquote {
   padding-left: 3em;
   border-left: 0.5em #EEE solid;
 }
-  
 
 hr {
 display: block;
