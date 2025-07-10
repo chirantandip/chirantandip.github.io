@@ -13,103 +13,48 @@ The Fundamentals of Phase Field {#tfpf}
 Introduction
 ----------------
 
-The phase-field is a thermodynamics-based method mostly used to model
-phase changes and microstructure evolution in materials. It is a
-mesoscopic method, meaning intermediate size. It deals with material
-systems between the nano-scale and a few micrometers. The variables used
-can be abstract non-conserved quantities representing a phase or
-anything (for example, a variable $x$ such that $x=0$ is a solid, $x=1$
-is a liquid and $x \in (0,1)$ is an interface between the two), or they
-can be conserved measurable quantity such as concentration.
+Phase-Field is a method of modelling phase transitions, where we find the evolution equations by minimizing a free energy integral. It is most commonly used to model mesoscopic systems from alloy solidification to crack propagation. 
 
-The principle variable in such a model, that determines the state of a
-system is called and order parameter.
+At the core of any phase-field model is a variable (scalar field) called order parameter. The order parameter is a representative of a phase in our system. One of the simplest order parameters is when we map the existence of a phase in a given coordinate to 1 and its absence to 0 as : $\phi(\vec{r},t) \in (0,1)$ . This form of $\phi$ is a non-conserved variable. Order parameters like concentration $c_i(\vec{r},t)$ are conserved and have to obey an additional conservation equation. The time evolution of $\phi$ is what defines our phase transition. In system of $N$ phases will need us to define $N$ order parameters if they are non-conserving or $N-1$ if they are conserved variables. The regions where the parameters vary from $1 \rightarrow 0$ represent the inter-phase interfaces. Mathematically the interfaces are captured with a gradient term $\nabla \phi$.
 
-The state of a system is captured in a variable, which is most often a
-scalar field, a continuous function of position and time, and that
-represents a property of the system such as concentration or phase
-identity. Such a variable is called an Order parameter, and let's denote
-it with $\phi(r,t)$. The value of $\phi$ at each position and time is
-determined from the free energy of the system. If in addition of energy
-conservation, $\phi(r,t)$ must itself remain conserved throughout its
-time evolution, it is called a conserved order parameter, for example
-the concentration field is conserved by the law of conservation of mass.
-Parameters like phase identity, grain orientation etc. that do not obey
-any conservation law are called non-conserved order parameters.
+The total free energy of the system is formulated as an integral over volume of certain expression involving phi. Typically we include a bulk-phase energy, an interfacial energy, a double-well potential and a driving force term in our free energy expression. The partial differential equations of evolution are then derived my minimizing the integral (also called a functional) with respect to the order parameter. (This form of taking a derivative of a functional with respect to a function is called a variational derivative, as it comes from the theory of Calculus of Variations). 
 
-The time evolution of a both kinds of order parameters are governed by
-two different equations.
+Given the two fundamental kinds of order parameter (conserved and non conserved) we have two different categorizations of the evolution equations. They are Allen-Cahn and Cahn-Hilliard.
 
 ### The Allen-Cahn equation
 
-Let $\phi$ be the non-conserved order parameter. The free energy density
-of a phase can be expressed as a function $f(\phi)$ which depends only
-on the state of the system (T and P) at each point. Each value of $\phi$
-represents a phase, let's say $\phi=0$ is solid and $\phi=1$ is liquid,
-then only at the solid-liquid interface $\phi$ will have a non-zero
-gradient. In this method, interfaces between phases are detected by
-taking the gradient of the order parameter, $\phi$.
+Let $\phi$ be the non-conserved order parameter. The free energy density of a phase can be expressed as a function $f(\phi)$ which depends only on the state of the system (T and P) at each point. Each value of $\phi$ represents a phase, let's say $\phi=0$ is solid and $\phi=1$ is liquid, then only at the solid-liquid interface $\phi$ will have a non-zero
+gradient. In this method, interfaces between phases are detected by taking the gradient of the order parameter, $\phi$.
 
-The total energy of the system is a sum of both bulk and interfacial
-energy. Bulk energy distribution is given by a function $f(\phi)$ and
-the interfacial energy is assumed to vary linearly with
-$|\nabla\phi|^2$. Higher the gradient of $\phi$, more discontinuous the
-interface and higher the interfacial energy. The free energy functional
-is expressed as:
+The total energy of the system is a sum of both bulk and interfacial energy. Bulk energy distribution is given by a function $f(\phi)$ and the interfacial energy is assumed to vary linearly with $|\nabla\phi|^2$. Higher the gradient of $\phi$, more discontinuous the interface and higher the interfacial energy. The free energy functional is expressed as:
 
-$$F = \int_V \left[ f(\phi) + \frac{\epsilon}{2}\left|\nabla\phi \right|^2 \right] dv$$
+$$F = \int_V \left[ \frac{\epsilon}{2}\left|\nabla\phi \right|^2 + f(\phi) \right] dV$$
 
-where $\epsilon$ is the constant that determines the interfacial free
-energy. The functional represents the volumetric total of the free
-energy of the system. And what should happen to the total free energy as
-time goes by, it should decrease. So, at equilibrium, $F$ should be in
-its minimum value, and the $\phi$ that minimizes $F$ is the $\phi$ at
-equilibrium. That is the $\phi$ we are looking for. Now, how to minimize
-a functional, equate its derivative to 0, yes. But, taking the
-derivative of a functional has to do with the calculus of variations and
-is beyond the scope of the present work.
+where $\epsilon$ is the constant that determines the interfacial free energy. The functional represents the volumetric total free energy of the system. To find the $\phi$ that minimizes the functional we must set its derivate to zero.
 
-The differential equation obtained as a result of minimizing the total
-free energy of the system is called the Allen-Cahn equation. This
-equation governs the evolution of a non-conserved order parameter. It is
-expressed as:
+$$ \frac{\delta F}{\delta \phi} = \frac{\partial F}{\partial \phi} - \nabla \cdot \frac{\partial F}{ \partial \nabla \phi} = 0$$
 
-$$\frac{\partial \phi(r,t)}{\partial t} = -L_\phi \left[ \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t) \right]$$
+The differential equation thus obtained is called the Allen-Cahn equation. This equation governs the evolution of a non-conserved order parameter. It is expressed as:
 
-here $L_\phi$ is a constant. The key assumptions for this equation to
-hold are:
+$$\frac{\partial \phi}{\partial t} = -L_\phi \left[ \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi \right]$$
 
--   The interfaces are diffuse. $\phi$ has continuous values across them.
--   The Higher-order terms in the taylor expansion of the free energy density $f(\phi)$ are negligible.
--   $\phi$ will change with time to decrease the total free energy of the system.
--   Thermodynamics is the only driving force for change. No other forces like electromagnetism are at play.
-
-These assumptions are also a must for the evolution of conserved order
-parameters as well.
+here $L_\phi$ is just a constant. 
 
 ### The Cahn-Hilliard equation
 
-A conserved order parameter demands a conservation law to be imposed on
-top of the condition of total free energy minimization of the system.
-The conservation of most quantities are governed by the mathematical
-laws as those of mass conservation, namely the Fick's laws of diffusion
-which are expressed as:
+A conserved order parameter demands a conservation law to be imposed on top of the condition of minimization of the total free energy of the system. The conservation of most quantities are governed by the mathematical laws as those of mass conservation, namely the Fick's laws of diffusion which are expressed as:
 
 $$\frac{\partial \phi}{\partial t} = -\nabla J \hspace{1cm}: J = -M\nabla \mu \hspace{1cm}$$
 
-where J is the mass flux, M is the mobility of the material and $\mu$ is
-the chemical potential which is defined as:
+where J is the mass flux, M is the mobility of the material and $\mu$ is the chemical potential which is defined as:
 
 $$\mu = \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t)$$
 
-Combining the two conditions, one can derive the differential equation
-governing the time evolution of a conserved order parameter, which is
-the Cahn-Hlliard equation. It is expressed as:
+Combining the two conditions, one can derive the differential equation governing the time evolution of a conserved order parameter, which is the Cahn-Hlliard equation. It is expressed as:
 
-$$\frac{\partial\phi(r,t)}{\partial t}=\nabla . \left( M \nabla . \left( \frac{\partial f}{\partial \phi} - \epsilon \nabla^2 \phi \right) \right)$$
-Where $M$ is the mobility and $\epsilon$ determines the interfacial free
-energy. $M$ can be taken out of the gradient operator when it is a
-scalar and then we will get a laplacian operating on the inner brackets.
+$$\frac{\partial\phi}{\partial t} = \nabla \cdot \left( M \nabla \cdot \left( \frac{\partial f}{\partial \phi} - \epsilon \nabla^2 \phi \right) \right)$$
+
+Where $M$ is the mobility and $\epsilon$ determines the interfacial free energy. $M$ can be taken out of the gradient operator when it is a scalar and then we will get a laplacian operating on the inner brackets.
 
 Kobayashi dendrite growth
 -------------------------

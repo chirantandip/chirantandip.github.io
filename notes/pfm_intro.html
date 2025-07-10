@@ -25,10 +25,10 @@
 
     <div class="dropdown">
         <a href="#">Research</a>
-        <div class="dropdown-content">
+        <!-- <div class="dropdown-content">
             <a href="phasetrans.html">Phase-Transitions</a>
             <a href="fluids.html">Fluids</a>
-        </div>
+        </div> -->
     </div>
 
     <div class="dropdown">
@@ -39,9 +39,9 @@
         </div>
     </div>
 
-    <a href="https://github.com/chirantandip">GitHub</a>
+    <a href="https://chirantandip.github.io/simmatery/">Simmatery</a>
 
-    <a href="contact.html">About</a>
+    <a href="https://github.com/chirantandip">GitHub</a>
 </div>
 </div>
     
@@ -50,32 +50,27 @@
 <p>This chapter is a compilation of the fundamental concepts in Phase-Field Theory. (The Notes are still in making).</p>
 </blockquote>
 <h2 id="introduction">Introduction</h2>
-<p>The phase-field is a thermodynamics-based method mostly used to model phase changes and microstructure evolution in materials. It is a mesoscopic method, meaning intermediate size. It deals with material systems between the nano-scale and a few micrometers. The variables used can be abstract non-conserved quantities representing a phase or anything (for example, a variable <span class="math inline">\(x\)</span> such that <span class="math inline">\(x=0\)</span> is a solid, <span class="math inline">\(x=1\)</span> is a liquid and <span class="math inline">\(x \in (0,1)\)</span> is an interface between the two), or they can be conserved measurable quantity such as concentration.</p>
-<p>The principle variable in such a model, that determines the state of a system is called and order parameter.</p>
-<p>The state of a system is captured in a variable, which is most often a scalar field, a continuous function of position and time, and that represents a property of the system such as concentration or phase identity. Such a variable is called an Order parameter, and let’s denote it with <span class="math inline">\(\phi(r,t)\)</span>. The value of <span class="math inline">\(\phi\)</span> at each position and time is determined from the free energy of the system. If in addition of energy conservation, <span class="math inline">\(\phi(r,t)\)</span> must itself remain conserved throughout its time evolution, it is called a conserved order parameter, for example the concentration field is conserved by the law of conservation of mass. Parameters like phase identity, grain orientation etc. that do not obey any conservation law are called non-conserved order parameters.</p>
-<p>The time evolution of a both kinds of order parameters are governed by two different equations.</p>
+<p>Phase-Field is a method of modelling phase transitions, where we find the evolution equations by minimizing a free energy integral. It is most commonly used to model mesoscopic systems from alloy solidification to crack propagation.</p>
+<p>At the core of any phase-field model is a variable (scalar field) called order parameter. The order parameter is a representative of a phase in our system. One of the simplest order parameters is when we map the existence of a phase in a given coordinate to 1 and its absence to 0 as : <span class="math inline">\(\phi(\vec{r},t) \in (0,1)\)</span> . This form of <span class="math inline">\(\phi\)</span> is a non-conserved variable. Order parameters like concentration <span class="math inline">\(c_i(\vec{r},t)\)</span> are conserved and have to obey an additional conservation equation. The time evolution of <span class="math inline">\(\phi\)</span> is what defines our phase transition. In system of <span class="math inline">\(N\)</span> phases will need us to define <span class="math inline">\(N\)</span> order parameters if they are non-conserving or <span class="math inline">\(N-1\)</span> if they are conserved variables. The regions where the parameters vary from <span class="math inline">\(1 \rightarrow 0\)</span> represent the inter-phase interfaces. Mathematically the interfaces are captured with a gradient term <span class="math inline">\(\nabla \phi\)</span>.</p>
+<p>The total free energy of the system is formulated as an integral over volume of certain expression involving phi. Typically we include a bulk-phase energy, an interfacial energy, a double-well potential and a driving force term in our free energy expression. The partial differential equations of evolution are then derived my minimizing the integral (also called a functional) with respect to the order parameter. (This form of taking a derivative of a functional with respect to a function is called a variational derivative, as it comes from the theory of Calculus of Variations).</p>
+<p>Given the two fundamental kinds of order parameter (conserved and non conserved) we have two different categorizations of the evolution equations. They are Allen-Cahn and Cahn-Hilliard.</p>
 <h3 id="the-allen-cahn-equation">The Allen-Cahn equation</h3>
 <p>Let <span class="math inline">\(\phi\)</span> be the non-conserved order parameter. The free energy density of a phase can be expressed as a function <span class="math inline">\(f(\phi)\)</span> which depends only on the state of the system (T and P) at each point. Each value of <span class="math inline">\(\phi\)</span> represents a phase, let’s say <span class="math inline">\(\phi=0\)</span> is solid and <span class="math inline">\(\phi=1\)</span> is liquid, then only at the solid-liquid interface <span class="math inline">\(\phi\)</span> will have a non-zero gradient. In this method, interfaces between phases are detected by taking the gradient of the order parameter, <span class="math inline">\(\phi\)</span>.</p>
 <p>The total energy of the system is a sum of both bulk and interfacial energy. Bulk energy distribution is given by a function <span class="math inline">\(f(\phi)\)</span> and the interfacial energy is assumed to vary linearly with <span class="math inline">\(|\nabla\phi|^2\)</span>. Higher the gradient of <span class="math inline">\(\phi\)</span>, more discontinuous the interface and higher the interfacial energy. The free energy functional is expressed as:</p>
-<p><span class="math display">\[F = \int_V \left[ f(\phi) + \frac{\epsilon}{2}\left|\nabla\phi \right|^2 \right] dv\]</span></p>
-<p>where <span class="math inline">\(\epsilon\)</span> is the constant that determines the interfacial free energy. The functional represents the volumetric total of the free energy of the system. And what should happen to the total free energy as time goes by, it should decrease. So, at equilibrium, <span class="math inline">\(F\)</span> should be in its minimum value, and the <span class="math inline">\(\phi\)</span> that minimizes <span class="math inline">\(F\)</span> is the <span class="math inline">\(\phi\)</span> at equilibrium. That is the <span class="math inline">\(\phi\)</span> we are looking for. Now, how to minimize a functional, equate its derivative to 0, yes. But, taking the derivative of a functional has to do with the calculus of variations and is beyond the scope of the present work.</p>
-<p>The differential equation obtained as a result of minimizing the total free energy of the system is called the Allen-Cahn equation. This equation governs the evolution of a non-conserved order parameter. It is expressed as:</p>
-<p><span class="math display">\[\frac{\partial \phi(r,t)}{\partial t} = -L_\phi \left[ \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t) \right]\]</span></p>
-<p>here <span class="math inline">\(L_\phi\)</span> is a constant. The key assumptions for this equation to hold are:</p>
-<ul>
-<li>The interfaces are diffuse. <span class="math inline">\(\phi\)</span> has continuous values across them.</li>
-<li>The Higher-order terms in the taylor expansion of the free energy density <span class="math inline">\(f(\phi)\)</span> are negligible.</li>
-<li><span class="math inline">\(\phi\)</span> will change with time to decrease the total free energy of the system.</li>
-<li>Thermodynamics is the only driving force for change. No other forces like electromagnetism are at play.</li>
-</ul>
-<p>These assumptions are also a must for the evolution of conserved order parameters as well.</p>
+<p><span class="math display">\[F = \int_V \left[ \frac{\epsilon}{2}\left|\nabla\phi \right|^2 + f(\phi) \right] dV\]</span></p>
+<p>where <span class="math inline">\(\epsilon\)</span> is the constant that determines the interfacial free energy. The functional represents the volumetric total free energy of the system. To find the <span class="math inline">\(\phi\)</span> that minimizes the functional we must set its derivate to zero.</p>
+<p><span class="math display">\[ \frac{\delta F}{\delta \phi} = \frac{\partial F}{\partial \phi} - \nabla \cdot \frac{\partial F}{ \partial \nabla \phi} = 0\]</span></p>
+<p>The differential equation thus obtained is called the Allen-Cahn equation. This equation governs the evolution of a non-conserved order parameter. It is expressed as:</p>
+<p><span class="math display">\[\frac{\partial \phi}{\partial t} = -L_\phi \left[ \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi \right]\]</span></p>
+<p>here <span class="math inline">\(L_\phi\)</span> is just a constant.</p>
 <h3 id="the-cahn-hilliard-equation">The Cahn-Hilliard equation</h3>
-<p>A conserved order parameter demands a conservation law to be imposed on top of the condition of total free energy minimization of the system. The conservation of most quantities are governed by the mathematical laws as those of mass conservation, namely the Fick’s laws of diffusion which are expressed as:</p>
+<p>A conserved order parameter demands a conservation law to be imposed on top of the condition of minimization of the total free energy of the system. The conservation of most quantities are governed by the mathematical laws as those of mass conservation, namely the Fick’s laws of diffusion which are expressed as:</p>
 <p><span class="math display">\[\frac{\partial \phi}{\partial t} = -\nabla J \hspace{1cm}: J = -M\nabla \mu \hspace{1cm}\]</span></p>
 <p>where J is the mass flux, M is the mobility of the material and <span class="math inline">\(\mu\)</span> is the chemical potential which is defined as:</p>
 <p><span class="math display">\[\mu = \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t)\]</span></p>
 <p>Combining the two conditions, one can derive the differential equation governing the time evolution of a conserved order parameter, which is the Cahn-Hlliard equation. It is expressed as:</p>
-<p><span class="math display">\[\frac{\partial\phi(r,t)}{\partial t}=\nabla . \left( M \nabla . \left( \frac{\partial f}{\partial \phi} - \epsilon \nabla^2 \phi \right) \right)\]</span> Where <span class="math inline">\(M\)</span> is the mobility and <span class="math inline">\(\epsilon\)</span> determines the interfacial free energy. <span class="math inline">\(M\)</span> can be taken out of the gradient operator when it is a scalar and then we will get a laplacian operating on the inner brackets.</p>
+<p><span class="math display">\[\frac{\partial\phi}{\partial t} = \nabla \cdot \left( M \nabla \cdot \left( \frac{\partial f}{\partial \phi} - \epsilon \nabla^2 \phi \right) \right)\]</span></p>
+<p>Where <span class="math inline">\(M\)</span> is the mobility and <span class="math inline">\(\epsilon\)</span> determines the interfacial free energy. <span class="math inline">\(M\)</span> can be taken out of the gradient operator when it is a scalar and then we will get a laplacian operating on the inner brackets.</p>
 <h2 id="kobayashi-dendrite-growth">Kobayashi dendrite growth</h2>
 <p>The simplest of all is the renowned work of Kobayashi<span class="citation" data-cites="Kobayashi1993"><sup><a href="#ref-Kobayashi1993" role="doc-biblioref">1</a></sup></span> which is one of the earliest phase-field models for dendritic solidification.</p>
 <p>The model includes two order parameters. One is a non-conserved order parameter <span class="math inline">\(\phi(r,t)\)</span> which takes the value of 1 in solid phase and 0 in liquid phase. The other parameter is the temperature field <span class="math inline">\(T(r,t)\)</span>. Here <span class="math inline">\(r\)</span> is the spatial position and <span class="math inline">\(t\)</span> is time.</p>
