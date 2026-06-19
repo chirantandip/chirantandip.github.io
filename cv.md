@@ -17,7 +17,7 @@ Indian Institute of Science
 
 <!-- ## Materials Modelling Group | Guide: Prof. Abhik Choudhary -->
 
-### A Lattice-Boltzmann flow solver coupled with Phase-Field to study flow effects on solidification.  
+### On the influence of convection on multi-phase solidification.
 
 [to be edited]
 
