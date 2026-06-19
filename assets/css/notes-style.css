@@ -129,36 +129,40 @@ h2:before {
     }
     /* Clean pastel table theme */
 
-    table {
-        min-width: 50%;
-        width: fit-content;
-        margin: 1.5rem auto;      /* horizontal centering */
-        border-collapse: collapse;
-        border-radius: 10px;
-        overflow: hidden;
-        background: #fcfcfd;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
+   table {
+    min-width: 50%;
+    width: max-content;       /* grow as needed */
+    max-width: 100%;
+    margin: 1.5rem auto;
+    border-collapse: collapse;
+    background: #fcfcfd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 
-    th,
-    td {
-        padding: 0.75rem 1.25rem;
-        text-align: left;
-        border: 1px solid #dfe7ee;
-    }
+    /* Important: let content determine column widths */
+    table-layout: auto;
+}
 
-    th {
-        background: #cfe8f6;      /* pastel blue */
-        color: #2c3e50;
-        font-weight: 600;
-    }
+th,
+td {
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+    border: 1px solid #dfe7ee;
+    vertical-align: top;
+}
 
-    tr:nth-child(even) {
-        background: #f7fbfd;
-    }
+th {
+    background: #cfe8f6;
+    color: #2c3e50;
+    font-weight: 600;
+}
 
-    tr:hover {
-        background: #eef7fb;
-    }
+tr:nth-child(even) {
+    background: #f7fbfd;
+}
 
+tr:hover {
+    background: #eef7fb;
+}
 }
