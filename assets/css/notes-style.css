@@ -37,7 +37,7 @@ h2:before {
     width: 60%;
     min-height: 100vh;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: normal;
     text-align: justify;
@@ -74,7 +74,7 @@ h2:before {
     }
 
     .math.display{
-        font-size: 1.6rem;
+        font-size: 1rem;
         margin: 0 ;
         color: black;
         overflow: auto;
@@ -95,7 +95,7 @@ h2:before {
     }
 
     .math.inline{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .references{
@@ -129,40 +129,36 @@ h2:before {
     }
     /* Clean pastel table theme */
 
-   table {
-    min-width: 50%;
-    width: max-content;       /* grow as needed */
-    max-width: 80%;
-    margin: 1rem auto;
-    border-collapse: collapse;
-    background: #fcfcfd;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    table {
+        min-width: 50%;
+        width: fit-content;
+        margin: 1.5rem auto;      /* horizontal centering */
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #fcfcfd;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
 
-    /* Important: let content determine column widths */
-    table-layout: auto;
-}
+    th,
+    td {
+        padding: 0.75rem 1.25rem;
+        text-align: left;
+        border: 1px solid #dfe7ee;
+    }
 
-th,
-td {
-    padding: 0.75rem 1.25rem;
-    text-align: left;
-    border: 1px solid #dfe7ee;
-    vertical-align: top;
-}
+    th {
+        background: #cfe8f6;      /* pastel blue */
+        color: #2c3e50;
+        font-weight: 600;
+    }
 
-th {
-    background: #cfe8f6;
-    color: #2c3e50;
-    font-weight: 600;
-}
+    tr:nth-child(even) {
+        background: #f7fbfd;
+    }
 
-tr:nth-child(even) {
-    background: #f7fbfd;
-}
+    tr:hover {
+        background: #eef7fb;
+    }
 
-tr:hover {
-    background: #eef7fb;
-}
 }
