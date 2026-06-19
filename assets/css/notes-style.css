@@ -49,6 +49,7 @@ h2:before {
         text-align: left;
         font-weight: bold;
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
     h1{
@@ -70,7 +71,6 @@ h2:before {
 
     h3{
         font-size: 1.2rem;
-        margin-top: 4rem;
     }
 
     .math.display{
