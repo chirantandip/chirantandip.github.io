@@ -213,6 +213,7 @@ $$
 $$
 
 **Key Stability Conditions**
+
 - $S(U,V,N)$ is concave.
 - $U(S,V,N)$ is convex.
 - $C_V > 0$ and $C_P > 0$.
@@ -425,6 +426,7 @@ $$\boxed{F = c - \phi + 2.}$$
 If $r$ independent chemical reactions constrain the system, $F = c - r - \phi + 2$. If external fields (electric, magnetic, gravitational) are present, additional variables enter and $F$ increases accordingly.
 
 **Applications:**
+
 | System | $c$ | $\phi$ | $F$ | Interpretation |
 |---|---|---|---|---|
 | Pure substance, single phase | 1 | 1 | 2 | Can independently vary $T$ and $P$ |
@@ -744,6 +746,7 @@ whereas the gradient term penalizes the formation of sharp composition variation
 The competition between these two effects causes fluctuations of intermediate wavelength to grow most rapidly, producing the characteristic length scale observed during spinodal decomposition. The existence of a preferred wavelength therefore arises from the combined action of the negative free-energy curvature and the positive gradient-energy penalty.
 
 **Formula Summary**
+
 | Quantity | Formula | Valid when | Ref. |
 |---|---|---|---|
 | Pure-metal driving force, first order | $\Delta G_v = L\Delta T/T_m$ | $\Delta T/T_m \ll 1$ | |
