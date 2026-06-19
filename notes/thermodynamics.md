@@ -76,7 +76,6 @@ Natural variables: $(T, P, N_i)$. $G$ is minimized at equilibrium at constant $T
 | $F$ (Helmholtz) | $U-TS$ | $-S\,dT - P\,dV + \sum\mu_i\,dN_i$ | $T, V, N_i$ | Minimize $F$ at fixed $T,V,N$ |
 | $G$ (Gibbs) | $H-TS$ | $-S\,dT + V\,dP + \sum\mu_i\,dN_i$ | $T, P, N_i$ | Minimize $G$ at fixed $T,P,N$ |
 
-
 ### The Chemical Potential
 From $dG = -S\,dT + V\,dP + \sum_i\mu_i\,dN_i$, at constant $T$ and $P$:
 $$\mu_i = \left(\frac{\partial G}{\partial N_i}\right)_{T,P,N_{j\neq i}}.$$
@@ -91,7 +90,6 @@ For a pure substance at $T, P$:
 $$\mu_i^\circ(T,P) = G_i^\circ(T,P),$$
 the molar Gibbs energy of the pure component. Deviations from ideality are absorbed into the **activity** $a_i$ (Module T5):
 $$\mu_i(T,P,\{x_j\}) = \mu_i^\circ(T,P) + RT\ln a_i.$$
-
 
 ### Maxwell Relations
 Because $G, H, F, U$ are state functions, their mixed second partial derivatives are equal (Schwarz's theorem, assuming sufficient smoothness). Applied to the four differentials:
@@ -607,6 +605,7 @@ $$G(T,P) = G(T,P_0) + \int_{P_0}^P V(T,P')\,dP'.$$
 Equations of state such as Birch–Murnaghan are commonly employed for solids.
 
 **Formula Summary**
+
 | Quantity / Concept | Formula / Expression | Notes / Reference |
 |---|---|---|
 | Equilibrium condition | $\mu_i^\alpha = \mu_i^\beta \ \forall i, \alpha,\beta$ | Core of CALPHAD |

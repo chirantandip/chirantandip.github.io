@@ -495,7 +495,58 @@ G_m = G_{\rm end-member} + RT\sum_s\sum_i y_i^{(s)}\ln y_i^{(s)} + G^{\rm xs},
 <h3 id="other-additional-contributions">Other Additional Contributions</h3>
 <p>For ferromagnetic phases: <span class="math display">\[G^{\rm mag} = RT \ln(\beta + 1) \cdot f(\tau), \quad \tau = T/T_C,\]</span> with different polynomials <span class="math inline">\(f(\tau)\)</span> above and below the Curie temperature <span class="math inline">\(T_C\)</span> (full model includes composition dependence of <span class="math inline">\(\beta\)</span> and <span class="math inline">\(T_C\)</span>). This term significantly affects phase stability in Fe-, Co-, Ni-based systems.</p>
 <p>While most assessments are performed at <span class="math inline">\(P = 1\)</span> bar, high-pressure extensions use volume integrals: <span class="math display">\[G(T,P) = G(T,P_0) + \int_{P_0}^P V(T,P&#39;)\,dP&#39;.\]</span> Equations of state such as Birch–Murnaghan are commonly employed for solids.</p>
-<p><strong>Formula Summary</strong> | Quantity / Concept | Formula / Expression | Notes / Reference | |—|—|—| | Equilibrium condition | <span class="math inline">\(\mu_i^\alpha = \mu_i^\beta \ \forall i, \alpha,\beta\)</span> | Core of CALPHAD | | Total <span class="math inline">\(G\)</span> minimization | <span class="math inline">\(\min G_{\rm tot}\)</span> s.t. mass balance | KKT conditions | | SGTE unary reference | <span class="math inline">\(G = a + bT + cT\ln T + dT^2 + \cdots\)</span> | Dinsdale 1991 | | Redlich–Kister excess | <span class="math inline">\(G^{\rm xs} = x_i x_j \sum_{n} L_n (x_i - x_j)^n\)</span> | Sub-regular models | | CEF (sublattice model) | Site fractions + ideal config. entropy + excess | Ordered phases [Hillert &amp; Staffansson, 1970] | | Muggianu extrapolation | Weighted binary excesses | Higher-order systems | | <span class="math inline">\(T_0\)</span> condition | <span class="math inline">\(G_m^L(x,T_0) = G_m^S(x,T_0)\)</span> | Partitionless solidification |</p>
+<p><strong>Formula Summary</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity / Concept</th>
+<th>Formula / Expression</th>
+<th>Notes / Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Equilibrium condition</td>
+<td><span class="math inline">\(\mu_i^\alpha = \mu_i^\beta \ \forall i, \alpha,\beta\)</span></td>
+<td>Core of CALPHAD</td>
+</tr>
+<tr class="even">
+<td>Total <span class="math inline">\(G\)</span> minimization</td>
+<td><span class="math inline">\(\min G_{\rm tot}\)</span> s.t. mass balance</td>
+<td>KKT conditions</td>
+</tr>
+<tr class="odd">
+<td>SGTE unary reference</td>
+<td><span class="math inline">\(G = a + bT + cT\ln T + dT^2 + \cdots\)</span></td>
+<td>Dinsdale 1991</td>
+</tr>
+<tr class="even">
+<td>Redlich–Kister excess</td>
+<td><span class="math inline">\(G^{\rm xs} = x_i x_j \sum_{n} L_n (x_i - x_j)^n\)</span></td>
+<td>Sub-regular models</td>
+</tr>
+<tr class="odd">
+<td>CEF (sublattice model)</td>
+<td>Site fractions + ideal config. entropy + excess</td>
+<td>Ordered phases [Hillert &amp; Staffansson, 1970]</td>
+</tr>
+<tr class="even">
+<td>Muggianu extrapolation</td>
+<td>Weighted binary excesses</td>
+<td>Higher-order systems</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(T_0\)</span> condition</td>
+<td><span class="math inline">\(G_m^L(x,T_0) = G_m^S(x,T_0)\)</span></td>
+<td>Partitionless solidification</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Notes</strong></p>
 <ul>
 <li>Validity of the extrapolation to higher-order systems. Geometric extrapolation from binary/ternary databases to quaternary and higher systems assumes no qualitatively new interactions appear in higher-order systems that are not captured by binary/ternary sub-systems. This is an approximation that works remarkably well in practice for metallic systems but can fail when quaternary or higher-order compounds or miscibility gaps exist that have no binary/ternary analog.</li>
