@@ -233,6 +233,7 @@ $$\boxed{\frac{dP}{dT} = \frac{L}{T\,\Delta V}.}$$
 **Consequence for solidification.** Since $\Delta V_{\text{fusion}} = V_L - V_S$ is small and often positive for metals (though negative for water), $dP/dT$ is large. Melting points of metals increase with pressure at roughly $10$–$30\,$K/GPa. This becomes relevant in high-pressure casting and shock-loading experiments.
 
 **Notes**
+
 - Classical thermodynamics strictly describes processes that occur infinitely slowly through a series of equilibrium states, Quasi-static (reversible) processes. Real processes are irreversible and happen at finite speeds. State functions ($U$, $G$, $S$, etc.) are still useful because they are path-independent, but work and heat are path-dependent.
 - The local equilibrium assumption (LEA).  When applying thermodynamics locally in non-uniform, evolving systems (e.g., diffusion, phase-field, or solidification), we assume each small volume element is in internal equilibrium. The LEA works well for diffusion in metals but breaks down at high growth speeds, near spinodals, or close to critical points.
 - Simple systems.  Classical thermodynamics applies to simple, uniform systems without external fields or significant surface effects. These assumptions often fail in solidification (non-uniform temperatures, curved interfaces, electromagnetic fields), so extensions like the Gibbs–Thomson relation are needed.
@@ -304,6 +305,7 @@ $$\Delta X_i^{\text{mix}} = \bar{X}_i - X_i^\circ$$
 is the partial molar mixing quantity.
 
 **Notes**
+
 -  Extensivity is an idealization. The Gibbs–Duhem relation comes from the extensivity of $U$. It holds exactly only for large, bulk systems where surface effects are negligible. For small systems like droplets or nuclei, surface energy ($\sim r^2$) becomes important compared to volume energy ($\sim r^3$). This requires corrections such as the Laplace pressure.
 - The simple binary form $x_A \, d\mu_A + x_B \, d\mu_B = 0$ is valid only when temperature and pressure are held constant. If $T$ or $P$ changes along the path, the full Gibbs–Duhem relation must be used.
 - Gibbs–Duhem does not say the chemical potentials are equal in a binary system. It only says the chemical potentials are *dependent* on each other. If you know how $\mu_A$ changes with composition, $\mu_B$ is fixed. Equal chemical potentials ($\mu_i^\alpha = \mu_i^\beta$) is the actual equilibrium condition between phases.
@@ -400,13 +402,14 @@ where $L_0, L_1, L_2, \dots$ are temperature-dependent interaction parameters fi
 The key advantage of RK over simple regular solution: it can handle *asymmetric* $G^{xs}(x)$ curves (where the maximum/minimum is not at $x = 0.5$), which is the norm rather than the exception in real metallic systems. 
 
 **Notes**
+
 - Ideal and regular solution models assume completely random distribution of atoms on lattice sites. In real metallic alloys, short-range order (SRO) often exists that cannot be captured by these simple models. The regular solution model is internally inconsistent because it assumes random mixing while introducing non-zero interaction energies, thereby neglecting the short-range order that those interactions would naturally produce.
 - In CALPHAD modeling, the $L_n$ parameters in Redlich–Kister polynomials are commonly expressed as linear in temperature ($L_n = A_n + B_n T$). This linear approximation works well within the temperature range of the assessment but should not be extrapolated far outside it, as the true temperature dependence is more complex.
 - The regular solution model assumes a composition-independent interaction parameter $\Omega$ derived from bond energies. In reality, bond energies vary with the local chemical environment. This limitation explains why multiple Redlich–Kister terms are needed to accurately fit experimental data.
 - Ideal solution and dilute (ideal dilute) solution are not the same. An ideal solution follows $\mu_i = \mu_i^\circ + RT \ln x_i$ with the pure-component standard state $\mu_i^\circ = G_i^\circ$ across the entire composition range (Raoult’s law). In contrast, an ideal dilute solution uses a Henrian standard state for the solute and is valid only in the dilute limit ($x_i \to 0$).
 - Regular solution entropy equals ideal solution entropy. This is correct by design. The regular solution model retains the ideal random-mixing entropy $-R \sum x_i \ln x_i$ and adds only the enthalpic interaction term $\Omega x_A x_B$. The non-ideality is therefore entirely enthalpic.
 - More Redlich–Kister terms do not always mean a better model. While additional $L_n$ parameters provide a more flexible fit to data, they can lead to unphysical oscillations and poor extrapolation without strong physical justification. Standard CALPHAD practice uses the minimum number of terms needed to reproduce experimental data within uncertainty.
-- 
+
 
 ## Phase Diagrams & the Gibbs Phase Rule
 ### The Gibbs Phase Rule
@@ -457,6 +460,7 @@ Three-phase reactions in a binary system ($F=0$ at fixed $P$) occur at unique $(
 | Monotectic | $L_1 \rightarrow L_2 + \alpha$ | one liquid produces another liquid + solid |
 
 **Notes**
+
 - True equilibrium. The Gibbs phase rule counts equilibrium phases. In rapidly cooled systems (solidification faster than diffusion timescales), metastable phases can form and the "apparent" phase rule can seem violated — in fact, the metastable system is following its own, constrained phase rule with the stable phases suppressed.
 - Pressure treated as fixed. For solid-state transformations at ambient pressure, fixing $P$ reduces $F$ by 1, effectively giving $F = c - \phi + 1$ (the condensed-phase phase rule). This is the form most commonly used in materials-science phase diagrams but must not be applied to high-pressure synthesis or geological phase equilibria where $P$ is genuinely variable.
 - Interface effects neglected. The phase rule as derived assumes bulk phases with negligible surface area. In nanoparticle or thin-film contexts, surface/interface energy contributes to $G$ and effectively shifts equilibrium compositions (Gibbs–Thomson effect), creating apparent violations of the textbook phase diagram.
@@ -506,6 +510,7 @@ $$\text{Spinodal:}\; \frac{\partial^2G}{\partial x^2} = 0 \quad (\text{metastabl
 $$\text{Binodal:}\; \text{common tangent}\; (G^\alpha\text{ and }G^\beta\text{ equal slope and chord slope}).$$
 
 **Notes**
+
 - The common-tangent argument as stated assumes each individual phase's $G(x)$ is a sufficiently smooth function with local convexity in the two-phase region. CALPHAD Gibbs-energy functions can have multiple inflection points for complex phases (e.g., ordered intermetallics), requiring more careful multi-tangent constructions.
 - For more than two coexisting phases (three-phase equilibrium at the eutectic point), the common-tangent generalizes to a common-tangent *line* (in a binary system) touching three separate $G$ curves at the three equilibrium compositions simultaneously. Numerically, this is found as a global Gibbs-energy minimization problem rather than a graphical tangent construction.
 
@@ -611,6 +616,7 @@ Equations of state such as Birch–Murnaghan are commonly employed for solids.
 | $T_0$ condition | $G_m^L(x,T_0) = G_m^S(x,T_0)$ | Partitionless solidification |
 
 **Notes**
+
 - Validity of the extrapolation to higher-order systems. Geometric extrapolation from binary/ternary databases to quaternary and higher systems assumes no qualitatively new interactions appear in higher-order systems that are not captured by binary/ternary sub-systems. This is an approximation that works remarkably well in practice for metallic systems but can fail when quaternary or higher-order compounds or miscibility gaps exist that have no binary/ternary analog.
 - Gibbs energy model validity range. The polynomial $G_m(T)$ expressions are fitted over a specific temperature range and should not be extrapolated far outside it (particularly to very low temperatures, where quantum effects invalidate the classical polynomial, or to very high temperatures beyond the data range).
 - Magnetic and ordering contributions. Many CALPHAD databases use semi-empirical models for magnetic contributions to $G$ (the Hillert–Jarl model for ferromagnetic elements) and for ordered phases (sublattice/compound-energy formalism). These add significant complexity beyond the simple Redlich–Kister formalism.
@@ -747,6 +753,7 @@ The competition between these two effects causes fluctuations of intermediate wa
 | Nucleation barrier (from Module S1 connection) | $\Delta G^* = 16\pi\gamma^3/(3\Delta G_v^2)$ | Classical nucleation theory | |
 
 **Notes**
+
 - Temperature independence of $L$ and $\Delta S$. The first-order approximation $\Delta G_v \approx L\Delta T/T_m$ assumes $L$ and $\Delta S_m$ are independent of temperature. In reality, $L(T) = L(T_m) + \int_{T_m}^T\Delta C_P\,dT'$. For aluminum ($L = 10.7\,\text{kJ/mol}$, $T_m = 933\,\text{K}$, $\Delta C_P\approx5\,\text{J/mol\,K}$), the correction at $\Delta T = 100\,\text{K}$ is $\sim5\Delta C_P/L \approx 5\%$ — significant for quantitative work but negligible for order-of-magnitude estimates.
 - Single equilibrium melting point. The formula $\Delta G_v \approx L\Delta T/T_m$ applies to *pure metals*. For alloys, the equilibrium temperature is composition-dependent (the liquidus temperature), and $\Delta T = T_L(x^L) - T$ is the local undercooling below the liquidus at the actual liquid composition. The linearization is then $\Delta G_v \approx \Delta S^L \Delta T$ where $\Delta S^L$ is an effective entropy of solidification that depends on the alloy system.
 - Neglect of volumetric strain energy. For solid-state transformations, elastic strain energy from the misfit between parent and product phases opposes the transformation and reduces the effective driving force. For solidification (liquid→solid), elastic contributions are generally negligible, but for solid-state precipitation in constrained geometries, strain energy can be $\sim10$–$50\%$ of $\Delta G_m$. 
