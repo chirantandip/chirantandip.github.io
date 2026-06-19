@@ -207,7 +207,15 @@ dG = -S\,dT + V\,dP + \mu\,dN.
 <p>The spinodal boundary is given by <span class="math display">\[
 \left(\frac{\partial^2 G}{\partial x^2}\right)_{T,P} = 0.
 \]</span></p>
-<p><strong>Key Stability Conditions</strong> - <span class="math inline">\(S(U,V,N)\)</span> is concave. - <span class="math inline">\(U(S,V,N)\)</span> is convex. - <span class="math inline">\(C_V &gt; 0\)</span> and <span class="math inline">\(C_P &gt; 0\)</span>. - <span class="math inline">\(\kappa_S &gt; 0\)</span> and <span class="math inline">\(\kappa_T &gt; 0\)</span>. - Stable mixtures require <span class="math inline">\(\left(\frac{\partial^2 G}{\partial x^2}\right)_{T,P} &gt; 0\)</span>. - Spinodal decomposition occurs when <span class="math inline">\(\left(\frac{\partial^2 G}{\partial x^2}\right)_{T,P} &lt; 0\)</span>.</p>
+<p><strong>Key Stability Conditions</strong></p>
+<ul>
+<li><span class="math inline">\(S(U,V,N)\)</span> is concave.</li>
+<li><span class="math inline">\(U(S,V,N)\)</span> is convex.</li>
+<li><span class="math inline">\(C_V &gt; 0\)</span> and <span class="math inline">\(C_P &gt; 0\)</span>.</li>
+<li><span class="math inline">\(\kappa_S &gt; 0\)</span> and <span class="math inline">\(\kappa_T &gt; 0\)</span>.</li>
+<li>Stable mixtures require <span class="math inline">\(\left(\frac{\partial^2 G}{\partial x^2}\right)_{T,P} &gt; 0\)</span>.</li>
+<li>Spinodal decomposition occurs when <span class="math inline">\(\left(\frac{\partial^2 G}{\partial x^2}\right)_{T,P} &lt; 0\)</span>.</li>
+</ul>
 <h3 id="the-clausiusclapeyron-equation">The Clausius–Clapeyron Equation</h3>
 <p>At a two-phase equilibrium boundary (e.g., liquid–solid) at temperature <span class="math inline">\(T\)</span> and pressure <span class="math inline">\(P\)</span>, the chemical potentials of all species are equal in both phases. For a single-component system: <span class="math inline">\(G^\alpha(T,P) = G^\beta(T,P)\)</span>. Moving along the coexistence curve by <span class="math inline">\(dT\)</span> and <span class="math inline">\(dP\)</span>: <span class="math display">\[dG^\alpha = -S^\alpha\,dT + V^\alpha\,dP = dG^\beta = -S^\beta\,dT + V^\beta\,dP.\]</span> Rearranging: <span class="math display">\[(S^\alpha - S^\beta)\,dT = (V^\alpha - V^\beta)\,dP,\]</span> <span class="math display">\[\frac{dP}{dT} = \frac{\Delta S}{\Delta V} = \frac{L}{T\,\Delta V},\]</span> where <span class="math inline">\(L = T\Delta S = T(S^\alpha - S^\beta)\)</span> is the latent heat per mole. Giving: <span class="math display">\[\boxed{\frac{dP}{dT} = \frac{L}{T\,\Delta V}.}\]</span></p>
 <p><strong>Consequence for solidification.</strong> Since <span class="math inline">\(\Delta V_{\text{fusion}} = V_L - V_S\)</span> is small and often positive for metals (though negative for water), <span class="math inline">\(dP/dT\)</span> is large. Melting points of metals increase with pressure at roughly <span class="math inline">\(10\)</span>–<span class="math inline">\(30\,\)</span>K/GPa. This becomes relevant in high-pressure casting and shock-loading experiments.</p>
@@ -308,7 +316,62 @@ dG = -S\,dT + V\,dP + \mu\,dN.
 <p><strong>Equilibrium constraints.</strong> Thermal equilibrium: <span class="math inline">\(T^\alpha = T^\beta = \cdots\)</span> — gives <span class="math inline">\((\phi-1)\)</span> equations. Mechanical equilibrium: <span class="math inline">\(P^\alpha = P^\beta = \cdots\)</span> — gives <span class="math inline">\((\phi-1)\)</span> equations. Chemical equilibrium: <span class="math inline">\(\mu_i^\alpha = \mu_i^\beta = \cdots\)</span> for each <span class="math inline">\(i\)</span> — gives <span class="math inline">\(c(\phi-1)\)</span> equations. Total constraints: <span class="math inline">\((\phi-1)(c+2)\)</span>.</p>
 <p><strong>Degrees of freedom</strong> <span class="math inline">\(F =\)</span> (total intensive variables) <span class="math inline">\(-\)</span> (constraints): <span class="math display">\[F = [\phi(c-1) + 2] - [(\phi-1)(c+2)] = \phi c - \phi + 2 - \phi c - 2\phi + c + 2.\]</span> <span class="math display">\[= c - \phi + 2.\]</span> <span class="math display">\[\boxed{F = c - \phi + 2.}\]</span></p>
 <p>If <span class="math inline">\(r\)</span> independent chemical reactions constrain the system, <span class="math inline">\(F = c - r - \phi + 2\)</span>. If external fields (electric, magnetic, gravitational) are present, additional variables enter and <span class="math inline">\(F\)</span> increases accordingly.</p>
-<p><strong>Applications:</strong> | System | <span class="math inline">\(c\)</span> | <span class="math inline">\(\phi\)</span> | <span class="math inline">\(F\)</span> | Interpretation | |—|—|—|—|—| | Pure substance, single phase | 1 | 1 | 2 | Can independently vary <span class="math inline">\(T\)</span> and <span class="math inline">\(P\)</span> | | Pure substance, two phases (e.g., boiling) | 1 | 2 | 1 | One degree of freedom: fix <span class="math inline">\(T\)</span>, <span class="math inline">\(P\)</span> is set (or vice versa) | | Pure substance, three phases (triple point) | 1 | 3 | 0 | Invariant: unique <span class="math inline">\(T\)</span> and <span class="math inline">\(P\)</span> | | Binary, two phases | 2 | 2 | 2 | At fixed <span class="math inline">\(P\)</span>: one degree of freedom (fix <span class="math inline">\(T\)</span>, compositions set) | | Binary, three phases (eutectic) | 2 | 3 | 1 | At fixed <span class="math inline">\(P\)</span>: zero remaining DOF — eutectic point is unique <span class="math inline">\(T,x\)</span> |</p>
+<p><strong>Applications:</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>System</th>
+<th><span class="math inline">\(c\)</span></th>
+<th><span class="math inline">\(\phi\)</span></th>
+<th><span class="math inline">\(F\)</span></th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pure substance, single phase</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>Can independently vary <span class="math inline">\(T\)</span> and <span class="math inline">\(P\)</span></td>
+</tr>
+<tr class="even">
+<td>Pure substance, two phases (e.g., boiling)</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>One degree of freedom: fix <span class="math inline">\(T\)</span>, <span class="math inline">\(P\)</span> is set (or vice versa)</td>
+</tr>
+<tr class="odd">
+<td>Pure substance, three phases (triple point)</td>
+<td>1</td>
+<td>3</td>
+<td>0</td>
+<td>Invariant: unique <span class="math inline">\(T\)</span> and <span class="math inline">\(P\)</span></td>
+</tr>
+<tr class="even">
+<td>Binary, two phases</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>At fixed <span class="math inline">\(P\)</span>: one degree of freedom (fix <span class="math inline">\(T\)</span>, compositions set)</td>
+</tr>
+<tr class="odd">
+<td>Binary, three phases (eutectic)</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>At fixed <span class="math inline">\(P\)</span>: zero remaining DOF — eutectic point is unique <span class="math inline">\(T,x\)</span></td>
+</tr>
+</tbody>
+</table>
 <h3 id="the-lever-rule">The Lever Rule</h3>
 <p>At temperature <span class="math inline">\(T\)</span> inside a two-phase (<span class="math inline">\(\alpha + \beta\)</span>) field of a binary phase diagram, the equilibrium compositions are <span class="math inline">\(x^\alpha\)</span> and <span class="math inline">\(x^\beta\)</span> (read from the phase boundaries), and the overall composition is <span class="math inline">\(x_0\)</span>. Let <span class="math inline">\(f^\alpha\)</span> = mole fraction of <span class="math inline">\(\alpha\)</span> phase. Conservation of species A requires: <span class="math display">\[f^\alpha x^\alpha + (1 - f^\alpha)x^\beta = x_0.\]</span></p>
 <p>Solving: <span class="math display">\[f^\alpha = \frac{x_0 - x^\beta}{x^\alpha - x^\beta}, \qquad f^\beta = \frac{x^\alpha - x_0}{x^\alpha - x^\beta}.\]</span> <span class="math display">\[\boxed{f^\alpha \cdot (x^\alpha - x_0) = f^\beta \cdot (x_0 - x^\beta).}\]</span></p>
@@ -498,7 +561,55 @@ G = \int \left[g(c) + \frac{\kappa}{2} |\nabla c|^2 \right] dV,
 \frac{\partial^2 g}{\partial c^2}&lt;0,
 \]</span> whereas the gradient term penalizes the formation of sharp composition variations.</p>
 <p>The competition between these two effects causes fluctuations of intermediate wavelength to grow most rapidly, producing the characteristic length scale observed during spinodal decomposition. The existence of a preferred wavelength therefore arises from the combined action of the negative free-energy curvature and the positive gradient-energy penalty.</p>
-<p><strong>Formula Summary</strong> | Quantity | Formula | Valid when | Ref. | |—|—|—|—| | Pure-metal driving force, first order | <span class="math inline">\(\Delta G_v = L\Delta T/T_m\)</span> | <span class="math inline">\(\Delta T/T_m \ll 1\)</span> | | | Pure-metal driving force, Thompson–Spaepen | <span class="math inline">\(\Delta G_m = L(\Delta T/T_m)(2T/(T+T_m))\)</span> | All undercoolings | [Thompson &amp; Spaepen, 1979] | | Molar entropy of fusion | <span class="math inline">\(\Delta S_m = L/T_m\)</span> | Pure metal, <span class="math inline">\(T=T_m\)</span> | | | Second-order correction | <span class="math inline">\(\Delta G_m \approx L\Delta T/T_m - \Delta C_P(\Delta T)^2/(2T_m)\)</span> | <span class="math inline">\(\Delta T\ll T_m\)</span> | [Derived above] | | Nucleation barrier (from Module S1 connection) | <span class="math inline">\(\Delta G^* = 16\pi\gamma^3/(3\Delta G_v^2)\)</span> | Classical nucleation theory | |</p>
+<p><strong>Formula Summary</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Formula</th>
+<th>Valid when</th>
+<th>Ref.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pure-metal driving force, first order</td>
+<td><span class="math inline">\(\Delta G_v = L\Delta T/T_m\)</span></td>
+<td><span class="math inline">\(\Delta T/T_m \ll 1\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Pure-metal driving force, Thompson–Spaepen</td>
+<td><span class="math inline">\(\Delta G_m = L(\Delta T/T_m)(2T/(T+T_m))\)</span></td>
+<td>All undercoolings</td>
+<td>[Thompson &amp; Spaepen, 1979]</td>
+</tr>
+<tr class="odd">
+<td>Molar entropy of fusion</td>
+<td><span class="math inline">\(\Delta S_m = L/T_m\)</span></td>
+<td>Pure metal, <span class="math inline">\(T=T_m\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Second-order correction</td>
+<td><span class="math inline">\(\Delta G_m \approx L\Delta T/T_m - \Delta C_P(\Delta T)^2/(2T_m)\)</span></td>
+<td><span class="math inline">\(\Delta T\ll T_m\)</span></td>
+<td>[Derived above]</td>
+</tr>
+<tr class="odd">
+<td>Nucleation barrier (from Module S1 connection)</td>
+<td><span class="math inline">\(\Delta G^* = 16\pi\gamma^3/(3\Delta G_v^2)\)</span></td>
+<td>Classical nucleation theory</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Notes</strong></p>
 <ul>
 <li>Temperature independence of <span class="math inline">\(L\)</span> and <span class="math inline">\(\Delta S\)</span>. The first-order approximation <span class="math inline">\(\Delta G_v \approx L\Delta T/T_m\)</span> assumes <span class="math inline">\(L\)</span> and <span class="math inline">\(\Delta S_m\)</span> are independent of temperature. In reality, <span class="math inline">\(L(T) = L(T_m) + \int_{T_m}^T\Delta C_P\,dT&#39;\)</span>. For aluminum (<span class="math inline">\(L = 10.7\,\text{kJ/mol}\)</span>, <span class="math inline">\(T_m = 933\,\text{K}\)</span>, <span class="math inline">\(\Delta C_P\approx5\,\text{J/mol\,K}\)</span>), the correction at <span class="math inline">\(\Delta T = 100\,\text{K}\)</span> is <span class="math inline">\(\sim5\Delta C_P/L \approx 5\%\)</span> — significant for quantitative work but negligible for order-of-magnitude estimates.</li>
