@@ -8,286 +8,291 @@ numbersections: true
 The KKS Model {#kks}
 =============
 
-> This Chapter presents a summary of the Kim-Kim-Suzuki Model. (The Notes are still in making.)
+> This chapter summarises the Kim-Kim-Suzuki (KKS) model. (These notes
+> are still being written.)
 
 The Binary Solidification Model
 -------------------------------
 
-This phase field model was first proposed in the paper [@Kim1999] as a
-binary model for solidification of multicomponent systems. Since then it
-has been developed and applied to study and model a range of
-microstructure evolution phenomenon from eutectic solidification to
-precipitate growth.
+The model was proposed by Kim, Kim and Suzuki [@Kim1999] for
+solidification of binary alloys, and was later extended to
+multicomponent alloys [@Kim2007]. It has since been used for a range of
+microstructure problems, from eutectic solidification to precipitate
+growth.
 
-The model is free from the limit in the interface thickness in the WBM
-model, and the unrealistic assumptions made by Losert, and it correctly
-generates the solute trapping phenomena at high interface velocity. A
-few relevant points about the model are:
+Its main advantage over the earlier WBM (Wheeler-Boettinger-McFadden)
+model is that the interface width is no longer tied to the material
+properties: in WBM the interface has to be made thin to avoid a
+spurious extra interface energy, whereas in KKS it can be chosen freely
+for numerical convenience. The model also reproduces solute trapping at
+high interface velocities. Its main assumptions are:
 
--   It is an isothermal model.
+-   The system is isothermal.
 
--   Defines n+1 components, and phases, solid and liquid.
+-   There are two phases, solid ($S$) and liquid ($L$), and $n+1$
+    components ($n$ solutes and a solvent).
 
--   $c_{iS}$, $c_{iL}$ represent mole fraction of $i$'th solute in solid
-    and liquid, they are scalar fields.
+-   $c_{iS}$ and $c_{iL}$ are the mole fractions of solute $i$ in the
+    solid and liquid. Both are fields, defined at every point including
+    the interface.
 
--   The Helmholtz free energy of a phase $f^p = f(\{c_{ip}\})$, is a
-    function of solute concentrations only.
+-   The free energy density of each phase, $f^p(\{c_{ip}\})$, depends
+    only on the composition of that phase.
 
--   The interface is defined as a mixture of solid and liquid phases.
+-   A point in the interface is treated as a mixture of solid and
+    liquid, so both the free energy and the composition are interpolated:
+    $$f = h(\phi)f^S + [1-h(\phi)]f^L, \qquad c_i = h(\phi)c_{iS} + [1-h(\phi)]c_{iL}$$
 
--   The free energy at interface follows the mixture rule :
-    $$f^{interface}=h(\phi)f^S + [1-h(\phi)]f^L$$
+-   At each point, $c_{iS}$ and $c_{iL}$ are related by equality of
+    the diffusion potentials of the two phases (rather than by
+    $c_{iS} = c_{iL}$, as in WBM).
 
--   The concentration at interface also follows the mixture rule :
-    $$c^{interface}=h(\phi)c^S + [1-h(\phi)]c^L$$
+-   Material properties do not depend on composition.
 
--   And $c_{iS}$ and $c_{iL}$ in a given point are restricted by the
-    equal chemical potential condition.
+The total free energy is
 
--   The material properties are assumed to be independent of the
-    composition.
+$$F=\int_V \left( \frac{\epsilon^2}{2}|\nabla \phi|^2 + w\,g(\phi) + h(\phi)f^S(c_S) + [1-h(\phi)]f^L(c_L) \right)dV$$
 
-The total free energy of the system:
-
-$$F=\int_V \left( \frac{\epsilon^2}{2}|\nabla \phi|^2 + wg(\phi) + h(\phi)f^S + [1-h(\phi)]f^L \right)dV$$
-
-where $\epsilon$ : gradient energy coefficient,
-$g(\phi)=\phi^2(1-\phi)^2$ : double well potential and $w$ : potential
+where $\epsilon$ is the gradient energy coefficient,
+$g(\phi)=\phi^2(1-\phi)^2$ is the double-well potential and $w$ its
 height.
 
-Imposing the equal chemical potential condition upon the solid and
-liquid phases at a point of the system has two advantages over the
-traditional equal composition condition.
+Imposing equal chemical potential, instead of equal composition, at
+each point has two consequences:
 
--   The first is the relaxation of the restriction on the interface
-    width in computation.
+-   The interface width can be chosen independently of the interface
+    energy, because the chemical free energy no longer contributes an
+    extra energy to the interface at equilibrium.
 
--   The second is that the profile of the equilibrium phase-field
-    gradient becomes symmetric, which suppresses the anomalous nonlinear
-    part in the Gibbs--Thomson effect in the thin interface limit.
+-   The equilibrium phase-field profile becomes symmetric, which removes
+    the anomalous nonlinear part of the Gibbs-Thomson effect in the
+    thin-interface limit.
 
-The phase-field and diffusion equations from the work of Kim[@Kim1999]
-and Eiken[@Eiken2006] are presented here:
+For a binary alloy, with $\phi=1$ in the solid, the phase-field equation
+is [@Kim1999]
 
-$$\frac{1}{M_\phi} \phi_t = \epsilon^2\nabla^2\phi
-- W \frac{dg(\phi)}{d\phi} 
-- \frac{dh_p(\phi)}{d\phi}\left( f^S - f^L + \sum_{i=1}^n(c_S - c_L)\tilde{\mu_i} \right)$$
+$$\frac{1}{M_\phi} \frac{\partial\phi}{\partial t} = \epsilon^2\nabla^2\phi
+- w \frac{dg}{d\phi}
+- \frac{dh}{d\phi}\Big( f^S(c_S) - f^L(c_L) - (c_S - c_L)\,\tilde{\mu} \Big)$$
 
-where $\epsilon$ is the gradient energy coefficient, $M_\phi$ is the
-mobility constant and $W$ is the double well potential barrier height.
+where $M_\phi$ is the phase-field mobility and $\tilde{\mu} =
+f^S_c(c_S) = f^L_c(c_L)$ is the common diffusion potential. The term in
+brackets is the difference in grand potential between solid and
+liquid, i.e. the driving force for solidification. In the
+multicomponent form [@Eiken2006; @Kim2007], $(c_S-c_L)\tilde{\mu}$
+becomes $\sum_{i=1}^n(c_{iS} - c_{iL})\tilde{\mu}_i$.
 
-The diffusion equation is as such:
+The diffusion equation is
 
-$$\frac{\partial c_i}{\partial t} 
-= \nabla \cdot \left(  h_d(\phi) \sum_{j=1}^n D^S_{ij} \nabla c_{jS} + [1-h_d(\phi)] \sum_{j=1}^n D^L_{ij} \nabla c_{jL}   \right)$$
+$$\frac{\partial c_i}{\partial t}
+= \nabla \cdot \left(  h(\phi) \sum_{j=1}^n D^S_{ij} \nabla c_{jS} + [1-h(\phi)] \sum_{j=1}^n D^L_{ij} \nabla c_{jL}   \right)$$
 
-A point to be noted is that, the concentrations of solid ($c_S$) and
-liquid ($c_L$) are defined at a certain infinitesimal point which is
-assumed to be a mixture of solid and liquid phases. Therefore the
-equality of chemical potentials imposed is also local. The chemical
-potential need not stay constant throughout the interfacial region. It
-is only constant across the interface only at a thermodynamic
-equilibrium state.
+Note that $c_{iS}$ and $c_{iL}$ are defined at every point of the
+interface, and the equality of chemical potentials is a local
+condition:
 
-At the interfacial region the components also satisfy the equality of
-chemical potential and the solute concentration is taken to be
+$$c = h(\phi)c_{S} + [1-h(\phi)]c_{L}, \qquad f^S_{c}[c_S(x,t)]=f^L_{c}[c_L(x,t)]$$
 
-$$c = h(\phi)c_{S} + (1-h(\phi))c_{L}$$
-$$f^S_{c_S}[c_S(x,t)]=f^L_{c_L}[c_L(x,t)]$$
+It does not mean that the chemical potential is uniform across the
+interface. That is only true at equilibrium.
 
-Assuming $g(\phi)=\phi^2(1-\phi)^2$, $\phi_0=1$ (solid) at $x=-\inf$ and
-$\phi_0=0$ (liquid) at $x=+\inf$, the equilibrium profile solved for 1D
-is given as:
+With $\phi=1$ (solid) at $x=-\infty$ and $\phi=0$ (liquid) at
+$x=+\infty$, the 1D equilibrium profile is
 
-$$\phi_0=\frac{1}{2}\left( 1 - \tanh\frac{\sqrt{w}}{\sqrt{2\epsilon}} x \right)$$
+$$\phi_0=\frac{1}{2}\left( 1 - \tanh\frac{\sqrt{w}}{\sqrt{2}\,\epsilon} x \right)$$
 
-From $\phi_0$ we get the the interface energy $\sigma$ and interface
-thickness $2\lambda$ to be
-$$\sigma=\frac{\epsilon\sqrt{w}}{3\sqrt{2}} \; \; \; \; \; \; 2\lambda=\alpha\frac{\sqrt{2}\epsilon}{\sqrt{w}}$$
+which gives the interface energy $\sigma$ and interface width $2\lambda$
 
-where $\alpha$ is a constant depending on the definition of interface
-thickness. $\alpha=2.2$ when $\phi_0\in(0.1,0.9)$.
+$$\sigma=\frac{\epsilon\sqrt{w}}{3\sqrt{2}}, \qquad 2\lambda=\alpha\frac{\sqrt{2}\,\epsilon}{\sqrt{w}}$$
 
-Introducing the Anti-trapping current
+where $\alpha$ depends on how the width is defined; $\alpha \approx
+2.2$ when the width is taken as the region $0.1<\phi_0<0.9$.
+
+Introducing the Anti-trapping Current
 -------------------------------------
 
-When we define a finite interface width, several anomalous interface
-effects appear. This was shown my Almgren[@Almgren1999]. The effects can
-be negated by using interpolation functions with specific symmetry but
-it appears that all of them cannot be suppressed simultaneously.
+A finite interface width gives rise to several spurious interface
+effects, as shown by Almgren [@Almgren1999]: excess solute trapping,
+surface diffusion along the interface, interface stretching, and a jump
+in chemical potential across the interface. Some of these can be removed
+by choosing interpolation functions with suitable symmetry, but not all
+of them at the same time.
 
-For dilute binary alloys with $D_S<<D_L$, Karma solved this problem by
-introducing an anti-trapping term in the diffusion equation [@Karma2001]
-[@Echebarria2004]. Kim[@Kim2007] extend the anti-trapping method to the
-cases of the arbitrary multi-component alloys. The assumption $D_S<<D_L$
-is, however, was maintained because it allowed the concentration (or
-chemical potential) profile at steady state to be determined
-unambiguously.
+For dilute binary alloys with $D_S \ll D_L$, Karma solved this by adding
+an anti-trapping current to the diffusion equation [@Karma2001;
+@Echebarria2004]. Kim [@Kim2007] extended the approach to
+multicomponent alloys with arbitrary thermodynamics. The assumption $D_S
+\ll D_L$ was kept, because it lets the steady-state concentration (or
+chemical potential) profile be determined unambiguously.
 
-The anti-trapping term is introduced to the diffusion equation as:
+With $D_S$ neglected, the diffusion equation with the anti-trapping
+term is
 
-$$\frac{\partial c_i}{\partial t} = \nabla .[1-h_d(\phi)]\sum_{j=1}^n D_{ij}^L\nabla c_{jL} + \nabla \cdot \alpha_i\frac{\partial \phi}{\partial t}\frac{\nabla \phi}{|\nabla \phi|}
+$$\frac{\partial c_i}{\partial t} = \nabla \cdot \left( [1-h_d(\phi)]\sum_{j=1}^n D_{ij}^L\nabla c_{jL} \right) + \nabla \cdot \left( \alpha_i\frac{\partial \phi}{\partial t}\frac{\nabla \phi}{|\nabla \phi|} \right)
 \label{eq:compevol}$$
 
-where $\alpha_i$ is a function of $c_{iS}$ and $c_{iL}$, and $c_i$ is
-given by $$c_i = h_r(\phi)c_{iS} + (1-h_r(\phi))c_{iL}$$
+where $\alpha_i$ depends on $c_{iS}$ and $c_{iL}$, and
 
-### Interpolation functions.
+$$c_i = h_r(\phi)c_{iS} + [1-h_r(\phi)]c_{iL}$$
 
-The three equations, phase evolution, diffusion equation and mass
-conservation, have three different interpolation functions marked by
-$p,d,r$. Even though a single function $h(\phi)$ must be adopted in the
-rigorous thermodynamic derivation, it is not the case in mapping the
-diffuse interface model onto the classical sharp interface model
-[@Karma2001] [@Echebarria2004].
+Since $\nabla\phi$ points into the solid and $\partial\phi/\partial t >
+0$ during solidification, the added flux carries solute from the solid
+side to the liquid side when $c_{iL} > c_{iS}$, counteracting the
+trapping caused by the wide interface.
 
-However, a specific symmetry in their functional forms must be imposed
-in order to suppress the anomalous interface effects, such as interface
-diffusion and interface stretching. This symmetry condition is
-equivalent to the requirement that the positions of the effective sharp
-interfaces for the driving force action ($h_p$), diffusivity change
-($h_d$) and solute partitioning ($h_r$) must be in accordance with that
-of the effective Gibbs--Thomson interface which is the symmetry axis
-position of the potential $g(\phi)$. For the potential
-$g(\phi)=\phi^2(1-\phi)^2$ having a symmetry axis at $x=1/2$, the simple
-interpolation functions such as $\phi$ satisfy the symmetry condition.
-Even after the choice of functions, there remains an anomalous interface
-effect: the chemical potential jump at the effective sharp interface.
+### Interpolation Functions
 
-### Chemical potential jump.
+The phase-field equation, the diffusion equation and the mixture rule
+for the composition now each have their own interpolation function,
+labelled $h_p$, $h_d$ and $h_r$. A strictly variational derivation would
+use a single $h(\phi)$, but this is not required when the goal is to
+reproduce a given sharp-interface model in the thin-interface limit
+[@Karma2001; @Echebarria2004].
 
-Kim[@Kim2007] assumed that the interface width is sufficiently smaller
-than the diffusion boundary layer width in liquid, that is, the thin
-interface condition. Note that $c_{iS}$, $c_{iL}$ and $\tilde{\mu_i}$
-are constrained by equality of chemical potential. If one of them is
-known at a given point, the other two at that point are fixed by the
-condition. For an interface with a finite width, there exist a finite
-difference between $c_{iS}^+$ and $c_{iL}^-$. This makes a corresponding
-difference in chemical potential, which has been called the chemical
-potential jump[@Karma2001] [@Echebarria2004].
+The functions cannot be arbitrary, however. To remove anomalous
+effects such as surface diffusion and interface stretching, the
+effective sharp-interface positions associated with the driving force
+($h_p$), the change in diffusivity ($h_d$) and the solute partitioning
+($h_r$) must coincide with the effective Gibbs-Thomson interface, which
+lies at the symmetry axis of $g(\phi)$. For $g(\phi)=\phi^2(1-\phi)^2$
+the symmetry axis is $\phi=1/2$, and simple functions such as $h=\phi$
+satisfy this condition. Even then, one anomalous effect remains: the
+chemical potential jump at the effective sharp interface.
 
-For multicomponent systems with arbitrary thermodynamic properties, as
-for dilute binary alloys[@Karma2001] [@Echebarria2004] the chemical
-potential jump can be suppressed by a suitable choice of the
-interpolation functions and $\alpha(c_{iS}$, $c_{iL})$, that is, by
-balancing the anomalous solute trapping arising from the diffusion
-through the thick interface.
+### Chemical Potential Jump
 
-The procedure for balancing the solute trapping with the anti-trapping
-current is straightforward.
+Kim [@Kim2007] assumes the thin-interface condition: the interface
+width is much smaller than the diffusion boundary layer in the liquid.
+Because $c_{iS}$, $c_{iL}$ and $\tilde{\mu}_i$ are linked by the
+equal-chemical-potential condition, knowing one of them at a point fixes
+the other two. For an interface of finite width, the concentration
+extrapolated to the effective sharp interface from the solid side,
+$c_{iS}^+$, differs from that extrapolated from the liquid side,
+$c_{iL}^-$ (both expressed as liquid-equivalent compositions). This
+gives a corresponding difference in chemical potential, called the
+chemical potential jump [@Karma2001; @Echebarria2004].
 
-1.  Find the composition profile $c_{iL}(x)$ by solving the steady-state
-    diffusion equation.
+As for dilute binary alloys, the jump can be removed for multicomponent
+alloys with arbitrary thermodynamics by choosing the interpolation
+functions and $\alpha_i$ so that the anti-trapping current exactly
+balances the extra solute trapping caused by diffusion through the thick
+interface. The procedure is:
 
-2.  Extract the straight part from the profile $c_{iL}(x)$ and then get
-    $c_{iS}^+$ and $c_{iL}^-$.
+1.  Solve the steady-state diffusion equation for the profile
+    $c_{iL}(x)$.
 
-3.  Put $c_{iS}^+ = c_{iL}^-$ to determine the interpolation functions
-    and $\alpha(c_{iS}$, $c_{iL})$ for the condition of vanishing
-    chemical potential jump.
+2.  Extrapolate the straight (outer) parts of the profile to the
+    interface to obtain $c_{iS}^+$ and $c_{iL}^-$.
 
-The interpolation functions are found to be $h_r(\phi)=h_d(\phi)=\phi$
-and for a vanishing chemical potential jump the anti-trapping function
-is given as
+3.  Set $c_{iS}^+ = c_{iL}^-$ and solve for the interpolation functions
+    and $\alpha_i$ that make the jump vanish.
 
-$$\alpha_i = \frac{\sqrt{2\omega}}{\epsilon}(c_{iL}-c_{iS})$$
+This gives $h_r(\phi)=h_d(\phi)=\phi$ and
 
-The parameters $\epsilon$ and $\omega$ can be found from their
-relationships with the interface width $2\xi$ and the interface energy
-$\sigma$ in the equilibrium state:
+$$\alpha_i = \frac{\epsilon}{\sqrt{2w}}(c_{iL}-c_{iS})$$
 
-$$2\xi=\frac{\epsilon}{\sqrt{2\varpi}}\int_{\phi_{a}}^{\phi_{b}}\frac{d\phi_{0}}{\phi_{0}(1-\phi_{0})}=\frac{\epsilon}{\sqrt{2\varpi}}ln\frac{\phi_{b}(1-\phi_{a})}{\phi_{a}(1-\phi_{b})}$$
+The parameters $\epsilon$ and $w$ are obtained from the interface width
+$2\xi$ and interface energy $\sigma$ at equilibrium:
 
-$$\sigma=\epsilon^{2}\int_{-\infty}^{\infty}(\frac{d\phi_{0}}{dx})^{2}dx=\frac{\epsilon\sqrt{\varpi}}{3\sqrt{2}}$$
+$$2\xi=\frac{\epsilon}{\sqrt{2w}}\int_{\phi_{a}}^{\phi_{b}}\frac{d\phi_{0}}{\phi_{0}(1-\phi_{0})}=\frac{\epsilon}{\sqrt{2w}}\ln\frac{\phi_{b}(1-\phi_{a})}{\phi_{a}(1-\phi_{b})}$$
 
-where $2\xi$ is defined as the width over which $\phi$ changes from
-$\phi_a$ to $\phi_b$.
+$$\sigma=\epsilon^{2}\int_{-\infty}^{\infty}\left(\frac{d\phi_{0}}{dx}\right)^{2}dx=\frac{\epsilon\sqrt{w}}{3\sqrt{2}}$$
+
+where $2\xi$ is the distance over which $\phi$ changes from $\phi_a$ to
+$\phi_b$.
 
 ### Phase-Field Mobility
 
-The phase-field mobility $M_\phi$ has a relationship with the interface
-mobility $m$ defined by the ratio between the driving force and the
-interface velocity. The procedure to find $M_\phi$ is as such:
+The phase-field mobility $M_\phi$ is related to the physical interface
+mobility $m$, defined as the ratio of interface velocity to driving
+force. It is found as follows:
 
-1.  Find the profile $c_{iL}(x)$ under the condition
-    $c_{iS}^+ = c_{iL}^-$ vanishing chemical potential jump.
+1.  Find the profile $c_{iL}(x)$ under the condition $c_{iS}^+ =
+    c_{iL}^-$ (no chemical potential jump).
 
-2.  Then $c_{iS}(x)$ and $\tilde{\mu_i}$ follow from equality of
-    chemical potential constraint.
+2.  Obtain $c_{iS}(x)$ and $\tilde{\mu}_i(x)$ from the
+    equal-chemical-potential condition.
 
-3.  Insert the composition and chemical potential profiles into the
-    driving force term of the phase-field equation and extract the new
-    driving force for the effective sharp interface with the straight
-    composition profiles in the interfacial region.
+3.  Substitute these profiles into the driving force term of the
+    phase-field equation and extract the driving force acting on the
+    effective sharp interface.
 
-4.  The relationship between the new driving force and the interface
-    velocity is found, which yields a relationship between the physical
-    interface mobility $m$ and the phase-field mobility $M_\phi$ at the
-    thin interface limit.
+4.  Relate this driving force to the interface velocity $V$. This gives
+    the relation between $m$ and $M_\phi$ in the thin-interface limit.
 
-Ultimately it leads to:
+The result is
 
-$$f^{L,e} - f^{S,e} - \sum_{i=1}^n (c^e_{iL} - c^e_{iS}) \tilde\mu_i^0 = V \left( \frac{1}{M_\phi} \frac{\sqrt w}{3 \sqrt2 \epsilon} - a_2 \frac{\epsilon}{\sqrt{2 \sigma}} \zeta \right)$$
+$$f^{L,e} - f^{S,e} - \sum_{i=1}^n (c^e_{iL} - c^e_{iS}) \tilde\mu_i^e = V \left( \frac{1}{M_\phi} \frac{\sqrt w}{3 \sqrt2\, \epsilon} - a_2 \frac{\epsilon}{\sqrt{2 w}} \zeta \right)$$
 
-where $\zeta$ is defined as:
-$$\zeta=\sum^n_{i=1}(c^e_{iL}-c^e_{iS})\sum^n_{j=1}f^{L,e}_{ij}\sum^n_{k=1}d^L_{jk}(c^e_{kL}-c^e_{kS})$$
+where the superscript $e$ denotes equilibrium values, $a_2$ is a
+constant that depends on the choice of $g$ and the interpolation
+functions, and
 
-This can be written into a compact form
+$$\zeta=\sum^n_{i=1}(c^e_{iL}-c^e_{iS})\sum^n_{j=1}f^{L,e}_{ij}\sum^n_{k=1}\left[(D^L)^{-1}\right]_{jk}(c^e_{kL}-c^e_{kS})$$
 
-$$\zeta = (\Delta c ] [G^L] [D^L]^{-1} [\Delta c) = (\Delta c] [M^L]^{-1} [\Delta c)$$
-with the matrix notations: $(\Delta c] = c^e_{iL} -c^e_{iS}$,
-$[G^L] = f^{L,e}_{ij}$ and $[M^L] = M^L_{ij}$.
+with $f^{L,e}_{ij} = \partial^2 f^L/\partial c_i\partial c_j$ at
+equilibrium. In matrix form, with $\Delta\mathbf{c} = \mathbf{c}^e_L -
+\mathbf{c}^e_S$, $\mathbf{G}^L = [f^{L,e}_{ij}]$ and $\mathbf{D}^L =
+\mathbf{M}^L\mathbf{G}^L$,
 
-In particular, for the infinite interface mobility, we obtain the
-phase-field mobility
+$$\zeta = \Delta\mathbf{c}^T\,\mathbf{G}^L(\mathbf{D}^L)^{-1}\Delta\mathbf{c} = \Delta\mathbf{c}^T(\mathbf{M}^L)^{-1}\Delta\mathbf{c}$$
 
-$$M_{0\phi} = \frac{W}{3 \cdot \epsilon_\phi^2 \cdot a_2 \cdot \zeta}
-\hspace{1cm}$$
+The left-hand side is the driving force, so the bracket on the right is
+$1/m$. For an infinite interface mobility (diffusion-controlled growth)
+the bracket must vanish, which gives
 
-For binary alloys, the parameter $\zeta$ becomes
-$$\zeta=\frac{(c^e_{1L}-c^e_{1S})f^{L,e}_{11}}{D^L_{11}}$$
+$$M_{\phi}^{0} = \frac{w}{3\,\epsilon^2 a_2 \zeta}$$
 
-Multi-Component extension
--------------------------
+For a binary alloy,
 
-The KKS model discussed above is expanded to a multi-component system
-with the following modifications.
+$$\zeta=\frac{(c^e_{L}-c^e_{S})^2 f^{L,e}_{cc}}{D^L}$$
 
-The Phase-Evolution-Equation (Allen-Cahn Style) can be derived from the
-variational derivative of the total free energy as such:
+Multi-Component, Multi-Phase Extension
+--------------------------------------
+
+The model above can be extended to $N$ phases, each with its own phase
+field $\phi_p$, and $k$ components.
+
+The phase-field equations follow from the variational derivative of the
+total free energy, written in the pairwise form commonly used for
+multi-phase-field models:
 
 $$\frac{\partial \phi_p }{\partial t}
 = -\frac{L}{N} \sum_{q\neq p}^{N}{\left[ \frac{\delta F}{\delta \phi_p} - \frac{\delta F}{\delta \phi_q}\right]}$$
 
-The Diffusion-Equation becomes :
+which keeps $\sum_p \phi_p = 1$.
+
+The diffusion equation for the $k-1$ independent components is
 
 $$\frac{\partial c_i }{\partial t}
-= \nabla \cdot \sum_{j=1}^{k-1} \left( M_{ij}(\phi) \nabla \mu_{ij} \right)$$
-where 
-$$M_{ij}(\phi) = \sum_{p=1}^{N} \left[
-    h_p(\phi)\sum_{j=1}\left[D^p_{ik}\frac{d c_k}{d \mu_j}\right]
-\right] \text{ : }
-D_{ij} = M_{ik}\frac{\partial f}{\partial c_k \partial c_j}$$
+= \nabla \cdot \sum_{j=1}^{k-1} M_{ij}(\phi) \nabla \mu_{j}$$
 
-The constraint imposed on the concentration fields are mass conservation
-and equality of chemical potential implemented as such:
+with the mobility interpolated between phases,
 
-$$
-c_j = \sum_{p=1}^{N} h(\phi_p)c^p_j ; 
-\mu_j = \mu_i : \frac{\partial f^p}{\partial c^p_i} = \frac{\partial f^p}{\partial c^p_j}
-$$
+$$M_{ij}(\phi) = \sum_{p=1}^{N} h(\phi_p)\sum_{l=1}^{k-1} D^p_{il}\frac{\partial c^p_l}{\partial \mu_j}$$
 
-The multi-well potential is chosen to be:
+which is the multicomponent form of $D = M\,\partial^2 f/\partial c^2$.
 
-$$g(\phi) = \sum_{i=1}^{N} q \gamma_i \phi_i^2(1-\phi_i)^2
-+ \sum_{i=1}^{N} \sum_{j>i}^{N} \theta_{ij}\phi_i^2\phi_j^2 
+The phase compositions are constrained by mass balance and by equal
+diffusion potentials in all phases:
+
+$$c_j = \sum_{p=1}^{N} h(\phi_p)c^p_j, \qquad \frac{\partial f^p}{\partial c^p_j} = \frac{\partial f^q}{\partial c^q_j} = \mu_j \quad \text{for all phases } p, q$$
+
+A common choice of multi-well potential is
+
+$$g(\phi) = \sum_{i=1}^{N} \gamma_i \phi_i^2(1-\phi_i)^2
++ \sum_{i=1}^{N} \sum_{j>i}^{N} \theta_{ij}\phi_i^2\phi_j^2
 + \sum_{i=1}^{N} \sum_{j>i}^{N} \sum_{k>j}^{N} \theta_{ijk} \phi_i^2\phi_j^2\phi_k^2$$
-or one can use the multi-obstacle potential.
 
-The Phase-Field interpolation function is
+where the higher-order terms suppress spurious third phases in two-phase
+interfaces. A multi-obstacle potential can be used instead.
 
-$$h(\phi_p) = \phi^3 (1-15\phi + 6\phi^2)$$
+A common interpolation function is
+
+$$h(\phi_p) = \phi_p^3 (10-15\phi_p + 6\phi_p^2)$$
+
+which satisfies $h(0)=0$, $h(1)=1$ and $h'(0)=h'(1)=0$, so the bulk
+phases are equilibrium states of the phase-field equation.
 
 References
 ==========

@@ -8,316 +8,365 @@ numbersections: true
 The Fundamentals of Phase Field {#tfpf}
 ===========================
 
-> This chapter is a compilation of the fundamental concepts in Phase-Field Theory. (The Notes are still in making).
 
 Introduction
 ----------------
 
-The phase-field is a thermodynamics-based method mostly used to model
-phase changes and microstructure evolution in materials. It is a
-mesoscopic method, meaning intermediate size. It deals with material
-systems between the nano-scale and a few micrometers. The variables used
-can be abstract non-conserved quantities representing a phase or
-anything (for example, a variable $x$ such that $x=0$ is a solid, $x=1$
-is a liquid and $x \in (0,1)$ is an interface between the two), or they
-can be conserved measurable quantity such as concentration.
+The phase-field method is a thermodynamics-based approach used mostly to
+model phase transformations and microstructure evolution in materials.
+It is a mesoscale method: it works at length scales between the atomic
+scale and a few micrometres, where individual atoms are not resolved but
+the interfaces between grains or phases still matter.
 
-The principle variable in such a model, that determines the state of a
-system is called and order parameter.
+The state of the system is described by one or more fields that vary
+continuously in space and time. Such a field is called an order
+parameter, and we will denote it by $\phi(\mathbf{r},t)$. It can be an
+abstract indicator of phase (for example $\phi=0$ in the solid,
+$\phi=1$ in the liquid, and $0<\phi<1$ inside the interface between
+them), or a measurable quantity such as concentration. Its evolution is
+determined by the free energy of the system, which decreases
+monotonically as the system relaxes.
 
-The state of a system is captured in a variable, which is most often a
-scalar field, a continuous function of position and time, and that
-represents a property of the system such as concentration or phase
-identity. Such a variable is called an Order parameter, and let's denote
-it with $\phi(r,t)$. The value of $\phi$ at each position and time is
-determined from the free energy of the system. If in addition of energy
-conservation, $\phi(r,t)$ must itself remain conserved throughout its
-time evolution, it is called a conserved order parameter, for example
-the concentration field is conserved by the law of conservation of mass.
-Parameters like phase identity, grain orientation etc. that do not obey
-any conservation law are called non-conserved order parameters.
+Order parameters come in two kinds. If the integral of $\phi$ over the
+system must stay fixed, as concentration must because mass is conserved,
+$\phi$ is a conserved order parameter. Quantities such as phase identity
+or grain orientation obey no such law and are called non-conserved order
+parameters. The two kinds evolve according to different equations: the
+Allen-Cahn equation for non-conserved fields and the Cahn-Hilliard
+equation for conserved ones.
 
-The time evolution of a both kinds of order parameters are governed by
-two different equations.
+## The Allen-Cahn Equation
 
-### The Allen-Cahn equation
+### The Free Energy Functional
 
-Let $\phi$ be the non-conserved order parameter. The free energy density
-of a phase can be expressed as a function $f(\phi)$ which depends only
-on the state of the system (T and P) at each point. Each value of $\phi$
-represents a phase, let's say $\phi=0$ is solid and $\phi=1$ is liquid,
-then only at the solid-liquid interface $\phi$ will have a non-zero
-gradient. In this method, interfaces between phases are detected by
-taking the gradient of the order parameter, $\phi$.
+The free energy has to do two things: penalise the presence of an
+interface, and favour one of two stable phases in the bulk. The usual
+functional that does both is
 
-The total energy of the system is a sum of both bulk and interfacial
-energy. Bulk energy distribution is given by a function $f(\phi)$ and
-the interfacial energy is assumed to vary linearly with
-$|\nabla\phi|^2$. Higher the gradient of $\phi$, more discontinuous the
-interface and higher the interfacial energy. The free energy functional
-is expressed as:
+$$F[\phi] = \int_V \left[ \underbrace{f(\phi)}_{\text{bulk}} + \underbrace{\frac{\epsilon^2}{2}|\nabla\phi|^2}_{\text{gradient}} \right] dV$$
 
-$$F = \int_V \left[ f(\phi) + \frac{\epsilon}{2}\left|\nabla\phi \right|^2 \right] dv$$
+The bulk term $f(\phi)$ has two minima, one for each phase. The standard
+choice is the symmetric double-well
 
-where $\epsilon$ is the constant that determines the interfacial free
-energy. The functional represents the volumetric total of the free
-energy of the system. And what should happen to the total free energy as
-time goes by, it should decrease. So, at equilibrium, $F$ should be in
-its minimum value, and the $\phi$ that minimizes $F$ is the $\phi$ at
-equilibrium. That is the $\phi$ we are looking for. Now, how to minimize
-a functional, equate its derivative to 0, yes. But, taking the
-derivative of a functional has to do with the calculus of variations and
-is beyond the scope of the present work.
+$$f(\phi) = W\phi^2(1-\phi)^2$$
 
-The differential equation obtained as a result of minimizing the total
-free energy of the system is called the Allen-Cahn equation. This
-equation governs the evolution of a non-conserved order parameter. It is
-expressed as:
+where $W > 0$ sets the height of the barrier between the wells at
+$\phi=0$ and $\phi=1$. The gradient term costs energy wherever $\phi$
+varies in space. A very sharp interface has a large gradient and is
+expensive; a very wide one has small gradients but puts a lot of
+material at intermediate values of $\phi$, where $f$ is high. The
+equilibrium interface is the compromise between the two, and we will
+compute it below.
 
-$$\frac{\partial \phi(r,t)}{\partial t} = -L_\phi \left[ \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t) \right]$$
+### The Variational Derivative
 
-here $L_\phi$ is a constant. The key assumptions for this equation to
-hold are:
+Perturbing $\phi \to \phi + \delta\phi$ changes $F$ by
 
--   The interfaces are diffuse. $\phi$ has continuous values across them.
--   The Higher-order terms in the taylor expansion of the free energy density $f(\phi)$ are negligible.
--   $\phi$ will change with time to decrease the total free energy of the system.
--   Thermodynamics is the only driving force for change. No other forces like electromagnetism are at play.
+$$\delta F = \int_V \left[ \frac{\partial f}{\partial \phi}\delta\phi + \epsilon^2 \nabla\phi \cdot \nabla(\delta\phi) \right] dV$$
 
-These assumptions are also a must for the evolution of conserved order
-parameters as well.
+Integrating the second term by parts, with $\delta\phi = 0$ (or
+$\nabla\phi\cdot\mathbf{n}=0$) on the boundary,
 
-### The Cahn-Hilliard equation
+$$\int_V \epsilon^2 \nabla\phi \cdot \nabla(\delta\phi)\,dV = -\int_V \epsilon^2 \nabla^2\phi\,\delta\phi\,dV$$
 
-A conserved order parameter demands a conservation law to be imposed on
-top of the condition of total free energy minimization of the system.
-The conservation of most quantities are governed by the mathematical
-laws as those of mass conservation, namely the Fick's laws of diffusion
-which are expressed as:
+so that
 
-$$\frac{\partial \phi}{\partial t} = -\nabla J \hspace{1cm}: J = -M\nabla \mu \hspace{1cm}$$
+$$\delta F = \int_V \left[ \frac{\partial f}{\partial \phi} - \epsilon^2 \nabla^2\phi \right] \delta\phi \,dV \equiv \int_V \frac{\delta F}{\delta \phi}\,\delta\phi\,dV$$
 
-where J is the mass flux, M is the mobility of the material and $\mu$ is
-the chemical potential which is defined as:
+The bracket is the functional derivative $\delta F / \delta\phi$. It
+plays the role of an ordinary derivative: it tells us how much $F$
+changes when $\phi$ is changed locally at a point.
 
-$$\mu = \frac{\partial f(\phi)}{\partial \phi} - \epsilon \nabla^2 \phi(r,t)$$
+### The Gradient Flow
 
-Combining the two conditions, one can derive the differential equation
-governing the time evolution of a conserved order parameter, which is
-the Cahn-Hlliard equation. It is expressed as:
+For a non-conserved field, the simplest dynamics that always lowers $F$
+is to let $\phi$ change at each point in proportion to the local
+driving force:
 
-$$\frac{\partial\phi(r,t)}{\partial t}=\nabla . \left( M \nabla . \left( \frac{\partial f}{\partial \phi} - \epsilon \nabla^2 \phi \right) \right)$$
-Where $M$ is the mobility and $\epsilon$ determines the interfacial free
-energy. $M$ can be taken out of the gradient operator when it is a
-scalar and then we will get a laplacian operating on the inner brackets.
+$$\frac{\partial \phi}{\partial t} = -L\,\frac{\delta F}{\delta \phi} = -L\left[\frac{\partial f}{\partial \phi} - \epsilon^2\nabla^2\phi\right]$$
 
-Kobayashi dendrite growth
+This is the Allen-Cahn equation, and $L > 0$ is a kinetic coefficient.
+That $F$ never increases follows directly:
+
+$$\frac{dF}{dt} = \int_V \frac{\delta F}{\delta\phi}\frac{\partial\phi}{\partial t}\,dV = -L\int_V\left(\frac{\delta F}{\delta\phi}\right)^2 dV \leq 0$$
+
+so $F$ is a Lyapunov function of the dynamics.
+
+For the double-well,
+
+$$\frac{\partial f}{\partial \phi} = 2W\phi(1-\phi)(1-2\phi)$$
+
+and the Allen-Cahn equation becomes
+
+$$\frac{\partial \phi}{\partial t} = -L\left[2W\phi(1-\phi)(1-2\phi) - \epsilon^2\nabla^2\phi\right]$$
+
+The reaction term pushes $\phi$ towards whichever well is closer, 0 or
+1. The Laplacian term smooths $\phi$ in space. Their balance gives an
+interface of finite width.
+
+### 1D Equilibrium Interface Profile
+
+In 1D at equilibrium ($\partial\phi/\partial t = 0$):
+
+$$\epsilon^2\frac{d^2\phi}{dx^2} = \frac{\partial f}{\partial \phi} = 2W\phi(1-\phi)(1-2\phi)$$
+
+with $\phi(-\infty) = 0$ and $\phi(+\infty) = 1$. Multiplying both
+sides by $d\phi/dx$, the left side becomes
+$\frac{\epsilon^2}{2}\frac{d}{dx}\left(\frac{d\phi}{dx}\right)^2$ and
+the right side $\frac{d}{dx}f(\phi)$. Integrating from $-\infty$ to $x$,
+and using that both $d\phi/dx$ and $f$ vanish in the bulk,
+
+$$\frac{\epsilon^2}{2}\left(\frac{d\phi}{dx}\right)^2 = f(\phi) = W\phi^2(1-\phi)^2$$
+
+This is separable:
+
+$$\frac{d\phi}{\phi(1-\phi)} = \frac{\sqrt{2W}}{\epsilon}\,dx
+\quad\Rightarrow\quad
+\ln\!\left(\frac{\phi}{1-\phi}\right) = \frac{\sqrt{2W}}{\epsilon}\,(x - x_0)$$
+
+and solving for $\phi$,
+
+$$\phi_{\rm eq}(x) = \frac{1}{2}\left[1 + \tanh\!\left(\frac{x - x_0}{\lambda}\right)\right], \qquad \lambda = \frac{2\epsilon}{\sqrt{2W}} = \epsilon\sqrt{\frac{2}{W}}$$
+
+Here $x_0$ is the position of the interface (arbitrary, since the
+problem is translation invariant) and $\lambda$ is a measure of the
+interface width. Increasing $\epsilon$ or decreasing $W$ widens the
+interface; the opposite sharpens it.
+
+### Interface Energy
+
+The interface energy per unit area $\gamma$ is the excess free energy
+of the interface relative to the bulk phases:
+
+$$\gamma = \int_{-\infty}^{+\infty} \left[ f(\phi_{\rm eq}) + \frac{\epsilon^2}{2}\left(\frac{d\phi_{\rm eq}}{dx}\right)^2 \right] dx$$
+
+Since $\frac{\epsilon^2}{2}(d\phi/dx)^2 = f(\phi)$ at equilibrium, the
+two contributions are equal, and changing the integration variable to
+$\phi$ (using $d\phi/dx = \sqrt{2f}/\epsilon$),
+
+$$\gamma = 2\int_{-\infty}^{+\infty} f(\phi_{\rm eq})\,dx = 2\int_0^1 f(\phi)\frac{dx}{d\phi}\,d\phi = \sqrt{2}\,\epsilon\int_0^1 \sqrt{f(\phi)}\,d\phi$$
+
+For $f = W\phi^2(1-\phi)^2$:
+
+$$\gamma = \epsilon\sqrt{2W}\int_0^1 \phi(1-\phi)\,d\phi = \frac{\epsilon\sqrt{2W}}{6}$$
+
+So $\lambda \propto \epsilon/\sqrt{W}$ and $\gamma \propto
+\epsilon\sqrt{W}$, and the two can be set independently through
+$\epsilon$ and $W$. In practice $\gamma$ is a material property, while
+$\lambda$ is chosen to be resolved by the numerical grid (usually much
+wider than a real interface); $\epsilon$ and $W$ then follow.
+
+### Interface Motion and the Sharp-Interface Limit
+
+To see how the interface moves, add a small bulk driving force: let the
+two wells differ in depth by $\Delta g$ per unit volume (favouring
+$\phi=1$), and let the interface be curved with mean curvature $\kappa$
+(sum of principal curvatures, positive when the $\phi=1$ region is
+convex). When $\lambda$ is small compared with the radius of curvature,
+$\phi$ across the interface stays close to the 1D tanh profile, and in a
+coordinate $u$ normal to the interface the Laplacian is approximately
+$\phi'' - \kappa\phi'$, with $u$ pointing into the $\phi=1$ region. Looking for a profile that
+moves with normal velocity $v$ (positive when the $\phi=1$ phase grows), multiplying the equation by $\phi'$ and
+integrating across the interface gives
+
+$$v = \frac{L\epsilon^2}{\gamma}\left(\Delta g - \gamma\kappa\right)$$
+
+where we have used $\int (\phi')^2\,du = \gamma/\epsilon^2$. This is the
+classical sharp-interface law: velocity equals an interface mobility
+$m = L\epsilon^2/\gamma$ times the driving force, which is the bulk
+energy difference reduced by the capillary (Gibbs-Thomson) term
+$\gamma\kappa$. With no bulk driving force, $v = -L\epsilon^2\kappa$:
+Allen-Cahn reduces to motion by mean curvature, and convex regions of
+the $\phi=1$ phase shrink. The interface is never tracked explicitly;
+its motion comes out of the evolution of the field.
+
+
+## The Cahn-Hilliard Equation
+
+Concentration is conserved: solute atoms cannot appear or disappear,
+they can only move. This changes the form of the dynamics. In
+Allen-Cahn, $\phi$ changes at a point in response to the local driving
+force. For a conserved field, the value at a point can only change by
+material flowing in or out, so the evolution must take the form of a
+continuity equation:
+
+$$\frac{\partial c}{\partial t} = -\nabla \cdot \mathbf{J}$$
+
+Atoms flow down gradients of chemical potential, which here is the
+functional derivative of the free energy:
+
+$$\mu = \frac{\delta F}{\delta c} = \frac{\partial f}{\partial c} - \epsilon^2\nabla^2 c, \qquad \mathbf{J} = -M\nabla\mu$$
+
+where $M > 0$ is the atomic mobility. Combining the two (with constant
+$M$),
+
+$$\frac{\partial c}{\partial t} = \nabla \cdot (M\nabla\mu) = M\nabla^2\left[\frac{\partial f}{\partial c} - \epsilon^2\nabla^2 c\right]$$
+
+This is the Cahn-Hilliard equation. The functional $F$ is the same as
+before, with $c$ (say, the mole fraction of one component) in place of
+$\phi$. A double-well $f(c)$ now describes a miscibility gap: two
+compositions are stable and mixtures in between can lower their energy
+by separating.
+
+With $f = Wc^2(1-c)^2$:
+
+$$\frac{\partial c}{\partial t} = M\nabla^2\!\left[2Wc(1-c)(1-2c) - \epsilon^2\nabla^2 c\right]$$
+
+Where $f''(c) < 0$ (inside the spinodal), the first term gives a
+negative effective diffusivity: solute flows up its concentration
+gradient and small fluctuations grow, the opposite of ordinary Fickian
+diffusion. The fourth-order gradient term penalises rapid variations in
+$c$ and damps short-wavelength fluctuations. The competition between the
+two selects a characteristic length scale, as the linear stability
+analysis shows.
+
+### Linear Stability Analysis
+
+Take a uniform state $c = c_0$ with a small perturbation
+
+$$c(x,t) = c_0 + A(t)\cos(kx)$$
+
+Expanding $\partial f/\partial c$ about $c_0$ and keeping terms linear in
+$A$:
+
+$$\dot{A} = -Mk^2\left[f''(c_0) + \epsilon^2 k^2\right] A$$
+
+with $f''(c_0) = 2W(1 - 6c_0 + 6c_0^2)$. So $A(t) = A_0 e^{\sigma(k)t}$
+with growth rate
+
+$$\sigma(k) = -Mk^2\left[f''(c_0) + \epsilon^2 k^2\right]$$
+
+A mode grows when $\sigma > 0$, i.e. when
+
+$$f''(c_0) + \epsilon^2 k^2 < 0 \implies k^2 < k_c^2 \equiv \frac{-f''(c_0)}{\epsilon^2}$$
+
+This requires $f''(c_0) < 0$, which defines the spinodal region. For the
+symmetric double-well it is $c_0 \in (c_-, c_+)$ with $c_\pm = \frac{1}{2}
+\pm \frac{1}{2\sqrt{3}}$. Outside it $f''(c_0) > 0$, every mode decays,
+and the uniform state is stable against small fluctuations (though
+between the spinodal and the miscibility gap it is still metastable and
+can decompose by nucleation).
+
+Maximising $\sigma$ with respect to $k^2$:
+
+$$\frac{d\sigma}{d(k^2)} = 0 \implies k_{\rm max}^2 = \frac{-f''(c_0)}{2\epsilon^2} = \frac{k_c^2}{2}$$
+
+The wavelength $\lambda_{\rm max} = 2\pi/k_{\rm max}$ sets the initial
+spacing of the composition domains in spinodal decomposition. A larger
+$\epsilon$ shifts it to longer wavelengths and gives a coarser initial
+microstructure.
+
+### 1D Equilibrium Concentration Profile
+
+At long times the system separates into solute-rich and solute-poor
+regions. At equilibrium $\mu = \delta F/\delta c$ is uniform. For the
+symmetric double-well with average composition inside the miscibility
+gap, the constant is $\mu = 0$, the bulk phases are $c=0$ and $c=1$,
+and the equation for the profile is exactly the one solved for
+Allen-Cahn. Hence
+
+$$c_{\rm eq}(x) = \frac{1}{2}\left[1 + \tanh\!\left(\frac{x - x_0}{\lambda}\right)\right], \qquad \lambda = \epsilon\sqrt{\frac{2}{W}}$$
+
+The two equations share the same free energy, so they share the same
+equilibrium states (for a non-symmetric $f$ one needs $\mu = $ const
+rather than $0$, and the common tangent construction fixes the bulk
+compositions). What differs is how equilibrium is approached. In
+Allen-Cahn, $\int\phi\,dV$ can change freely. In Cahn-Hilliard,
+$\int c\,dV$ is fixed, so building up domains requires long-range
+diffusion, which is slower. This shows up in the coarsening laws: the
+average domain size grows as $R \sim t^{1/2}$ for non-conserved
+(curvature-driven) dynamics and as $R \sim t^{1/3}$ for conserved
+dynamics.
+
+### Coarsening
+
+After spinodal decomposition, the microstructure continues to coarsen:
+large domains grow at the expense of small ones. Because of the
+Gibbs-Thomson effect, the chemical potential near a curved interface is
+raised by an amount proportional to $\gamma/R$, so solute diffuses from
+small particles to large ones (Ostwald ripening). The flux is set by the
+chemical potential difference over a diffusion distance of order $R$,
+so
+
+$$\frac{dR}{dt} \propto \frac{M\gamma}{R^2} \implies R(t)^3 \propto M\gamma t$$
+
+This $t^{1/3}$ law is the Lifshitz-Slyozov-Wagner (LSW) result. It
+follows from conservation and diffusion-limited transport rather than
+from the details of $f$, and is observed in alloys, polymer blends and
+liquid mixtures.
+
+
+Kobayashi Dendrite Growth
 -------------------------
 
-The simplest of all is the renowned work of Kobayashi [@Kobayashi1993]
-which is one of the earliest phase-field models for dendritic
-solidification.
+Dendrites form during solidification of an undercooled melt because the
+solid-liquid interface energy (and the interface kinetics) depend on
+crystallographic direction. A growing front is unstable to small
+perturbations, and anisotropy picks out the directions in which the
+perturbations grow into primary arms and side branches. Kobayashi
+[@Kobayashi1993] wrote one of the first phase-field models to reproduce
+this, with a simple set of equations.
 
-The model includes two order parameters. One is a non-conserved order
-parameter $\phi(r,t)$ which takes the value of 1 in solid phase and 0 in
-liquid phase. The other parameter is the temperature field $T(r,t)$.
-Here $r$ is the spatial position and $t$ is time.
+The model has two fields: the phase field $\phi(\mathbf{r},t)$, equal to
+1 in the solid and 0 in the liquid, and the temperature
+$T(\mathbf{r},t)$. Solidification releases latent heat at the
+interface, which must diffuse away into the undercooled liquid before
+the front can advance further. The temperature equation is
 
-The free energy functional chosen for this model is the Ginzburg-Landau
-type free energy including $m$ as a parameter :
+$$\frac{\partial T}{\partial t} = \nabla^2T + K\frac{\partial \phi}{\partial t}$$
 
-$$F(\phi,m) = \int_V \frac{1}{2} \epsilon^2 |\nabla \phi|^2 + f(\phi,m)dv ;$$
+where the last term is the latent heat released wherever $\phi$
+increases, and $K$ is the dimensionless latent heat. Temperature is
+scaled so that the melting temperature is $T_{eq}=1$ and the initial
+undercooled liquid is at $T=0$.
 
-where $\epsilon$ is a small parameter which determines the thickness of
-the layer and also controls the mobility of the interface. $f$ is a
-double well potential (free energy function) that has local minima at
-$\phi=0$ and $\phi=1$ for each value of $m$. The specific form of $f$
-taken in this model is :
+The free energy functional is
 
-$$f(\phi,m) = \frac{1}{4}\phi^4 + (\frac{1}{2} - \frac{1}{3}m)\phi^3 + (\frac{1}{4} - \frac{1}{2}m)\phi^2$$
+$$F(\phi,m) = \int_V \left[\frac{1}{2} \epsilon^2 |\nabla \phi|^2 + f(\phi,m)\right]dV$$
 
-where $|m|<\frac{1}{2}$. Anisotropy is accounted for by assuming that
-$\epsilon$ depends on the direction of the outer normal vector at the
-interface. Its value is calculated as :
+with the double-well
 
-$$\epsilon = \bar{\epsilon}\sigma(\theta)$$
+$$f(\phi,m) = \frac{1}{4}\phi^4 - \left(\frac{1}{2} - \frac{m}{3}\right)\phi^3 + \left(\frac{1}{4} - \frac{m}{2}\right)\phi^2$$
 
-where $\bar{\epsilon}$ is the mean value and $\sigma(\theta)$ represents
-anisotropy in the form :
+which has minima at $\phi=0$ and $\phi=1$ for $|m|<1/2$, with
+$f(0)=0$ and $f(1) = -m/6$. The parameter $m$ tilts the wells and is
+tied to the temperature through
 
-$$\sigma(\theta) = 1 + \delta \cos{j(\theta - \theta_0)} \; \; \text{ with } \; \; \theta = \arctan{ \left(\frac{\partial \phi / \partial y}{\partial \phi/ \partial x} \right)}$$
+$$m(T) = \frac{\alpha}{\pi} \arctan{[ \gamma (T_{eq}-T)]}$$
 
-where $\delta$ is the strength of anisotropy and $j$ is the mode number
-of anisotropy which takes the value of 4 for cubic lattices and 6 for
-hexagonal lattices. $\theta_0$ is the initial offset angle taken as a
-constant.
+with $\alpha < 1$ so that $|m| < 1/2$ (here $\gamma$ is just a model
+constant, not the interface energy). Below the melting point $m > 0$,
+the solid well is lower, and the solid grows; above it the solid melts.
 
-The parameter $m$ is assumed to be dependent on the degree of
-supercooling an the temperature. The dependency is expressed as :
+The gradient flow of $F$, $\tau\,\partial\phi/\partial t = -\delta
+F/\delta\phi$, gives for constant $\epsilon$
 
-$$m(T) = \frac{\alpha}{\pi} \arctan{[ \gamma (T_{eq}-T } ]$$
+$$\tau\frac{\partial \phi}{\partial t} = \epsilon^2\nabla^2\phi + \phi(1-\phi)\left(\phi - \frac{1}{2} + m\right)$$
 
-where $\alpha$ is a positive constant and $T_{eq}$ is the equilibrium
-temperature. The Allen-Cahn equation for the evolution of the
-non-conserved order parameter $\phi$ takes the respective forms as
-expressed above.
+The Laplacian term smooths $\phi$ across the interface. The last term,
+which is $-\partial f/\partial\phi$, vanishes in the bulk phases and
+acts only within the interface, pushing $\phi$ towards the lower well.
 
-The temperature field evolution equation is derived from enthalpy
-conservation and is expressed as :
+**Anisotropy.** To make the interface energy depend on orientation,
+Kobayashi lets $\epsilon$ depend on the angle $\theta$ of the interface
+normal:
 
-$$\frac{\partial T}{\partial t} = \nabla^2T + \kappa\frac{\partial \phi}{\partial t}$$
+$$\epsilon = \bar{\epsilon}\,\sigma(\theta), \qquad \sigma(\theta) = 1 + \delta \cos{j(\theta - \theta_0)}, \qquad \theta = \arctan\!\left(\frac{\partial \phi / \partial y}{\partial \phi / \partial x}\right)$$
 
-The equation is non-dimentionalized so that the characteristic cooling
-temperature is 0 and the equilibrium temperature is 1.
+where $\delta$ is the strength of anisotropy, $j$ the mode number (4
+for cubic symmetry, 6 for hexagonal) and $\theta_0$ the orientation of
+the crystal. Because $\epsilon$ now depends on $\nabla\phi$ through
+$\theta$, the variational derivative of the gradient term picks up extra
+terms. Using $\partial\theta/\partial\phi_x = -\phi_y/|\nabla\phi|^2$
+and $\partial\theta/\partial\phi_y = \phi_x/|\nabla\phi|^2$, one gets
 
-The isotropic phase field evolution equation is :
+$$\tau\frac{\partial \phi}{\partial t} = -\frac{\partial}{\partial x}\!\left(\epsilon \frac{\partial\epsilon}{\partial\theta} \frac{\partial\phi}{\partial y}\right) + \frac{\partial}{\partial y}\!\left(\epsilon \frac{\partial\epsilon}{\partial\theta} \frac{\partial\phi}{\partial x}\right) + \nabla \cdot (\epsilon^2\nabla\phi) + \phi(1-\phi)\!\left(\phi -\tfrac{1}{2} +m\right)$$
 
-$$\tau\frac{\partial \phi}{\partial t} =  \epsilon^2\nabla^2\phi + \phi(1-\phi)(\phi- \frac{1}{2} +m )$$
-
-The phase field $\phi$ evolution equation for anisotropic solidification
-is expressed as:
-
-$$\tau\frac{\partial \phi}{\partial t} = \frac{\partial}{\partial y} \left( \epsilon \frac{\partial\epsilon}{\partial\theta} \frac{\partial\phi}{\partial x} \right)- \frac{\partial}{\partial y} \left( \epsilon \frac{\partial\epsilon}{\partial\theta} \frac{\partial\phi}{\partial y} \right) + \nabla . (\epsilon^2\nabla\phi) + \phi(1-\phi)(\phi -\frac{1}{2} +m)$$
-
-This model is henceforth referred to as 'KOB'.
-
- The WBM Model 
--------------
-
-The next important advance was made by Wheeler, Boettinger and McFadden
-[@Wheeler1992] and the model came to be known as WBM. The model
-describes isothermal phase transitions between ideal binary-alloy liquid
-and solid phases.
-
-Extending on the KOB model, the free energy of an isothermal solid
-solution in which the two solutes are assumed to be ideal solutions is
-derived. It is assumed that the freezing temperature of the solution is
-between the freezing temperatures of the pure elements (a lens phase
-diagram). Further, the Helmholtz free energy of the components are
-assumed to be of the form :
-
-$$f_A(\phi; T) = W_A \int_0^{\phi} p(p-1)\left[p - \frac{1}{2} - \beta_A(T)\right] dp,$$
-where $W_A$ is a constant, $T$ is a isothermal parameter and
-$\beta_A(T)$ is a monotonically increasing function of temperature
-capturing the effects of undercooling. The free energy density of the
-solution is derived to be :
-
-$$f(\phi, c; T) = cf_B + (1 - c) f_A + \frac{RT}{v_m} \left[ c \ln c + (1 - c) \ln (1 - c) \right]$$
-
-where $R$ is the universal gas constant and $v_m$ is
-the molar volume assumed to be a constant. The free energy functional
-defined in terms of above equation is :
-
-$$F[\phi, c; T] = \int_{V} \left[ f(\phi, c; T) + \frac{\epsilon^2}{2} |\nabla \phi|^2 \right] dv
-\label{eq:wbmF}$$
-
-Taking the variational derivative of the free energy functional gives the following governing equations:
-
-$$\frac{\partial \phi}{\partial t} = M_1 \left[ \epsilon^2 \nabla^2 \phi - \left( c \frac{\partial f_B}{\partial \phi} + (1-c) \frac{\partial f_A}{\partial \phi} \right) \right]$$
-
-$$\frac{\partial c}{\partial t} = M_2 \nabla \cdot \left[ c(1 - c) \nabla (f_B - f_A) \right] + D \nabla^2 c$$
-
-where $D=M_2RT/v_m$ is the diffusivity of the solute $B$ assumed to be
-constant and equal in both solid and liquid. And $M_1$ and $M_2$ are
-constants related to mobilities of phase and concentration fields.
-
-The model can reproduce correctly the solute trapping phenomena at a
-high interface velocity. But the drawback of the model is that the
-microstructure parameters vary depending on the interface thickness and
-the presence of anomalous interface effects.
-
-The next change is axiom was when Steinbach [@Steinbach1999] assumed the
-interface to be a mixture of solid and liquid phases with different
-compositions, but constant in their ratio (partition coefficient). The
-model only worked for dilute alloys.
-
-Binary KKS Model
-----------------
-
-A different derivation of governing equations came from Losert
-[@Losert1998]. It was long been realized that the governing equations
-describing alloy solidification are similar to the ones corresponding to
-pure material. Using this concept, Losert extended the thin-interface
-PFM for a pure material to an alloy case. However, the model had two
-unrealistic assumptions. The first is that the model assumed the
-liquidus and solidus lines to be parallel. And secondly they assumed a
-constant solute diffusivity throughout the system like in the WBM model.
-
-Building on the approach of Losert, the first successful and widely
-adopted model for binary-alloy solidification was presented by Seong
-Gyoon Kim, Won Tae Kim and Toshio Suzuki [@Kim1999]. They utilized the
-correspondence between the variables of enthalpy-temperature equations
-and composition-chemical-potential equations to derive an alloy phase
-field model from the phase field model of pure elements. An important
-assumption of the model is the equality of chemical potentials of
-components at the interface.[^1]
-
-The Interface-Width Problem
----------------------------
-
-> If the PFM interface width is of the order of a real interface, the
-> needed computational mesh size for mesoscale simulation
-> amplifies[@Karma1998]. If not, various anomalous interface effects are
-> observed[@Almgren1999].
-
-The problem of finite interface width is as such. Generally, a binary
-PFM model consists of two equations. The phase-field evolution equation
-and the concentration-field evolution equation (the diffusion equation).
-There are three parameters in the phase-field equation with definite
-relationships with interface's energy, width and mobility. For the
-interface dynamics of the PFM to correspond to that of a real interface,
-the relationships between the parameters need to be precisely
-determined. One way to do so is to set the interface width of the PFM to
-the value corresponding to that of a real interface. This demands the
-grid size of the computational mesh to be even smaller, about $<1nm$.
-Mesoscale simulations then become almost impossible owing to a needed
-much larger grid size.
-
-This restriction was overcome in a remarkable work of Karma and Rappel
-[@Karma1998]. They showed that for the solidification of pure substances
-which have the same heat capacities and thermal diffusivity in solid and
-liquid forms, trhe dynamics of an interface with a vanishingly small
-width (that is, classical sharp interface dynamics) can be described
-correctly by a PFM with a finite thin interface width, given that a
-novel relationship between the real interface mobility and phase-field
-mobility is adopted. The interface width does need to be much smaller
-than the characteristic length scales of the diffusion field as well as
-the interface curvature.
-
-The PFMs developed with this concept of finite interface width still
-suffered from anomalous interface effects. This was shown by
-Almgren[@Almgren1999]. The effects include a chemical potential jump at
-the interface which causes an exaggerated solute-trapping effect. Such
-effects only become significant with increasing interface width.
-
-The Anti-trapping Solution
---------------------------
-
-> All the anomalous interface effects could be suppressed by introducing
-> an antitrapping current term into the diffusion equation[@Karma2001].
-
-A solution was proposed by Karma[@Karma2001][@Echebarria2004]. To act
-against the solute-trapping current driven by the chemical potential
-gradient, an antitrapping current term was introduced to the diffusion
-equation. This suppressed the anomalous interface effects.
-
-Following these findings, a model new PFM was proposed[@Kim2004]. It is
-based on the fact that all the anomalous interface effects originate
-from the finite interface width in the diffusion equation, not in the
-phase-field equation. The anomalous interface effects can then be
-suppressed by decoupling the interface width $2\xi_d$ in the diffusion
-equation from the width $2\xi_d$ in the phase-field equation and taking
-the limit $2\xi_d \rightarrow 0$. In numerical computations, however,
-the minimum $2\xi_d$ value which one can take appears to be slightly
-above the grid size $\Delta x$. Therefore the solute-trapping phenomenon
-persists to a certain extent, as long as $\Delta x$ in the computation
-is much thicker than the real interface width.
-
-Next was the derivation of a PFM for multi-component systems with
-arbitrary thermodynamic properties under the equal chemical potential
-condition. This was done by Kim[@Kim2007] and is discussed in detail in
-Chapter [KKS](notes/pfm_kks.html).
-
+The first two terms vanish when $\delta = 0$, recovering the isotropic
+equation. With $\delta > 0$ the interface advances fastest along the
+$j$ directions $\theta = \theta_0 + 2\pi n/j$, and the coupling with
+the temperature field turns these into dendrite arms with side branches.
+We will refer to this model as KOB.
 
 
 References

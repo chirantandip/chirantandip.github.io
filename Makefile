@@ -34,7 +34,7 @@ fluids.html: fluids.md assets/fluids_template.html
 %.html: %.md assets/template.html
 	${pandoc} --template=assets/template.html -s $< -o $@
 
-assets/%.html: assets/base/%.html 
+assets/%.html: assets/base/%.html assets/base/navbar.html assets/base/footer.html
 	sed '/^NAVBAR$$/r assets/base/navbar.html' $< | sed '/^NAVBAR$$/d' > tmp.html
 	sed '/^FOOTER$$/r assets/base/footer.html' tmp.html | sed '/^FOOTER$$/d' > $@
 
